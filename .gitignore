@@ -1,5 +1,6 @@
 # Standard
 node_modules
+dist
 
 # OS
 .DS_Store

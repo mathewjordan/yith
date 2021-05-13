@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Preview from "./components/Preview";
+import Figure from "./components/Figure";
 
 class Yith extends Component {
 
@@ -39,7 +39,7 @@ class Yith extends Component {
     if (this.state.data) {
       return (
         <div>
-          <Preview manifest={this.state.data} />
+          <Figure manifest={this.state.data} />
         </div>
       )
     } else {

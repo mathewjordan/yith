@@ -11,6 +11,7 @@ Array.prototype.forEach.call(
     let manifest = el.getAttribute('data-manifest');
     let region = el.getAttribute('data-region');
     let autozoom = el.getAttribute('data-autozoom');
+    let chronologyDate = el.getAttribute('data-chronology-date');
     ReactDOM.render(
       <Yith manifest={manifest}
             region={region}

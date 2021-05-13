@@ -37,11 +37,12 @@ class Yith extends Component {
   render() {
     if (this.state.data) {
       return (
-        <div>
+        <React.Fragment>
           <Figure manifest={this.state.data}
                   region={this.props.region}
                   autozoom={this.props.autozoom} />
-        </div>
+
+        </React.Fragment>
       )
     } else {
       return null

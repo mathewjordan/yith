@@ -62,8 +62,23 @@
     &:hover {
       &::before {
         background-color: #004c4c;
-        transform: scale3d(1.3,1.3,1.3);
+        transform: scale3d(1.2,1.2,1.2);
       }
     }
+  }
+
+  .yith-emblem {
+    color: #136e6e;
+    font-weight: 400;
+    font-family: $sans;
+    font-size: 4em;
+    letter-spacing: -0.05em;
+    transform: rotate(270deg);
+    position: absolute;
+    left: 54px;
+    margin-top: 50px;
+    background: -webkit-linear-gradient(90deg, #66b2b2, #B2D8D8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 }

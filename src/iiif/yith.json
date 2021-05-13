@@ -1,0 +1,102 @@
+{
+  "@context": [
+    "https://iiif.io/api/presentation/3/context.json"
+  ],
+  "id": "http://localhost:8080/iiif/yith.json",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "File:H.P. Lovecraft statue in Providence, RI sculpted by artist Gage Prentiss. Photo by David Lepage.jpg"
+    ]
+  },
+  "summary": {
+    "en": [
+      "H.P. Lovecraft statue in Providence, RI sculpted by artist Gage Prentiss. Photo taken by David Lepage shortly after the statue was unveiled online. A place has yet to be determined for the permanent installation of the statue in Providence."
+    ]
+  },
+  "metadata": [
+    {
+      "label": {
+        "en": [
+          "Date"
+        ]
+      },
+      "value": {
+        "en": [
+          "14 October 2018, 15:08:56"
+        ]
+      }
+    },
+    {
+      "label": {
+        "en": [
+          "Author"
+        ]
+      },
+      "value": {
+        "en": [
+          "David Lepage"
+        ]
+      }
+    }
+  ],
+  "rights": "http://rightsstatements.org/vocab/NoC-US/1.0/",
+  "requiredStatement": {
+    "label": {
+      "en": [
+        "Attribution"
+      ]
+    },
+    "value": {
+      "en": [
+        "Public Domain"
+      ]
+    }
+  },
+  "thumbnail": [
+    {
+      "id": "https://zoomviewer.toolforge.org/iipsrv.fcgi/?iiif=cache/3d71f5798ff5dcc9a6048682e2ccd6d5.tif/full/200,200/0/default.jpg",
+      "type": "Image",
+      "format": "image/jpeg",
+      "width": 200,
+      "height": 200
+    }
+  ],
+  "items": [
+    {
+      "id": "http://localhost:8080/iiif/yith/canvas",
+      "type": "Canvas",
+      "width": 4000,
+      "height": 2545,
+      "items": [
+        {
+          "id": "http://localhost:8080/iiif/yith/canvas/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "@context": "https://iiif.io/api/presentation/3/context.json",
+              "id": "http://localhost:8080/iiif/yith/canvas/page/annotation",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": [
+                {
+                  "id": "https://zoomviewer.toolforge.org/iipsrv.fcgi/?cache/d5c138289dc698f722d64c7fe592e054.tif/full/full/0/default.jpg",
+                  "type": "Image",
+                  "width": 4000,
+                  "height": 2545,
+                  "format": "image/jpeg",
+                  "service": {
+                    "@id": "https://zoomviewer.toolforge.org/iipsrv.fcgi/?iiif=cache/d5c138289dc698f722d64c7fe592e054.tif",
+                    "@type": "http://iiif.io/api/image/2/context.json",
+                    "profile": "http://iiif.io/api/image/2/level1.json"
+                  }
+                }
+              ],
+              "target": "http://localhost:8080/iiif/yith/canvas"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

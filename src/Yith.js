@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Preview from "./components/Preview";
 
 class Yith extends Component {
 
@@ -11,6 +12,7 @@ class Yith extends Component {
   }
 
   getManifest = (uri) => {
+
     fetch(uri, {
       headers : {
         'Content-Type': 'application/json',
@@ -20,7 +22,7 @@ class Yith extends Component {
       .then(response => response.json())
       .then(data => {
         this.setState({
-          manifest: data
+          data
         });
       })
       .catch(err => console.error(this.props.url, err.toString()));
@@ -34,9 +36,15 @@ class Yith extends Component {
 
   render() {
 
-    return (
-      <div>Yith</div>
-    )
+    if (this.state.data) {
+      return (
+        <div>
+          <Preview manifest={this.state.data} />
+        </div>
+      )
+    } else {
+      return null
+    }
 
   }
 }

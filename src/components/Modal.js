@@ -17,6 +17,8 @@ class Modal extends Component {
 
   render() {
 
+    console.log(this.props.autozoom)
+
     return (
       <React.Fragment>
         <a className="yith-modal-close"
@@ -29,8 +31,9 @@ class Modal extends Component {
         </a>
         <div className="yith-modal">
           <Mirador
+            autozoom={this.props.autozoom}
             config={{
-              id: 'mirador',
+              id: 'yith',
               window: {
                 allowMaximize: false,
                 allowClose: false

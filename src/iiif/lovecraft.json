@@ -2,7 +2,7 @@
   "@context": [
     "https://iiif.io/api/presentation/3/context.json"
   ],
-  "id": "http://localhost:8080/iiif/yith.json",
+  "id": "http://localhost:8080/iiif/lovecraft.json",
   "type": "Manifest",
   "label": {
     "en": [
@@ -55,27 +55,32 @@
   },
   "thumbnail": [
     {
-      "id": "https://zoomviewer.toolforge.org/iipsrv.fcgi/?iiif=cache/3d71f5798ff5dcc9a6048682e2ccd6d5.tif/full/200,200/0/default.jpg",
+      "id": "https://zoomviewer.toolforge.org/iipsrv.fcgi/?iiif=cache/3d71f5798ff5dcc9a6048682e2ccd6d5.tif/full/full/0/default.jpg",
       "type": "Image",
-      "format": "image/jpeg",
       "width": 200,
-      "height": 200
+      "height": 200,
+      "format": "image/jpeg",
+      "service": {
+        "@id": "https://zoomviewer.toolforge.org/iipsrv.fcgi/?iiif=cache/d5c138289dc698f722d64c7fe592e054.tif",
+        "@type": "http://iiif.io/api/image/2/context.json",
+        "profile": "http://iiif.io/api/image/2/level1.json"
+      }
     }
   ],
   "items": [
     {
-      "id": "http://localhost:8080/iiif/yith/canvas",
+      "id": "http://localhost:8080/iiif/lovecraft/canvas",
       "type": "Canvas",
       "width": 4000,
       "height": 2545,
       "items": [
         {
-          "id": "http://localhost:8080/iiif/yith/canvas/page",
+          "id": "http://localhost:8080/iiif/lovecraft/canvas/page",
           "type": "AnnotationPage",
           "items": [
             {
               "@context": "https://iiif.io/api/presentation/3/context.json",
-              "id": "http://localhost:8080/iiif/yith/canvas/page/annotation",
+              "id": "http://localhost:8080/iiif/lovecraft/canvas/page/annotation",
               "type": "Annotation",
               "motivation": "painting",
               "body": [
@@ -92,7 +97,7 @@
                   }
                 }
               ],
-              "target": "http://localhost:8080/iiif/yith/canvas"
+              "target": "http://localhost:8080/iiif/lovecraft/canvas"
             }
           ]
         }

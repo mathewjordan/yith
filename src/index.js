@@ -10,7 +10,13 @@ Array.prototype.forEach.call(
   function(el) {
     let manifest = el.getAttribute('data-manifest');
     let region = el.getAttribute('data-region');
-    ReactDOM.render(<Yith manifest={manifest} region={region} />, el);
+    let autozoom = el.getAttribute('data-autozoom');
+    ReactDOM.render(
+      <Yith manifest={manifest}
+            region={region}
+            autozoom={autozoom}
+      />, el
+    );
   }
 );
 

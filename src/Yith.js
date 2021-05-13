@@ -35,11 +35,12 @@ class Yith extends Component {
   }
 
   render() {
-
     if (this.state.data) {
       return (
         <div>
-          <Figure manifest={this.state.data} region={this.props.region} />
+          <Figure manifest={this.state.data}
+                  region={this.props.region}
+                  autozoom={this.props.autozoom} />
         </div>
       )
     } else {

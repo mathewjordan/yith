@@ -12,15 +12,34 @@ class Mirador extends Component {
     const { config, plugins } = this.props;
 
     this.miradorInstance = mirador.viewer(config, plugins);
-    this.miradorInstance.store.subscribe(() => {
-      const state = this.miradorInstance.store.getState();
-    });
-    // Hacky example of waiting a specified time to add a window... Don't do this for real
-    setTimeout(() => {
-      this.miradorInstance.store.dispatch(
-        this.miradorInstance.actions.addWindow()
-      );
-    }, 10000);
+
+    if (this.props.autozoom) {
+
+      const windowId = Object.keys(this.miradorInstance.store.getState().windows)[0];
+
+      const boxToZoom = {
+        x: 1900,
+        y: 1200,
+        width: 2000,
+        height: 2000
+      };
+
+      const zoomCenter = {
+        x: boxToZoom.x + boxToZoom.width / 2,
+        y: boxToZoom.y + boxToZoom.height / 2
+      };
+
+      var action = mirador.actions.updateViewport(windowId, {
+        x: zoomCenter.x,
+        y: zoomCenter.y,
+        zoom: 1 / boxToZoom.width
+      });
+
+      setTimeout(() => {
+        this.miradorInstance.store.dispatch(action);
+      }, 1000);
+    }
+
   }
 
   render() {

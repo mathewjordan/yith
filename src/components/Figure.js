@@ -19,7 +19,7 @@ class Figure extends Component {
     const { manifest } = this.props;
 
     let region = 'full';
-    if (this.props.region !== '') {
+    if (this.props.region !== null) {
       region = this.props.region
     }
 
@@ -34,7 +34,7 @@ class Figure extends Component {
 
   yithModal() {
     if (this.state.active) {
-      return <Modal iiif={this.props.manifest} showModal={this.showModal} />
+      return <Modal iiif={this.props.manifest} autozoom={this.props.autozoom} showModal={this.showModal} />
     }
   }
 

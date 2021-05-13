@@ -1,11 +1,10 @@
 .yith-chronology {
   position: relative;
   padding: 20px;
-  padding-left: 100px;
 
   &::before {
     top: 0;
-    left: 170px;
+    left: 85px;
     width: 10px;
     height: 100%;
     background-color: #66b2b2;
@@ -25,12 +24,12 @@
     font-weight: 300;
 
     &::after {
-      width: 19px;
+      width: 14px;
       height: 3px;
       background-color: #B2D8D8;
       display: block;
       content: '';
-      right: -20px;
+      right: -15px;
       top: 9px;
       position: absolute;
     }
@@ -42,8 +41,8 @@
 
   > .yith {
     position: relative;
-    margin-left: 110px;
-    margin-top: -3em;
+    margin-left: 105px;
+    margin-top: -48px;
 
     &::before {
       width: 22px;
@@ -82,18 +81,18 @@
   }
 
   .yith-emblem {
-    color: #136e6e;
     font-weight: 800;
     font-family: $sans;
     font-size: 4em;
     letter-spacing: -0.05em;
     transform: rotate(270deg);
     position: absolute;
-    left: 44px;
-    padding: 0 10px;
-    margin-top: 50px;
-    background: -webkit-linear-gradient(180deg, #004c4c, #136e6e);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    left: -15px;
+    padding: 0 15px;
+    margin-top: 60px;
+    color: #136e6e;
+    background-color: white;
+    display: block;
+    z-index: 3;
   }
 }

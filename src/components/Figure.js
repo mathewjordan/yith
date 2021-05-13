@@ -28,7 +28,7 @@ class Figure extends Component {
       summary: manifest.summary.en[0],
       requiredStatementLabel: manifest.requiredStatement.label.en[0],
       requiredStatementValue: manifest.requiredStatement.value.en[0],
-      media: manifest.items[0].items[0].items[0].body[0].service['@id'] + '/' + region + '/!360,360/0/default.jpg'
+      media: manifest.items[0].items[0].items[0].body[0].service['@id'] + '/' + region + '/!640,640/0/default.jpg'
     })
   }
 

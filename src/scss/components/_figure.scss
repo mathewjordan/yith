@@ -60,5 +60,7 @@
   figcaption {
     margin-top: 1em;
     font-family: $sans;
+    position: relative;
+    z-index: 0;
   }
 }

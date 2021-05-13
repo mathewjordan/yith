@@ -12,6 +12,7 @@ class Figure extends Component {
     }
 
     this.handleClick = this.handleClick.bind(this);
+    this.showModal = this.showModal.bind(this);
   }
 
   componentDidMount() {
@@ -33,14 +34,17 @@ class Figure extends Component {
 
   yithModal() {
     if (this.state.active) {
-      return <Modal iiif={this.props.manifest} />
+      return <Modal iiif={this.props.manifest} showModal={this.showModal} />
     }
   }
-
 
   handleClick(e) {
     e.stopPropagation();
     e.preventDefault();
+    this.showModal();
+  }
+
+  showModal() {
     this.setState(state => ({
       active: !state.active
     }));

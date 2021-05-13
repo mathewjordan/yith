@@ -3,12 +3,16 @@ import Mirador from "./Mirador";
 
 class Modal extends Component {
 
-  handleClick(e) {
+  constructor(props) {
+    super(props);
+
+    this.showModal = this.showModal.bind(this);
+  }
+
+  showModal(e) {
     e.stopPropagation();
     e.preventDefault();
-    this.setState(state => ({
-      active: !state.active
-    }));
+    this.props.showModal(false);
   }
 
   render() {
@@ -19,7 +23,7 @@ class Modal extends Component {
            tabIndex="0"
            href="#"
            aria-label={`Close Viewer`}
-           onClick={this.handleClick}
+           onClick={this.showModal}
         >
           Close Viewer
         </a>

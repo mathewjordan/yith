@@ -9,7 +9,8 @@ Array.prototype.forEach.call(
   document.getElementsByClassName('yith'),
   function(el) {
     let manifest = el.getAttribute('data-manifest');
-    ReactDOM.render(<Yith manifest={manifest} />, el);
+    let region = el.getAttribute('data-region');
+    ReactDOM.render(<Yith manifest={manifest} region={region} />, el);
   }
 );
 

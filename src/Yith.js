@@ -39,7 +39,7 @@ class Yith extends Component {
     if (this.state.data) {
       return (
         <div>
-          <Figure manifest={this.state.data} />
+          <Figure manifest={this.state.data} region={this.props.region} />
         </div>
       )
     } else {

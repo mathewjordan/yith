@@ -31,7 +31,6 @@ class Modal extends Component {
         </a>
         <div className="yith-modal">
           <Mirador
-            autozoom={this.props.autozoom}
             config={{
               id: 'yith',
               window: {
@@ -48,6 +47,8 @@ class Modal extends Component {
               },
             }}
             plugins={[]}
+            autozoom={this.props.autozoom}
+            region={this.props.region}
           />
         </div>
       </React.Fragment>

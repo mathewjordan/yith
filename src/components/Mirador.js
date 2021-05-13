@@ -17,11 +17,13 @@ class Mirador extends Component {
 
       const windowId = Object.keys(this.miradorInstance.store.getState().windows)[0];
 
+      const region = this.props.region.split(",");
+
       const boxToZoom = {
-        x: 1900,
-        y: 1200,
-        width: 2000,
-        height: 2000
+        x: parseInt(region[0]),
+        y: parseInt(region[1]),
+        width: parseInt(region[2]),
+        height: parseInt(region[3])
       };
 
       const zoomCenter = {

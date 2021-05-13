@@ -34,7 +34,10 @@ class Figure extends Component {
 
   yithModal() {
     if (this.state.active) {
-      return <Modal iiif={this.props.manifest} autozoom={this.props.autozoom} showModal={this.showModal} />
+      return <Modal iiif={this.props.manifest}
+                    region={this.props.region}
+                    autozoom={this.props.autozoom}
+                    showModal={this.showModal} />
     }
   }
 

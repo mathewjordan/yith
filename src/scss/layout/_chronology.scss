@@ -2,97 +2,99 @@
   position: relative;
   padding: 20px;
 
-  &::before {
-    top: 0;
-    left: 85px;
-    width: 10px;
-    height: 100%;
-    background-color: #66b2b2;
-    display: block;
-    content: '';
-    position: absolute;
-  }
-
-  > span {
-    position: relative;
-    display: block;
-    font-family: $sans;
-    margin-bottom: 1em;
-    text-align: right;
-    width: 40px;
-    padding-right: 10px;
-    font-weight: 300;
-
-    &::after {
-      width: 14px;
-      height: 3px;
-      background-color: #B2D8D8;
-      display: block;
-      content: '';
-      right: -15px;
-      top: 9px;
-      position: absolute;
-    }
-
-    &.yith-date {
-      font-weight: 700 !important;
-    }
-  }
-
-  > .yith {
-    position: relative;
-    margin-left: 105px;
-    margin-top: -48px;
-
+  .yith-collection {
     &::before {
-      width: 22px;
-      height: 22px;
-      background-color: #004c4c;
-      border-radius: 50%;
-      display: block;
-      content: '';
-      left: -46px;
-      top: 11px;
-      position: absolute;
-      transition: all 190ms ease-in-out;
-      box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.25);
-      transform: scale3d(1,1,1);
-      z-index: 2;
-    }
-
-    &::after {
+      top: 0;
+      left: 85px;
       width: 10px;
-      height: calc(100% - 25px);
+      height: 100%;
       background-color: #66b2b2;
       display: block;
       content: '';
-      left: -40px;
-      top: 16px;
       position: absolute;
-      background: -webkit-linear-gradient(90deg, #66b2b2, #136e6e);
     }
 
-    &:hover {
-      &::before {
-        background-color: #004c4c;
-        transform: scale3d(1.2,1.2,1.2);
+    > span {
+      position: relative;
+      display: block;
+      font-family: $sans;
+      margin-bottom: 1em;
+      text-align: right;
+      width: 40px;
+      padding-right: 10px;
+      font-weight: 300;
+
+      &::after {
+        width: 14px;
+        height: 3px;
+        background-color: #B2D8D8;
+        display: block;
+        content: '';
+        right: -15px;
+        top: 9px;
+        position: absolute;
+      }
+
+      &.yith-date {
+        font-weight: 700 !important;
       }
     }
-  }
 
-  .yith-emblem {
-    font-weight: 800;
-    font-family: $sans;
-    font-size: 4em;
-    letter-spacing: -0.05em;
-    transform: rotate(270deg);
-    position: absolute;
-    left: -15px;
-    padding: 0 15px;
-    margin-top: 60px;
-    color: #136e6e;
-    background-color: white;
-    display: block;
-    z-index: 3;
+    > .yith {
+      position: relative;
+      margin-left: 105px;
+      margin-top: -48px;
+
+      &::before {
+        width: 22px;
+        height: 22px;
+        background-color: #004c4c;
+        border-radius: 50%;
+        display: block;
+        content: '';
+        left: -46px;
+        top: 11px;
+        position: absolute;
+        transition: all 190ms ease-in-out;
+        box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.25);
+        transform: scale3d(1,1,1);
+        z-index: 2;
+      }
+
+      &::after {
+        width: 10px;
+        height: calc(100% - 25px);
+        background-color: #66b2b2;
+        display: block;
+        content: '';
+        left: -40px;
+        top: 16px;
+        position: absolute;
+        background: -webkit-linear-gradient(90deg, #66b2b2, #136e6e);
+      }
+
+      &:hover {
+        &::before {
+          background-color: #004c4c;
+          transform: scale3d(1.2,1.2,1.2);
+        }
+      }
+    }
+
+    .yith-emblem {
+      font-weight: 800;
+      font-family: $sans;
+      font-size: 4em;
+      letter-spacing: -0.05em;
+      transform: rotate(270deg);
+      position: absolute;
+      left: -15px;
+      padding: 0 15px;
+      margin-top: 60px;
+      color: #136e6e;
+      background-color: white;
+      display: block;
+      z-index: 3;
+    }
   }
 }

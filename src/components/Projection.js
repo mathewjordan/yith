@@ -1,18 +1,15 @@
 import React, { Component } from 'react';
 
-class Chronology extends Component {
+class Projection extends Component {
 
   render() {
-
-    console.log(this.props)
-
     return (
       <React.Fragment>
-        y
+        x
       </React.Fragment>
     )
 
   }
 }
 
-export default Chronology;
+export default Projection;

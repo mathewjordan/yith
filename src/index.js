@@ -8,17 +8,76 @@ import Yith from "./Yith";
 Array.prototype.forEach.call(
   document.getElementsByClassName('yith'),
   function(el) {
-    let manifest = el.getAttribute('data-manifest');
-    let region = el.getAttribute('data-region');
-    let autozoom = el.getAttribute('data-autozoom');
-    let chronologyDate = el.getAttribute('data-chronology-date');
+    const mode = el.getAttribute('data-mode');
+    const target = document.getElementById(el.id)
+    const structure = buildStructure(target)
+    const expand = buildExpand(target)
     ReactDOM.render(
-      <Yith manifest={manifest}
-            region={region}
-            autozoom={autozoom}
-      />, el
+      <Yith id={el.id} mode={mode} structure={structure} expand={expand}  />, el
     );
   }
 );
+
+function buildExpand(source) {
+
+  const expand = source.querySelector('a.yith-expand');
+
+  if (expand) {
+
+    return ({
+      "value": expand.textContent
+    });
+
+  } else {
+
+    return false;
+
+  }
+
+}
+
+function buildStructure(source) {
+
+  const children = source.querySelector('div.yith-structure').children;
+
+  let index = 0;
+  let structure = [];
+
+  while(children.length > structure.length) {
+
+    let item = children.item(index);
+    index++;
+
+    let itemClass = null;
+    if (item.className != '') {
+      itemClass = item.className
+    }
+
+    let itemTextContent = null;
+    if (item.textContent != '') {
+      itemTextContent = item.textContent
+    }
+
+    let itemDataset = null;
+    if (Object.keys(item.dataset).length > 0) {
+      itemDataset = JSON.parse(JSON.stringify(item.dataset))
+    }
+
+    structure.push({
+      "element": item.localName,
+      "value": itemTextContent,
+      "data": itemDataset,
+      "class": itemClass
+    });
+  }
+
+  return structure;
+
+}
+
+//
+// Array.prototype.forEach.call(collectionEl, function(el, i){
+//   console.log(el)
+// });
 
 module.hot.accept();

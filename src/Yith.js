@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import Figure from "./components/Figure";
+
+import Chronology from "./components/Chronology";
+import Projection from "./components/Projection";
 
 class Yith extends Component {
 
@@ -7,43 +9,32 @@ class Yith extends Component {
     super(props);
 
     this.state ={
-      data: null
+      active: false
     }
   }
 
-  getManifest = (uri) => {
-
-    fetch(uri, {
-      headers : {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      }
-    })
-      .then(response => response.json())
-      .then(data => {
-        this.setState({
-          data
-        });
-      })
-      .catch(err => console.error(this.props.url, err.toString()));
-
-    return null
+  isActive = () => {
+    this.setState(state => ({
+      active: !state.active
+    }));
   }
 
   componentDidMount() {
-    this.getManifest(this.props.manifest)
+    if (this.props.mode === 'chronology') {
+      this.isActive()
+    }
   }
 
   render() {
-    if (this.state.data) {
-      return (
-        <React.Fragment>
-          <Figure manifest={this.state.data}
-                  region={this.props.region}
-                  autozoom={this.props.autozoom} />
 
-        </React.Fragment>
-      )
+    const {mode, structure, expand} = this.props
+
+    const {active} = this.state
+
+    if (mode === 'chronology') {
+      return  <Chronology structure={structure} active={active} />
+    } else if (mode === 'projection') {
+      return  <Projection structure={structure} active={active} />
     } else {
       return null
     }

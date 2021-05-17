@@ -9,11 +9,10 @@ Array.prototype.forEach.call(
   document.getElementsByClassName('yith'),
   function(el) {
     const mode = el.getAttribute('data-mode');
-    const target = document.getElementById(el.id)
-    const structure = buildStructure(target)
-    const expand = buildExpand(target)
+    const structure = buildStructure(el)
+    const expand = buildExpand(el)
     ReactDOM.render(
-      <Yith id={el.id} mode={mode} structure={structure} expand={expand}  />, el
+      <Yith mode={mode} structure={structure} expand={expand}  />, el
     );
   }
 );

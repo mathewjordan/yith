@@ -63,7 +63,7 @@ function buildStructure(source) {
     }
 
     structure.push({
-      "element": item.localName,
+      "tag": item.localName,
       "value": itemTextContent,
       "data": itemDataset,
       "class": itemClass

@@ -30,7 +30,7 @@ class Modal extends Component {
         <div className="yith-modal">
           <Mirador
             config={{
-              id: 'yith',
+              id: 'yith-modal',
               window: {
                 allowMaximize: false,
                 allowClose: false

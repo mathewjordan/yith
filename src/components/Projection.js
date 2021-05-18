@@ -12,11 +12,23 @@ class Projection extends Component {
     }
   }
 
+  toggleCanvas = () => {
+    const { dom } = this.props;
+    let nextIndex = this.state.index + 1;
+
+    this.setState({
+      index: nextIndex,
+      activeWindow: {
+        manifestId: dom[nextIndex].data.manifest
+      }
+    })
+  }
+
   componentDidMount() {
     const { dom } = this.props;
     this.setState({
       activeWindow: {
-        manifestId: dom[0].data.manifest
+        manifestId: dom[this.state.index].data.manifest
       }
     })
 
@@ -62,12 +74,12 @@ class Projection extends Component {
               <strong>Additional Stuff</strong>
               <p>Phasellus feugiat mollis tincidunt. In hac habitasse platea dictumst. Pellentesque vitae laoreet lorem. Sed in dictum metus. Morbi vitae ex ac eros mattis sollicitudin. </p>
               <nav>
-                <a>Next</a>
+                <a href="#" onClick={this.toggleCanvas}>Next</a>
               </nav>
             </div>
             <Mirador
               config={{
-                id: 'yith',
+                id: 'yith-projection',
                 selectedTheme: 'dark',
                 window: {
                   hideWindowTitle: true,

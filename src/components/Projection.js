@@ -10,6 +10,14 @@ class Projection extends Component {
       index: 0,
       activeWindow: null
     }
+
+    this.showModal = this.showModal.bind(this);
+  }
+
+  showModal(e) {
+    e.stopPropagation();
+    e.preventDefault();
+    this.props.showModal(false);
   }
 
   toggleCanvas = (e) => {
@@ -33,71 +41,55 @@ class Projection extends Component {
         manifestId: dom[this.state.index].data.manifest
       }
     })
-
-    // proof of concept that I can send manifest to a mirador viewer window at any time
-    // setTimeout(() => {
-    //   this.setState({
-    //     activeWindow: {
-    //       manifestId: dom[1].data.manifest
-    //     }
-    //   })
-    // }, 5000);
-    //
-    // setTimeout(() => {
-    //   this.setState({
-    //     activeWindow: {
-    //       highlightAllAnnotations: true,
-    //       manifestId: "https://iiif.harvardartmuseums.org/manifests/object/299843",
-    //       canvasId: "https://iiif.harvardartmuseums.org/manifests/object/299843/canvas/canvas-47174892",
-    //     }
-    //   })
-    // }, 7500);
-    //
-    // setTimeout(() => {
-    //   this.setState({
-    //     activeWindow: {
-    //       manifestId: "https://iiif.bodleian.ox.ac.uk/iiif/manifest/e32a277e-91e2-4a6d-8ba6-cc4bad230410.json",
-    //       canvasId: "https://iiif.bodleian.ox.ac.uk/iiif/canvas/33ce3177-0fdc-44fd-8325-24a298322023.json"
-    //     }
-    //   })
-    // }, 15000);
   }
 
   render() {
 
-    const {dom} = this.props
     let {activeWindow} = this.state
 
-    if (activeWindow) {
+
+    console.log(this.props.showModal)
+
+    if (this.props.active && activeWindow) {
       return (
         <React.Fragment>
           <div className="yith-structure">
-            <div className="yith-context">
-              <strong>Additional Stuff</strong>
-              <p>Phasellus feugiat mollis tincidunt. In hac habitasse platea dictumst. Pellentesque vitae laoreet lorem. Sed in dictum metus. Morbi vitae ex ac eros mattis sollicitudin. </p>
-              <nav>
-                <a href="#" onClick={this.toggleCanvas}>Next</a>
-              </nav>
+            <a className="yith-close"
+               tabIndex="0"
+               href="#"
+               aria-label={`Close Viewer`}
+               onClick={this.showModal}
+            >
+              Close Viewer
+            </a>
+            <div className="yith-modal">
+              <div className="yith-context">
+                <strong>Additional Stuff</strong>
+                <p>Phasellus feugiat mollis tincidunt. In hac habitasse platea dictumst. Pellentesque vitae laoreet lorem. Sed in dictum metus. Morbi vitae ex ac eros mattis sollicitudin. </p>
+                <nav>
+                  <a href="#" onClick={this.toggleCanvas}>Next</a>
+                </nav>
+              </div>
+              <Mirador
+                config={{
+                  id: 'yith-projection',
+                  selectedTheme: 'dark',
+                  window: {
+                    hideWindowTitle: true,
+                    allowTopMenuButton: false,
+                    allowWindowSideBar: false,
+                    allowMaximize: false,
+                    allowClose: false
+                  },
+                  windows: [activeWindow],
+                  workspaceControlPanel: {
+                    enabled: false,
+                  },
+                }}
+                plugins={[]}
+                manifest={this.state.manifest}
+              />
             </div>
-            <Mirador
-              config={{
-                id: 'yith-projection',
-                selectedTheme: 'dark',
-                window: {
-                  hideWindowTitle: true,
-                  allowTopMenuButton: false,
-                  allowWindowSideBar: false,
-                  allowMaximize: false,
-                  allowClose: false
-                },
-                windows: [activeWindow],
-                workspaceControlPanel: {
-                  enabled: false,
-                },
-              }}
-              plugins={[]}
-              manifest={this.state.manifest}
-            />
           </div>
         </React.Fragment>
       )

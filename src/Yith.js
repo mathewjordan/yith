@@ -11,9 +11,17 @@ class Yith extends Component {
     this.state ={
       active: false
     }
+
+    this.showModal = this.showModal.bind(this);
   }
 
   isActive = () => {
+    this.setState(state => ({
+      active: !state.active
+    }));
+  }
+
+  showModal() {
     this.setState(state => ({
       active: !state.active
     }));
@@ -35,7 +43,11 @@ class Yith extends Component {
     if (mode === 'chronology') {
       return <Chronology dom={structure} />
     } else if (mode === 'projection') {
-      return <Projection dom={structure} active={active} />
+      return (
+        <div className={`yith-modal-wrapper yith-modal-${active}`}>
+          <Projection dom={structure} active={active} showModal={this.showModal} />
+        </div>
+      )
     }
   }
 

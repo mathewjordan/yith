@@ -19,7 +19,7 @@ class Modal extends Component {
 
     return (
       <React.Fragment>
-        <a className="yith-modal-close"
+        <a className="yith-close"
            tabIndex="0"
            href="#"
            aria-label={`Close Viewer`}

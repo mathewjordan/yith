@@ -12,10 +12,18 @@ class Chronology extends Component {
           </React.Fragment>
         )
       } else if (element.tag === 'div') {
+
+        let region = null
+        if (element.data.region === typeof('string')) {
+          region = element.data.region
+        }
+
         return (
           <React.Fragment>
             <div className={element.class}>
-              <Manifest manifest={element.data.manifest}/>
+              <Manifest
+                manifest={element.data.manifest}
+                region={region} />
             </div>
           </React.Fragment>
         )

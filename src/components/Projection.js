@@ -12,7 +12,9 @@ class Projection extends Component {
     }
   }
 
-  toggleCanvas = () => {
+  toggleCanvas = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
     const { dom } = this.props;
     let nextIndex = this.state.index + 1;
 

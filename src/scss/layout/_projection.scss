@@ -1,0 +1,53 @@
+.yith-projection {
+  .yith-structure {
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    display: block;
+
+    .yith-context {
+      font-family: $sans;
+      position: absolute;
+      z-index: 2;
+      left: 0;
+      top: 0;
+      background-color: white;
+      padding: 2em;
+      margin: 2em;
+      max-width: 20vw;
+      box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.25);
+      font-family: $sans;
+      line-height: 1.25rem;
+
+      strong {
+        font-size: 1em;
+        font-weight: 800;
+      }
+
+      p {
+        font-size: 0.8333em;
+      }
+    }
+  }
+
+  .mirador-viewer {
+    background-color: black;
+
+    .mosaic-root {
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      .mosaic-tile {
+        margin: 0;
+
+        .mosaic-window-body header,
+        .mirador-osd-navigation,
+        .mirador-osd-info {
+          display: none;
+        }
+      }
+    }
+  }
+}

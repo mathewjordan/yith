@@ -44,6 +44,11 @@ class Mirador extends Component {
 
   }
 
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    const { config, plugins } = this.props;
+    this.miradorInstance = mirador.viewer(config, plugins);
+  }
+
   render() {
     const { config } = this.props;
     return <div id={config.id} />;

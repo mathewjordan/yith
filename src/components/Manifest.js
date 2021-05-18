@@ -41,7 +41,6 @@ class Manifest extends Component {
           <Figure manifest={this.state.data}
                   region={this.props.region}
                   autozoom={this.props.autozoom} />
-
         </React.Fragment>
       )
     } else {

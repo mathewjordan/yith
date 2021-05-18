@@ -17,8 +17,6 @@ class Modal extends Component {
 
   render() {
 
-    console.log(this.props.autozoom)
-
     return (
       <React.Fragment>
         <a className="yith-modal-close"

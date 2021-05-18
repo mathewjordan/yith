@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 import Chronology from "./components/Chronology";
 import Projection from "./components/Projection";
-import Structure from "./components/Structure";
 
 class Yith extends Component {
 
@@ -32,6 +31,14 @@ class Yith extends Component {
     }
   }
 
+  renderStructure = (structure, active, mode) => {
+    if (mode === 'chronology') {
+      return <Chronology dom={structure} />
+    } else if (mode === 'projection') {
+      return <Projection dom={structure} active={active} />
+    }
+  }
+
   componentDidMount() {
     if (this.props.mode === 'chronology') {
       this.isActive()
@@ -47,9 +54,7 @@ class Yith extends Component {
     return (
       <React.Fragment>
         {this.renderExpand(expand)}
-        <Structure mode={mode}
-                   active={active}
-                   structure={structure} />
+        {this.renderStructure(structure, active, mode)}
       </React.Fragment>
     )
 

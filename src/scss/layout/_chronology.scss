@@ -2,7 +2,7 @@
   position: relative;
   padding: 20px;
 
-  .yith-collection {
+  .yith-structure {
     &::before {
       top: 0;
       left: 85px;
@@ -38,9 +38,30 @@
       &.yith-date {
         font-weight: 700 !important;
       }
+
+      &.yith-emblem {
+        width: auto;
+        font-weight: 800;
+        font-family: $sans;
+        font-size: 4em;
+        letter-spacing: -0.05em;
+        transform: rotate(270deg);
+        position: absolute;
+        left: -15px;
+        padding: 0 15px;
+        margin-top: 60px;
+        color: #136e6e;
+        background-color: white;
+        display: block;
+        z-index: 3;
+
+        &:after {
+          content: unset;
+        }
+      }
     }
 
-    > .yith {
+    > .yith-manifest {
       position: relative;
       margin-left: 105px;
       margin-top: -48px;
@@ -79,22 +100,6 @@
           transform: scale3d(1.2,1.2,1.2);
         }
       }
-    }
-
-    .yith-emblem {
-      font-weight: 800;
-      font-family: $sans;
-      font-size: 4em;
-      letter-spacing: -0.05em;
-      transform: rotate(270deg);
-      position: absolute;
-      left: -15px;
-      padding: 0 15px;
-      margin-top: 60px;
-      color: #136e6e;
-      background-color: white;
-      display: block;
-      z-index: 3;
     }
   }
 }

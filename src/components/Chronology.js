@@ -11,7 +11,7 @@ class Chronology extends Component {
             <span className={element.class}>{element.value}</span>
           </React.Fragment>
         )
-      } else if (element.tag === 'div') {
+      } else if (element.tag === 'figure') {
 
         let region = null
         if (element.data.region === typeof('string')) {

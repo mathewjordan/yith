@@ -8,6 +8,7 @@ class Projection extends Component {
 
     this.state = {
       index: 0,
+      annotations: false,
       activeWindow: null
     }
 
@@ -23,22 +24,32 @@ class Projection extends Component {
   toggleCanvas = (e) => {
     e.stopPropagation();
     e.preventDefault();
-    const { dom } = this.props;
+    const {sequence} = this.props;
     let nextIndex = this.state.index + 1;
 
     this.setState({
       index: nextIndex,
       activeWindow: {
-        manifestId: dom[nextIndex].data.manifest
+        manifestId: sequence[nextIndex].manifest,
+        canvasId: null
       }
     })
   }
 
+  hasAnnotations = (current) => {
+    if (current.annotations) {
+      return true
+    } else {
+      return false
+    }
+  }
+
   componentDidMount() {
-    const { dom } = this.props;
+    const { sequence } = this.props;
+
     this.setState({
       activeWindow: {
-        manifestId: dom[this.state.index].data.manifest
+        manifestId: sequence[this.state.index].manifest
       }
     })
   }
@@ -47,10 +58,8 @@ class Projection extends Component {
 
     let {activeWindow} = this.state
 
-
-    console.log(this.props.showModal)
-
     if (this.props.active && activeWindow) {
+      console.log(this.props)
       return (
         <React.Fragment>
           <div className="yith-structure">
@@ -64,8 +73,7 @@ class Projection extends Component {
             </a>
             <div className="yith-modal">
               <div className="yith-context">
-                <strong>Additional Stuff</strong>
-                <p>Phasellus feugiat mollis tincidunt. In hac habitasse platea dictumst. Pellentesque vitae laoreet lorem. Sed in dictum metus. Morbi vitae ex ac eros mattis sollicitudin. </p>
+                <div dangerouslySetInnerHTML={{__html:this.props.sequence[this.state.index].value}}></div>
                 <nav>
                   <a href="#" onClick={this.toggleCanvas}>Next</a>
                 </nav>

@@ -62,11 +62,52 @@ function buildStructure(source) {
       itemDataset = JSON.parse(JSON.stringify(item.dataset))
     }
 
+    let annotationStructure = null;
+    if (item.childElementCount !== 0) {
+
+      let annotationIndex = 0;
+      annotationStructure = [];
+
+      while(item.children.length > annotationStructure.length) {
+
+        let annotation = item.children.item(annotationIndex);
+        annotationIndex++;
+
+        if (annotation) {
+
+          console.log(annotation)
+
+          let itemAnnotationClass = null;
+          if (annotation.className != '') {
+            itemAnnotationClass = annotation.className
+          }
+          let itemAnnotationTextContent = null;
+          if (annotation.textContent != '') {
+            itemAnnotationTextContent = annotation.innerHTML
+          }
+          let itemAnnotationDataset = null;
+          if (Object.keys(annotation.dataset).length > 0) {
+            itemAnnotationDataset = JSON.parse(JSON.stringify(annotation.dataset))
+          }
+
+          annotationStructure.push({
+            "tag": annotation.localName,
+            "value": itemAnnotationTextContent,
+            "data": itemAnnotationDataset,
+            "class": itemAnnotationClass
+          });
+        }
+
+      }
+
+    }
+
     structure.push({
       "tag": item.localName,
       "value": itemTextContent,
       "data": itemDataset,
-      "class": itemClass
+      "class": itemClass,
+      'annotations': annotationStructure
     });
   }
 

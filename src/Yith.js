@@ -9,7 +9,8 @@ class Yith extends Component {
     super(props);
 
     this.state ={
-      active: false
+      active: true,
+      data: []
     }
 
     this.showModal = this.showModal.bind(this);
@@ -45,16 +46,64 @@ class Yith extends Component {
     } else if (mode === 'projection') {
       return (
         <div className={`yith-modal-wrapper yith-modal-${active}`}>
-          <Projection dom={structure} active={active} showModal={this.showModal} />
+          <Projection manifests={this.state.data} sequence={this.state.sequence} active={active} showModal={this.showModal} />
         </div>
       )
     }
+  }
+
+  getManifest = (uri, index) => {
+    fetch(uri, {
+      headers : {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      }
+    })
+      .then(response => response.json())
+      .then((data) => {
+        this.state.data[index] = data
+      })
+      .catch(err => console.error(this.props.url, err.toString()));
+    return null
+  }
+
+  buildSequence = (dom) => {
+    let sequence = []
+    dom.map((item, index) => {
+      this.getManifest(item.data.manifest, index);
+      if (!item.annotations) {
+        sequence.push({
+          "index": index,
+          "type": "manifest",
+          "manifest": item.data.manifest,
+          "canvas": item.data.canvas,
+          "value": item.value
+        })
+      } else {
+        item.annotations.map((annotation) => {
+          sequence.push({
+            "index": index,
+            "type": "annotation",
+            "manifest": item.data.manifest,
+            "canvas": annotation.data.canvas,
+            "annotation": annotation.data.annotation,
+            "value": annotation.value,
+          })
+        });
+      }
+    });
+
+    this.setState(state => ({
+      sequence: sequence
+    }));
   }
 
   componentDidMount() {
     if (this.props.mode === 'chronology') {
       this.isActive()
     }
+
+    this.buildSequence(this.props.structure)
   }
 
   render() {
@@ -63,12 +112,17 @@ class Yith extends Component {
 
     const {active} = this.state
 
-    return (
-      <React.Fragment>
-        {this.renderExpand(expand)}
-        {this.renderStructure(structure, active, mode)}
-      </React.Fragment>
-    )
+
+    if (this.state.sequence) {
+      return (
+        <React.Fragment>
+          {this.renderExpand(expand)}
+          {this.renderStructure(structure, active, mode)}
+        </React.Fragment>
+      )
+    } else {
+      return null
+    }
 
   }
 }

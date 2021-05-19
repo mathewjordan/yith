@@ -2,7 +2,7 @@
 
 [![buddy pipeline](https://app.buddy.works/utk-libraries/yith/pipelines/pipeline/326439/badge.svg?token=a08d633e5c643d3691ca9044dffdb440f63f3a962084d29bf363b91177438c2b "buddy pipeline")](https://app.buddy.works/utk-libraries/yith/pipelines/pipeline/326439) [![Netlify Status](https://api.netlify.com/api/v1/badges/15c8004a-e6f4-46c8-82a5-d0cd79f25e17/deploy-status)](https://app.netlify.com/sites/yith/deploys)
 
-A React.js based frontend tool that leverages IIIF for presenting manifests using a basic HTML structure. The Yith app wraps around a Mirador 3 viewer for deep zoom capability, annotations, and delivering additonal metadata.
+A frontend tool that leverages IIIF manifests and interweaves them into flexible layouts. Yith parses the initial HTML structure and renders a React.js based presentation wrapped around a Mirador 3 viewer for deep zoom capability, annotations, and the delivery of additonal metadata.
 
 [View Demo](https://yith.netlify.app)
 

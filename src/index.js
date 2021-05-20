@@ -8,11 +8,11 @@ import Yith from "./Yith";
 Array.prototype.forEach.call(
   document.getElementsByClassName('yith'),
   function(el) {
+    const expand = buildExpand(el)
     const mode = el.getAttribute('data-mode');
     const structure = buildStructure(el)
-    const expand = buildExpand(el)
     ReactDOM.render(
-      <Yith mode={mode} structure={structure} expand={expand}  />, el
+      <Yith expand={expand} mode={mode} structure={structure} />, el
     );
   }
 );
@@ -112,10 +112,5 @@ function buildStructure(source) {
   return structure;
 
 }
-
-//
-// Array.prototype.forEach.call(collectionEl, function(el, i){
-//   console.log(el)
-// });
 
 module.hot.accept();

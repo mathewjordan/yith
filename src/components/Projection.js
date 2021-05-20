@@ -30,7 +30,9 @@ class Projection extends Component {
 
     this.setState({
       index: nextIndex,
-      loaded: false
+      loaded: false,
+      autozoom: false,
+      region: null
     })
   }
 
@@ -51,14 +53,19 @@ class Projection extends Component {
           if (canvas.annotations) {
             canvas.annotations[0].items.map((annotation, annotationIndex) => {
               if (annotation.id === slide.annotation) {
+                let region = annotation.target.split('#xywh=');
                 this.setState({
                   loaded: true,
                   annotations: true,
                   annotation: annotation,
                   activeWindow: {
+                    highlightAllAnnotations: true,
                     manifestId: slide.manifest,
-                    canvasId: canvas.id
-                  }
+                    canvasId: canvas.id,
+                    selectedAnnotationId: annotation.id
+                  },
+                  autozoom: true,
+                  region: region[1]
                 })
               }
             });
@@ -90,6 +97,7 @@ class Projection extends Component {
     let {activeWindow} = this.state
 
     if (this.props.active && activeWindow) {
+      console.log(this.state.region)
       return (
         <React.Fragment>
           <div className="yith-structure">
@@ -117,7 +125,8 @@ class Projection extends Component {
                     allowTopMenuButton: false,
                     allowWindowSideBar: false,
                     allowMaximize: false,
-                    allowClose: false
+                    allowClose: false,
+                    forceDrawAnnotations: true
                   },
                   windows: [activeWindow],
                   workspaceControlPanel: {
@@ -126,6 +135,8 @@ class Projection extends Component {
                 }}
                 plugins={[]}
                 manifest={this.state.manifest}
+                autozoom={this.state.autozoom}
+                region={this.state.region}
               />
             </div>
           </div>

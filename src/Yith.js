@@ -113,7 +113,6 @@ class Yith extends Component {
 
     const {active} = this.state
 
-
     if (this.state.sequence) {
       return (
         <React.Fragment>

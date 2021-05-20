@@ -8,10 +8,12 @@ class Mirador extends Component {
     this.miradorInstance = null;
   }
 
-  componentDidMount() {
+  handleInstance = () => {
     const { config, plugins } = this.props;
-
     this.miradorInstance = mirador.viewer(config, plugins);
+
+    console.log(this.props.mode)
+    console.log(this.props.config.windows[0])
 
     if (this.props.autozoom) {
 
@@ -41,42 +43,10 @@ class Mirador extends Component {
         this.miradorInstance.store.dispatch(action);
       }, 2000);
     }
-
   }
 
-  componentDidUpdate(prevProps, prevState, snapshot) {
-    const { config, plugins } = this.props;
-
-    this.miradorInstance = mirador.viewer(config, plugins);
-
-    if (this.props.autozoom) {
-
-      const windowId = Object.keys(this.miradorInstance.store.getState().windows)[0];
-
-      const region = this.props.region.split(",");
-
-      const boxToZoom = {
-        x: parseInt(region[0]),
-        y: parseInt(region[1]),
-        width: parseInt(region[2]),
-        height: parseInt(region[3])
-      };
-
-      const zoomCenter = {
-        x: boxToZoom.x + boxToZoom.width / 2,
-        y: boxToZoom.y + boxToZoom.height / 2
-      };
-
-      var action = mirador.actions.updateViewport(windowId, {
-        x: zoomCenter.x,
-        y: zoomCenter.y,
-        zoom: 0.61888 / boxToZoom.width
-      });
-
-      setTimeout(() => {
-        this.miradorInstance.store.dispatch(action);
-      }, 2000);
-    }
+  componentDidMount() {
+    this.handleInstance()
   }
 
   render() {

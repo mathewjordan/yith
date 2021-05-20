@@ -10,7 +10,8 @@ class Projection extends Component {
       index: 0,
       loaded: false,
       annotations: false,
-      activeWindow: null
+      activeWindow: null,
+      slideMode: 'initial'
     }
 
     this.showModal = this.showModal.bind(this);
@@ -32,7 +33,8 @@ class Projection extends Component {
       index: nextIndex,
       loaded: false,
       autozoom: false,
-      region: null
+      region: null,
+      slideMode: 'nextAnnotation'
     })
   }
 
@@ -84,6 +86,38 @@ class Projection extends Component {
     }
   }
 
+  getMirador = () => {
+    if (this.state.loaded) {
+      return (
+        <Mirador
+          config={{
+            id: 'yith-projection',
+            selectedTheme: 'dark',
+            window: {
+              hideWindowTitle: true,
+              allowTopMenuButton: false,
+              allowWindowSideBar: false,
+              allowMaximize: false,
+              allowClose: false,
+              forceDrawAnnotations: true
+            },
+            windows: [this.state.activeWindow],
+            workspaceControlPanel: {
+              enabled: false,
+            },
+          }}
+          plugins={[]}
+          manifest={this.props.sequence[this.state.index].manifest}
+          autozoom={this.state.autozoom}
+          region={this.state.region}
+          mode={this.state.slideMode}
+        />
+      )
+    } else {
+      return null
+    }
+  }
+
   componentDidMount() {
     this.handleSlide()
   }
@@ -94,10 +128,7 @@ class Projection extends Component {
 
   render() {
 
-    let {activeWindow} = this.state
-
-    if (this.props.active && activeWindow) {
-      console.log(this.state.region)
+    if (this.props.active && this.state.activeWindow) {
       return (
         <React.Fragment>
           <div className="yith-structure">
@@ -116,28 +147,7 @@ class Projection extends Component {
                   <a href="#" onClick={this.toggleCanvas}>Next</a>
                 </nav>
               </div>
-              <Mirador
-                config={{
-                  id: 'yith-projection',
-                  selectedTheme: 'dark',
-                  window: {
-                    hideWindowTitle: true,
-                    allowTopMenuButton: false,
-                    allowWindowSideBar: false,
-                    allowMaximize: false,
-                    allowClose: false,
-                    forceDrawAnnotations: true
-                  },
-                  windows: [activeWindow],
-                  workspaceControlPanel: {
-                    enabled: false,
-                  },
-                }}
-                plugins={[]}
-                manifest={this.state.manifest}
-                autozoom={this.state.autozoom}
-                region={this.state.region}
-              />
+              {this.getMirador()}
             </div>
           </div>
         </React.Fragment>

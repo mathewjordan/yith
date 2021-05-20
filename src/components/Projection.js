@@ -8,6 +8,7 @@ class Projection extends Component {
 
     this.state = {
       index: 0,
+      loaded: false,
       annotations: false,
       activeWindow: null
     }
@@ -29,10 +30,7 @@ class Projection extends Component {
 
     this.setState({
       index: nextIndex,
-      activeWindow: {
-        manifestId: sequence[nextIndex].manifest,
-        canvasId: null
-      }
+      loaded: false
     })
   }
 
@@ -44,14 +42,47 @@ class Projection extends Component {
     }
   }
 
-  componentDidMount() {
-    const { sequence } = this.props;
-
-    this.setState({
-      activeWindow: {
-        manifestId: sequence[this.state.index].manifest
+  handleSlide = () => {
+    if (!this.state.loaded) {
+      let slide = this.props.sequence[this.state.index]
+      const data = this.props.manifests[slide.mIndex]
+      if (slide.type === 'annotation') {
+        data.items.map((canvas, canvasIndex) => {
+          if (canvas.annotations) {
+            canvas.annotations[0].items.map((annotation, annotationIndex) => {
+              if (annotation.id === slide.annotation) {
+                this.setState({
+                  loaded: true,
+                  annotations: true,
+                  annotation: annotation,
+                  activeWindow: {
+                    manifestId: slide.manifest,
+                    canvasId: canvas.id
+                  }
+                })
+              }
+            });
+          }
+        });
+      } else if (slide.type === 'manifest') {
+        this.setState({
+          loaded: true,
+          annotations: false,
+          annotation: null,
+          activeWindow: {
+            manifestId: slide.manifest
+          }
+        })
       }
-    })
+    }
+  }
+
+  componentDidMount() {
+    this.handleSlide()
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    this.handleSlide()
   }
 
   render() {
@@ -59,7 +90,6 @@ class Projection extends Component {
     let {activeWindow} = this.state
 
     if (this.props.active && activeWindow) {
-      console.log(this.props)
       return (
         <React.Fragment>
           <div className="yith-structure">

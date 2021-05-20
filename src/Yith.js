@@ -9,7 +9,7 @@ class Yith extends Component {
     super(props);
 
     this.state ={
-      active: true,
+      active: false,
       data: []
     }
 
@@ -43,7 +43,7 @@ class Yith extends Component {
   renderStructure = (structure, active, mode) => {
     if (mode === 'chronology') {
       return <Chronology dom={structure} />
-    } else if (mode === 'projection') {
+    } else if (mode === 'projection' && this.state.data.length > 0) {
       return (
         <div className={`yith-modal-wrapper yith-modal-${active}`}>
           <Projection manifests={this.state.data} sequence={this.state.sequence} active={active} showModal={this.showModal} />
@@ -69,20 +69,21 @@ class Yith extends Component {
 
   buildSequence = (dom) => {
     let sequence = []
-    dom.map((item, index) => {
-      this.getManifest(item.data.manifest, index);
+    dom.map((item, mIndex) => {
+      this.getManifest(item.data.manifest, mIndex);
       if (!item.annotations) {
         sequence.push({
-          "index": index,
+          "mIndex": mIndex,
           "type": "manifest",
           "manifest": item.data.manifest,
           "canvas": item.data.canvas,
           "value": item.value
         })
       } else {
-        item.annotations.map((annotation) => {
+        item.annotations.map((annotation, aIndex) => {
           sequence.push({
-            "index": index,
+            "mIndex": mIndex,
+            "aIndex": aIndex,
             "type": "annotation",
             "manifest": item.data.manifest,
             "canvas": annotation.data.canvas,

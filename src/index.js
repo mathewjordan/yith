@@ -75,8 +75,6 @@ function buildStructure(source) {
 
         if (annotation) {
 
-          console.log(annotation)
-
           let itemAnnotationClass = null;
           if (annotation.className != '') {
             itemAnnotationClass = annotation.className

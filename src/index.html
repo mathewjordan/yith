@@ -11,8 +11,13 @@
             padding: 0;
         }
 
-        body h2 {
-            margin: 2em 1em 1em;
+        body > h2 {
+            margin: 2rem 2rem 1rem;
+            font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+        }
+
+        body > p {
+            margin: 0 2rem 1rem;
             font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
         }
     </style>
@@ -20,7 +25,8 @@
 <body>
 
 <h2>Projection</h2>
-<div class="yith yith-projection" id="galston-projection" data-mode="projection">
+<p>Single Canvas - w/ Annotations</p>
+<div class="yith yith-projection" id="tacoma-projection" data-mode="projection">
     <a class="yith-expand" href="#">Tacoma, c.1890</a>
     <div class="yith-structure">
         <figure class="yith-manifest"
@@ -103,7 +109,49 @@
         </figure>
     </div>
 </div>
-
+<p>Multiple Canvas - Mixed</p>
+<div class="yith yith-projection" id="galston-projection" data-mode="projection">
+    <a class="yith-expand" href="#">Explore the Studienbuch</a>
+    <div class="yith-structure">
+        <figure class="yith-manifest"
+                data-manifest="https://digital.lib.utk.edu/static/iiif/pcard00_100204.json">
+            <figure class="yith-annotation"
+                    data-annotation="https://digital.lib.utk.edu/assemble/manifest/pcard00/100204/canvas/1/annotations/1">
+                <strong>Proin in tincidunt leo</strong>
+                <p>Curabitur ullamcorper, purus sit amet posuere pretium, velit est vulputate ante, non sollicitudin ipsum quam a nibh. Nullam et accumsan ligula.</p>
+            </figure>
+            <figure class="yith-annotation"
+                    data-annotation="https://digital.lib.utk.edu/assemble/manifest/pcard00/100204/canvas/1/annotations/2">
+                <strong>Maecenas pulvinar</strong>
+                <p> Duis at lorem magna. Ut blandit eros erat, vitae semper lacus vehicula et. Maecenas consequat quam vel egestas euismod. Morbi tincidunt nec ante id mollis. Suspendisse in nibh mi.</p>
+            </figure>
+            <figure class="yith-annotation"
+                    data-annotation="https://digital.lib.utk.edu/assemble/manifest/pcard00/100204/canvas/2/annotations/1">
+                <strong>Orci varius natoque 1920</strong>
+                <p>Proin in tristique libero, non porta metus. Sed pretium mattis tellus ut pharetra. Mauris quis molestie ipsum. Donec consectetur convallis eros, vitae ornare dui.</p>
+            </figure>
+        </figure>
+        <figure class="yith-manifest"
+                data-manifest="https://digital.lib.utk.edu/assemble/manifest/tenncities/343">
+        </figure>
+        <figure class="yith-manifest"
+                data-manifest="https://digital.lib.utk.edu/static/iiif/thompson_317.json">
+            <figure class="yith-annotation"
+                    data-annotation="https://digital.lib.utk.edu/assemble/manifest/thompson/317/canvas/1/annotations/1">
+                <strong>Proin in tincidunt leo</strong>
+                <p>Curabitur ullamcorper, purus sit amet posuere pretium, velit est vulputate ante, non sollicitudin ipsum quam a nibh. Nullam et accumsan ligula.</p>
+            </figure>
+            <figure class="yith-annotation"
+                    data-annotation="https://digital.lib.utk.edu/assemble/manifest/thompson/317/canvas/2/annotations/1">
+                <strong>Orci varius natoque 1920</strong>
+                <p>Proin in tristique libero, non porta metus. Sed pretium mattis tellus ut pharetra. Mauris quis molestie ipsum. Donec consectetur convallis eros, vitae ornare dui.</p>
+            </figure>
+        </figure>
+        <figure class="yith-manifest"
+                data-manifest="https://digital.lib.utk.edu/assemble/manifest/tenncities/390">
+        </figure>
+    </div>
+</div>
 
 </body>
 </html>

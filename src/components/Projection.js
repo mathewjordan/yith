@@ -23,19 +23,38 @@ class Projection extends Component {
     this.props.showModal(false);
   }
 
-  toggleCanvas = (e) => {
+  selectPrev = (e) => {
     e.stopPropagation();
     e.preventDefault();
     const {sequence} = this.props;
-    let nextIndex = this.state.index + 1;
+    if (this.state.index > 0) {
+      let nextIndex = this.state.index - 1;
+  
+      this.setState({
+        index: nextIndex,
+        loaded: false,
+        autozoom: false,
+        region: null,
+        slideMode: 'nextAnnotation'
+      });
+    }
+  }
 
-    this.setState({
-      index: nextIndex,
-      loaded: false,
-      autozoom: false,
-      region: null,
-      slideMode: 'nextAnnotation'
-    })
+  selectNext = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    const {sequence} = this.props;
+    if (this.state.index < (sequence.length - 2)) {
+      let nextIndex = this.state.index + 1;
+
+      this.setState({
+        index: nextIndex,
+        loaded: false,
+        autozoom: false,
+        region: null,
+        slideMode: 'nextAnnotation'
+      });
+    }
   }
 
   hasAnnotations = (current) => {
@@ -144,7 +163,10 @@ class Projection extends Component {
               <div className="yith-context">
                 <div dangerouslySetInnerHTML={{__html:this.props.sequence[this.state.index].value}}></div>
                 <nav>
-                  <a href="#" onClick={this.toggleCanvas}>Next</a>
+                  <a href="#" onClick={this.selectPrev}>Prev</a>
+                </nav>
+                <nav>
+                  <a href="#" onClick={this.selectNext}>Next</a>
                 </nav>
               </div>
               {this.getMirador()}

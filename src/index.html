@@ -25,7 +25,62 @@
 <body>
 
 <h2>Projection</h2>
-<p>Single Canvas - w/ Annotations</p>
+<p>Multiple Canvas - Manifest Only</p>
+<div class="yith yith-projection" id="flowers-projection" data-mode="projection">
+    <a class="yith-expand" href="#">Heilman's Flora</a>
+    <div class="yith-structure">
+        <figure class="yith-manifest"
+                data-manifest="https://digital.lib.utk.edu/assemble/manifest/heilman/1004"></figure>
+        <figure class="yith-manifest"
+                data-manifest="https://digital.lib.utk.edu/assemble/manifest/heilman/1010"></figure>
+        <figure class="yith-manifest"
+                data-manifest="https://digital.lib.utk.edu/assemble/manifest/heilman/1011"></figure>
+    </div>
+</div>
+<p>Multiple Canvas - Mixed</p>
+<div class="yith yith-projection" id="east-tenn-projection" data-mode="projection">
+    <a class="yith-expand" href="#">East Tennessee</a>
+    <div class="yith-structure">
+        <figure class="yith-manifest"
+                data-manifest="https://digital.lib.utk.edu/static/iiif/pcard00_100204.json">
+            <figure class="yith-annotation"
+                    data-annotation="https://digital.lib.utk.edu/assemble/manifest/pcard00/100204/canvas/1/annotations/1">
+                <strong>Proin in tincidunt leo</strong>
+                <p>Curabitur ullamcorper, purus sit amet posuere pretium, velit est vulputate ante, non sollicitudin ipsum quam a nibh. Nullam et accumsan ligula.</p>
+            </figure>
+            <figure class="yith-annotation"
+                    data-annotation="https://digital.lib.utk.edu/assemble/manifest/pcard00/100204/canvas/1/annotations/2">
+                <strong>Maecenas pulvinar</strong>
+                <p> Duis at lorem magna. Ut blandit eros erat, vitae semper lacus vehicula et. Maecenas consequat quam vel egestas euismod. Morbi tincidunt nec ante id mollis. Suspendisse in nibh mi.</p>
+            </figure>
+            <figure class="yith-annotation"
+                    data-annotation="https://digital.lib.utk.edu/assemble/manifest/pcard00/100204/canvas/2/annotations/1">
+                <strong>Orci varius natoque 1920</strong>
+                <p>Proin in tristique libero, non porta metus. Sed pretium mattis tellus ut pharetra. Mauris quis molestie ipsum. Donec consectetur convallis eros, vitae ornare dui.</p>
+            </figure>
+        </figure>
+        <figure class="yith-manifest"
+                data-manifest="https://digital.lib.utk.edu/assemble/manifest/tenncities/343">
+        </figure>
+        <figure class="yith-manifest"
+                data-manifest="https://digital.lib.utk.edu/static/iiif/thompson_317.json">
+            <figure class="yith-annotation"
+                    data-annotation="https://digital.lib.utk.edu/assemble/manifest/thompson/317/canvas/1/annotations/1">
+                <strong>Proin in tincidunt leo</strong>
+                <p>Curabitur ullamcorper, purus sit amet posuere pretium, velit est vulputate ante, non sollicitudin ipsum quam a nibh. Nullam et accumsan ligula.</p>
+            </figure>
+            <figure class="yith-annotation"
+                    data-annotation="https://digital.lib.utk.edu/assemble/manifest/thompson/317/canvas/2/annotations/1">
+                <strong>Orci varius natoque 1920</strong>
+                <p>Proin in tristique libero, non porta metus. Sed pretium mattis tellus ut pharetra. Mauris quis molestie ipsum. Donec consectetur convallis eros, vitae ornare dui.</p>
+            </figure>
+        </figure>
+        <figure class="yith-manifest"
+                data-manifest="https://digital.lib.utk.edu/assemble/manifest/tenncities/390">
+        </figure>
+    </div>
+</div>
+<p>Single Canvas - Annotations</p>
 <div class="yith yith-projection" id="tacoma-projection" data-mode="projection">
     <a class="yith-expand" href="#">Tacoma, c.1890</a>
     <div class="yith-structure">
@@ -106,49 +161,6 @@
                 <strong>null</strong>
                 <p>this doesn't display, but should...</p>
             </figure>
-        </figure>
-    </div>
-</div>
-<p>Multiple Canvas - Mixed</p>
-<div class="yith yith-projection" id="galston-projection" data-mode="projection">
-    <a class="yith-expand" href="#">Explore the Studienbuch</a>
-    <div class="yith-structure">
-        <figure class="yith-manifest"
-                data-manifest="https://digital.lib.utk.edu/static/iiif/pcard00_100204.json">
-            <figure class="yith-annotation"
-                    data-annotation="https://digital.lib.utk.edu/assemble/manifest/pcard00/100204/canvas/1/annotations/1">
-                <strong>Proin in tincidunt leo</strong>
-                <p>Curabitur ullamcorper, purus sit amet posuere pretium, velit est vulputate ante, non sollicitudin ipsum quam a nibh. Nullam et accumsan ligula.</p>
-            </figure>
-            <figure class="yith-annotation"
-                    data-annotation="https://digital.lib.utk.edu/assemble/manifest/pcard00/100204/canvas/1/annotations/2">
-                <strong>Maecenas pulvinar</strong>
-                <p> Duis at lorem magna. Ut blandit eros erat, vitae semper lacus vehicula et. Maecenas consequat quam vel egestas euismod. Morbi tincidunt nec ante id mollis. Suspendisse in nibh mi.</p>
-            </figure>
-            <figure class="yith-annotation"
-                    data-annotation="https://digital.lib.utk.edu/assemble/manifest/pcard00/100204/canvas/2/annotations/1">
-                <strong>Orci varius natoque 1920</strong>
-                <p>Proin in tristique libero, non porta metus. Sed pretium mattis tellus ut pharetra. Mauris quis molestie ipsum. Donec consectetur convallis eros, vitae ornare dui.</p>
-            </figure>
-        </figure>
-        <figure class="yith-manifest"
-                data-manifest="https://digital.lib.utk.edu/assemble/manifest/tenncities/343">
-        </figure>
-        <figure class="yith-manifest"
-                data-manifest="https://digital.lib.utk.edu/static/iiif/thompson_317.json">
-            <figure class="yith-annotation"
-                    data-annotation="https://digital.lib.utk.edu/assemble/manifest/thompson/317/canvas/1/annotations/1">
-                <strong>Proin in tincidunt leo</strong>
-                <p>Curabitur ullamcorper, purus sit amet posuere pretium, velit est vulputate ante, non sollicitudin ipsum quam a nibh. Nullam et accumsan ligula.</p>
-            </figure>
-            <figure class="yith-annotation"
-                    data-annotation="https://digital.lib.utk.edu/assemble/manifest/thompson/317/canvas/2/annotations/1">
-                <strong>Orci varius natoque 1920</strong>
-                <p>Proin in tristique libero, non porta metus. Sed pretium mattis tellus ut pharetra. Mauris quis molestie ipsum. Donec consectetur convallis eros, vitae ornare dui.</p>
-            </figure>
-        </figure>
-        <figure class="yith-manifest"
-                data-manifest="https://digital.lib.utk.edu/assemble/manifest/tenncities/390">
         </figure>
     </div>
 </div>

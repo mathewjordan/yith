@@ -1,10 +1,25 @@
 .yith-expand {
-  display: inline-flex;
-  margin: 1em 0;
+
+}
+
+.yith-expand {
   font-size: 0.8333em;
   text-transform: uppercase;
   font-weight: 700;
   line-height: 2em;
   flex-shrink: 1;
   flex-grow: 0;
+  display: inline-flex;
+  margin: 0 2em;
+  background-color: #000;
+  text-decoration: none;
+  font-family: $sans;
+  padding: 1em 2em;
+  color: white;
+  transition: all 200ms ease;
+
+  &:hover,
+  &:focus {
+    background-color: #0b4f6e;
+  }
 }

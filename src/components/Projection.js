@@ -26,10 +26,9 @@ class Projection extends Component {
   selectPrev = (e) => {
     e.stopPropagation();
     e.preventDefault();
-    const {sequence} = this.props;
-    if (this.state.index > 0) {
-      let nextIndex = this.state.index - 1;
 
+    if (this.state.index != 0) {
+      let nextIndex = this.state.index - 1;
       this.setState({
         index: nextIndex,
         loaded: false,
@@ -43,10 +42,10 @@ class Projection extends Component {
   selectNext = (e) => {
     e.stopPropagation();
     e.preventDefault();
-    const {sequence} = this.props;
-    if (this.state.index < (sequence.length - 2)) {
-      let nextIndex = this.state.index + 1;
 
+    let last = this.props.sequence.length - 1
+    if (this.state.index != last) {
+      let nextIndex = this.state.index + 1;
       this.setState({
         index: nextIndex,
         loaded: false,
@@ -157,13 +156,11 @@ class Projection extends Component {
             </a>
             <div className="yith-modal">
               <div className="yith-context">
-                <div dangerouslySetInnerHTML={{__html:this.props.sequence[this.state.index].value}}></div>
                 <nav>
                   <a href="#" onClick={this.selectPrev}>Prev</a>
-                </nav>
-                <nav>
                   <a href="#" onClick={this.selectNext}>Next</a>
                 </nav>
+                <div className="yith-context--html" dangerouslySetInnerHTML={{__html:this.props.sequence[this.state.index].value}}></div>
               </div>
               {this.getMirador()}
             </div>

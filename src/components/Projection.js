@@ -29,7 +29,7 @@ class Projection extends Component {
     const {sequence} = this.props;
     if (this.state.index > 0) {
       let nextIndex = this.state.index - 1;
-  
+
       this.setState({
         index: nextIndex,
         loaded: false,
@@ -117,7 +117,7 @@ class Projection extends Component {
             allowWindowSideBar: false,
             allowMaximize: false,
             allowClose: false,
-            forceDrawAnnotations: true
+            forceDrawAnnotations: false
           },
           windows: [this.state.activeWindow],
           workspaceControlPanel: {

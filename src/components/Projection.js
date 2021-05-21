@@ -106,35 +106,31 @@ class Projection extends Component {
   }
 
   getMirador = () => {
-    if (this.state.loaded) {
-      return (
-        <Mirador
-          config={{
-            id: 'yith-projection',
-            selectedTheme: 'dark',
-            window: {
-              hideWindowTitle: true,
-              allowTopMenuButton: false,
-              allowWindowSideBar: false,
-              allowMaximize: false,
-              allowClose: false,
-              forceDrawAnnotations: true
-            },
-            windows: [this.state.activeWindow],
-            workspaceControlPanel: {
-              enabled: false,
-            },
-          }}
-          plugins={[]}
-          manifest={this.props.sequence[this.state.index].manifest}
-          autozoom={this.state.autozoom}
-          region={this.state.region}
-          mode={this.state.slideMode}
-        />
-      )
-    } else {
-      return null
-    }
+    return (
+      <Mirador
+        config={{
+          id: 'yith-projection',
+          selectedTheme: 'dark',
+          window: {
+            hideWindowTitle: true,
+            allowTopMenuButton: false,
+            allowWindowSideBar: false,
+            allowMaximize: false,
+            allowClose: false,
+            forceDrawAnnotations: true
+          },
+          windows: [this.state.activeWindow],
+          workspaceControlPanel: {
+            enabled: false,
+          },
+        }}
+        plugins={[]}
+        manifest={this.props.sequence[this.state.index].manifest}
+        autozoom={this.state.autozoom}
+        region={this.state.region}
+        mode={this.state.slideMode}
+      />
+    )
   }
 
   componentDidMount() {

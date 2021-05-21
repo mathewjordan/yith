@@ -5,15 +5,27 @@ import PropTypes from 'prop-types';
 class Mirador extends Component {
   constructor(props) {
     super(props);
+
     this.miradorInstance = null;
   }
 
-  handleInstance = () => {
+  handleInstance = (mode) => {
     const { config, plugins } = this.props;
-    this.miradorInstance = mirador.viewer(config, plugins);
 
-    console.log(this.props.mode)
-    console.log(this.props.config.windows[0])
+    if (mode === 'initial') {
+
+      this.miradorInstance = mirador.viewer(config, plugins);
+
+      this.panZoom(2000)
+
+    } else if (mode === 'nextAnnotation') {
+
+      this.panZoom(0)
+
+    }
+  }
+
+  panZoom = (ms) => {
 
     if (this.props.autozoom) {
 
@@ -41,12 +53,18 @@ class Mirador extends Component {
 
       setTimeout(() => {
         this.miradorInstance.store.dispatch(action);
-      }, 2000);
+      }, ms);
+
     }
+
   }
 
   componentDidMount() {
-    this.handleInstance()
+    this.handleInstance(this.props.mode)
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    this.handleInstance(this.props.mode)
   }
 
   render() {

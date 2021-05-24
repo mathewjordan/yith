@@ -18,6 +18,7 @@ A frontend tool that leverages IIIF manifests and interweaves them into flexible
 ### Projection
 The Projection component presents an immersive modal display with the ability for a user to navigate through manifests. Projections are hidden by default and expanded using a toggle.
 #### Multiple Manifests
+```
 <div class="yith yith-projection" id="flowers-projection" data-mode="projection">
     <a class="yith-expand" href="#">Heilman's Flora</a>
     <div class="yith-structure">
@@ -29,6 +30,7 @@ The Projection component presents an immersive modal display with the ability fo
                 data-manifest="https://digital.lib.utk.edu/assemble/manifest/heilman/1011"></figure>
     </div>
 </div>
+```
 
 #### Annotations on a Manifest
 ```

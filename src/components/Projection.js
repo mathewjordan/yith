@@ -34,6 +34,7 @@ class Projection extends Component {
         loaded: false,
         autozoom: false,
         region: null,
+        interaction: 'toggle',
         slideMode: 'nextAnnotation'
       });
     }
@@ -51,6 +52,7 @@ class Projection extends Component {
         loaded: false,
         autozoom: false,
         region: null,
+        interaction: 'toggle',
         slideMode: 'nextAnnotation'
       });
     }
@@ -73,7 +75,14 @@ class Projection extends Component {
           if (canvas.annotations) {
             canvas.annotations[0].items.map((annotation, annotationIndex) => {
               if (annotation.id === slide.annotation) {
-                let region = annotation.target.split('#xywh=');
+                let target = annotation.target.split('#xywh=');
+                if (this.state.activeWindow) {
+                  if (this.state.activeWindow.canvasId !== target[0]) {
+                    this.setState({
+                      slideMode: 'nextCanvas'
+                    })
+                  }
+                }
                 this.setState({
                   loaded: true,
                   annotations: true,
@@ -85,7 +94,7 @@ class Projection extends Component {
                     selectedAnnotationId: annotation.id
                   },
                   autozoom: true,
-                  region: region[1]
+                  region: target[1]
                 })
               }
             });
@@ -97,8 +106,10 @@ class Projection extends Component {
           annotations: false,
           annotation: null,
           activeWindow: {
-            manifestId: slide.manifest
-          }
+            manifestId: slide.manifest,
+            canvasId: this.props.manifests[slide.mIndex].items[0].id
+          },
+          slideMode: 'nextManifest'
         })
       }
     }

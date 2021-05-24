@@ -12,7 +12,7 @@ class Mirador extends Component {
   handleInstance = (mode) => {
     const { config, plugins } = this.props;
 
-    if (mode === 'initial') {
+    if (mode === 'initial' || mode === 'nextManifest' || mode === 'nextCanvas') {
       this.miradorInstance = mirador.viewer(config, plugins);
       this.panZoom(2000)
     } else if (mode === 'nextAnnotation') {

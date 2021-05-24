@@ -86,7 +86,6 @@ class Yith extends Component {
             "aIndex": aIndex,
             "type": "annotation",
             "manifest": item.data.manifest,
-            "canvas": annotation.data.canvas,
             "annotation": annotation.data.annotation,
             "value": annotation.value,
           })

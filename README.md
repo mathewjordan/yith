@@ -17,16 +17,67 @@ A frontend tool that leverages IIIF manifests and interweaves them into flexible
 
 ### Projection
 The Projection component presents an immersive modal display with the ability for a user to navigate through manifests. Projections are hidden by default and expanded using a toggle.
-```
-<div class="yith yith-projection" id="galston-projection" data-mode="projection">
-    <a class="yith-expand" href="#" >Explore the Studienbuch</a>
+#### Multiple Manifests
+<div class="yith yith-projection" id="flowers-projection" data-mode="projection">
+    <a class="yith-expand" href="#">Heilman's Flora</a>
     <div class="yith-structure">
-        <div class="yith-manifest"
-             data-manifest="https://digital.lib.utk.edu/assemble/manifest/galston/710"></div>
-        <div class="yith-manifest"
-             data-manifest="https://digital.lib.utk.edu/assemble/manifest/galston/703"></div>
-        <div class="yith-manifest"
-             data-manifest="https://digital.lib.utk.edu/assemble/manifest/galston/684"></div>
+        <figure class="yith-manifest"
+                data-manifest="https://digital.lib.utk.edu/assemble/manifest/heilman/1004"></figure>
+        <figure class="yith-manifest"
+                data-manifest="https://digital.lib.utk.edu/assemble/manifest/heilman/1010"></figure>
+        <figure class="yith-manifest"
+                data-manifest="https://digital.lib.utk.edu/assemble/manifest/heilman/1011"></figure>
+    </div>
+</div>
+
+#### Annotations on a Manifest
+```
+<div class="yith yith-projection" id="tacoma-projection" data-mode="projection">
+    <a class="yith-expand" href="#">Tacoma, c.1890</a>
+    <div class="yith-structure">
+        <figure class="yith-manifest"
+                data-manifest="https://digital.lib.utk.edu/static/iiif/uw-maps-68-tacoma.json">
+            <figure class="yith-annotation"
+                    data-annotation="https://digital.lib.utk.edu/static/iiif/uw-maps-68-tacoma/canvas/1/annotations/1">
+                <strong>c.1890, Tacoma, Wash.</strong>
+                <p>Curabitur ullamcorper, purus sit amet posuere pretium, velit est vulputate ante, non sollicitudin ipsum quam a nibh. Nullam et accumsan ligula.</p>
+            </figure>
+            <figure class="yith-annotation"
+                    data-annotation="https://digital.lib.utk.edu/static/iiif/uw-maps-68-tacoma/canvas/1/annotations/15">
+                <strong>East Tacoma</strong>
+                <p>Paellus tincidunt nec ante id mollis. Mauris quis molestie ipsum. Donec consectetur convallis eros.</p>
+            </figure>
+            <figure class="yith-annotation"
+                    data-annotation="https://digital.lib.utk.edu/static/iiif/uw-maps-68-tacoma/canvas/1/annotations/8">
+                <strong>Industry of the Puget Sound</strong>
+                <p>Mauris quis molestie ipsum. Donec consectetur convallis eros, vitae ornare dui.</p>
+            </figure>
+            <figure class="yith-annotation"
+                    data-annotation="https://digital.lib.utk.edu/static/iiif/uw-maps-68-tacoma/canvas/1/annotations/14">
+                <strong>Pacific Ave.</strong>
+                <p>Velit est vulputate ante, non porta metus. Sed pretium mattis tellus ut pharetra. Mauris quis molestie ipsum. Donec consectetur convallis eros, vitae ornare dui.</p>
+            </figure>
+            <figure class="yith-annotation"
+                    data-annotation="https://digital.lib.utk.edu/static/iiif/uw-maps-68-tacoma/canvas/1/annotations/13">
+                <strong>Metal and Alloy Processing</strong>
+                <p>Sed pretium mattis tellus ut pharetra. Donec consectetur convallis eros, vitae ornare dui.</p>
+            </figure>
+            <figure class="yith-annotation"
+                    data-annotation="https://digital.lib.utk.edu/static/iiif/uw-maps-68-tacoma/canvas/1/annotations/12">
+                <strong>Clothing Manufacturing</strong>
+                <p>Mattis tristique libero, non porta metus. Sed pretium mattis tellus ut pharetra.Donec consectetur convallis eros, vitae ornare dui.</p>
+            </figure>
+            <figure class="yith-annotation"
+                    data-annotation="https://digital.lib.utk.edu/static/iiif/uw-maps-68-tacoma/canvas/1/annotations/11">
+                <strong>Transportation to Seattle</strong>
+                <p>Donec consectetur convallis eros, vitae ornare dui. Proin in tristique libero, non porta metus. </p>
+            </figure>
+            <figure class="yith-annotation"
+                    data-annotation="https://digital.lib.utk.edu/static/iiif/uw-maps-68-tacoma/canvas/1/annotations/10">
+                <strong>Commencement Bay</strong>
+                <p>Mauris quis molestie ipsum. Donec consectetur convallis eros, vitae ornare dui.</p>
+            </figure>
+        </figure>
     </div>
 </div>
 ```

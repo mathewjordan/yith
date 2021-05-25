@@ -13,12 +13,12 @@
 
         body > h2 {
             margin: 2rem 2rem 1rem;
-            font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
         }
 
         body > p {
             margin: 0 2rem 1rem;
-            font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
         }
     </style>
 </head>
@@ -26,145 +26,293 @@
 
 <h2>Projection</h2>
 
-<p>Multiple Canvas - Manifest Only</p>
-<div class="yith yith-projection" id="flowers-projection" data-mode="projection">
-    <a class="yith-expand" href="#">Heilman's Flora</a>
-    <div class="yith-structure">
-        <figure class="yith-manifest"
-                data-manifest="https://digital.lib.utk.edu/assemble/manifest/heilman/1004"></figure>
-        <figure class="yith-manifest"
-                data-manifest="https://digital.lib.utk.edu/assemble/manifest/heilman/1010"></figure>
-        <figure class="yith-manifest"
-                data-manifest="https://digital.lib.utk.edu/assemble/manifest/heilman/1011"></figure>
-    </div>
-</div>
 
-<p>Multiple Canvas - Mixed</p>
-<div class="yith yith-projection" id="east-tenn-projection" data-mode="projection">
-    <a class="yith-expand" href="#">East Tennessee</a>
-    <div class="yith-structure">
-        <figure class="yith-manifest"
-                data-manifest="https://digital.lib.utk.edu/static/iiif/pcard00_100204.json">
-            <figure class="yith-annotation"
-                    data-annotation="https://digital.lib.utk.edu/assemble/manifest/pcard00/100204/canvas/1/annotations/1">
-                <strong>Proin in tincidunt leo</strong>
-                <p>Curabitur ullamcorper, purus sit amet posuere pretium, velit est vulputate ante, non sollicitudin ipsum quam a nibh. Nullam et accumsan ligula.</p>
-            </figure>
-            <figure class="yith-annotation"
-                    data-annotation="https://digital.lib.utk.edu/assemble/manifest/pcard00/100204/canvas/1/annotations/2">
-                <strong>Maecenas pulvinar</strong>
-                <p> Duis at lorem magna. Ut blandit eros erat, vitae semper lacus vehicula et. Maecenas consequat quam vel egestas euismod. Morbi tincidunt nec ante id mollis. Suspendisse in nibh mi.</p>
-            </figure>
-            <figure class="yith-annotation"
-                    data-annotation="https://digital.lib.utk.edu/assemble/manifest/pcard00/100204/canvas/2/annotations/1">
-                <strong>Orci varius natoque 1920</strong>
-                <p>Proin in tristique libero, non porta metus. Sed pretium mattis tellus ut pharetra. Mauris quis molestie ipsum. Donec consectetur convallis eros, vitae ornare dui.</p>
-            </figure>
-        </figure>
-        <figure class="yith-manifest"
-                data-manifest="https://digital.lib.utk.edu/assemble/manifest/tenncities/343">
-        </figure>
-        <figure class="yith-manifest"
-                data-manifest="https://digital.lib.utk.edu/static/iiif/thompson_317.json">
-            <figure class="yith-annotation"
-                    data-annotation="https://digital.lib.utk.edu/assemble/manifest/thompson/317/canvas/1/annotations/1">
-                <strong>Proin in tincidunt leo</strong>
-                <p>Curabitur ullamcorper, purus sit amet posuere pretium, velit est vulputate ante, non sollicitudin ipsum quam a nibh. Nullam et accumsan ligula.</p>
-            </figure>
-            <figure class="yith-annotation"
-                    data-annotation="https://digital.lib.utk.edu/assemble/manifest/thompson/317/canvas/2/annotations/1">
-                <strong>Orci varius natoque 1920</strong>
-                <p>Proin in tristique libero, non porta metus. Sed pretium mattis tellus ut pharetra. Mauris quis molestie ipsum. Donec consectetur convallis eros, vitae ornare dui.</p>
-            </figure>
-        </figure>
-        <figure class="yith-manifest"
-                data-manifest="https://digital.lib.utk.edu/assemble/manifest/tenncities/390">
-        </figure>
-    </div>
-</div>
-
-<p>Single Canvas - Annotations</p>
+<p>Single Canvas - Annotations Only</p>
 <div class="yith yith-projection" id="tacoma-projection" data-mode="projection">
     <a class="yith-expand" href="#">Tacoma, c.1890</a>
     <div class="yith-structure">
         <figure class="yith-manifest"
                 data-manifest="https://digital.lib.utk.edu/static/iiif/uw-maps-68-tacoma.json">
-            <figure class="yith-annotation"
-                    data-annotation="https://digital.lib.utk.edu/static/iiif/uw-maps-68-tacoma/canvas/1/annotations/1">
-                <strong>c.1890, Tacoma, Wash.</strong>
-                <p>Curabitur ullamcorper, purus sit amet posuere pretium, velit est vulputate ante, non sollicitudin ipsum quam a nibh. Nullam et accumsan ligula.</p>
-            </figure>
-            <figure class="yith-annotation"
-                    data-annotation="https://digital.lib.utk.edu/static/iiif/uw-maps-68-tacoma/canvas/1/annotations/2">
-                <strong>Alaskan Trade Effect</strong>
-                <p>Maecenas consequat quam vel egestas euismod. Morbi tincidunt nec ante id mollis. Suspendisse in nibh mi.</p>
-            </figure>
-            <figure class="yith-annotation"
-                    data-annotation="https://digital.lib.utk.edu/static/iiif/uw-maps-68-tacoma/canvas/1/annotations/4">
-                <strong>Thriving Local Economy</strong>
-                <p>Proin in tristique libero, non porta metus. Sed pretium mattis tellus ut pharetra. Mauris quis molestie ipsum. </p>
-            </figure>
-            <figure class="yith-annotation"
-                    data-annotation="https://digital.lib.utk.edu/static/iiif/uw-maps-68-tacoma/canvas/1/annotations/6">
-                <strong>Roosevelt's 1902 Visit</strong>
-                <p>Mauris quis molestie ipsum. Proin in tristique libero, non porta metus. Sed pretium mattis tellus ut pharetra.</p>
-            </figure>
-            <figure class="yith-annotation"
-                    data-annotation="https://digital.lib.utk.edu/static/iiif/uw-maps-68-tacoma/canvas/1/annotations/7">
-                <strong>A Grand Parade</strong>
-                <p>Proin in tristique libero, non porta metus. Sed pretium mattis tellus ut pharetra. Mauris quis molestie ipsum. Donec consectetur convallis eros, vitae ornare dui.</p>
-            </figure>
-            <figure class="yith-annotation"
-                    data-annotation="https://digital.lib.utk.edu/static/iiif/uw-maps-68-tacoma/canvas/1/annotations/5">
-                <strong>Great Fire of 1906</strong>
-                <p>Sed pretium mattis tellus ut pharetra. Mauris quis molestie ipsum eros, vitae ornare dui.</p>
-            </figure>
-            <figure class="yith-annotation"
-                    data-annotation="https://digital.lib.utk.edu/static/iiif/uw-maps-68-tacoma/canvas/1/annotations/9">
-                <strong>Population Growth</strong>
-                <p>Proin in tristique libero, non porta metus. Sed pretium mattis tellus ut pharetra. Mauris quis molestie ipsum. Donec consectetur convallis eros, vitae ornare dui.</p>
-            </figure>
-            <figure class="yith-annotation"
-                    data-annotation="https://digital.lib.utk.edu/static/iiif/uw-maps-68-tacoma/canvas/1/annotations/15">
-                <strong>East Tacoma</strong>
-                <p>Paellus tincidunt nec ante id mollis. Mauris quis molestie ipsum. Donec consectetur convallis eros.</p>
-            </figure>
-            <figure class="yith-annotation"
-                    data-annotation="https://digital.lib.utk.edu/static/iiif/uw-maps-68-tacoma/canvas/1/annotations/8">
-                <strong>Industry of the Puget Sound</strong>
-                <p>Mauris quis molestie ipsum. Donec consectetur convallis eros, vitae ornare dui.</p>
-            </figure>
-            <figure class="yith-annotation"
-                    data-annotation="https://digital.lib.utk.edu/static/iiif/uw-maps-68-tacoma/canvas/1/annotations/14">
-                <strong>Pacific Ave.</strong>
-                <p>Velit est vulputate ante, non porta metus. Sed pretium mattis tellus ut pharetra. Mauris quis molestie ipsum. Donec consectetur convallis eros, vitae ornare dui.</p>
-            </figure>
-            <figure class="yith-annotation"
-                    data-annotation="https://digital.lib.utk.edu/static/iiif/uw-maps-68-tacoma/canvas/1/annotations/13">
-                <strong>Metal and Alloy Processing</strong>
-                <p>Sed pretium mattis tellus ut pharetra. Donec consectetur convallis eros, vitae ornare dui.</p>
-            </figure>
-            <figure class="yith-annotation"
-                    data-annotation="https://digital.lib.utk.edu/static/iiif/uw-maps-68-tacoma/canvas/1/annotations/12">
-                <strong>Clothing Manufacturing</strong>
-                <p>Mattis tristique libero, non porta metus. Sed pretium mattis tellus ut pharetra.Donec consectetur convallis eros, vitae ornare dui.</p>
-            </figure>
-            <figure class="yith-annotation"
-                    data-annotation="https://digital.lib.utk.edu/static/iiif/uw-maps-68-tacoma/canvas/1/annotations/11">
-                <strong>Transportation to Seattle</strong>
-                <p>Donec consectetur convallis eros, vitae ornare dui. Proin in tristique libero, non porta metus. </p>
-            </figure>
-            <figure class="yith-annotation"
-                    data-annotation="https://digital.lib.utk.edu/static/iiif/uw-maps-68-tacoma/canvas/1/annotations/10">
-                <strong>Commencement Bay</strong>
-                <p>Mauris quis molestie ipsum. Donec consectetur convallis eros, vitae ornare dui.</p>
-            </figure>
-            <figure class="yith-annotation"
-                    data-annotation="https://digital.lib.utk.edu/static/iiif/uw-maps-68-tacoma/canvas/1/annotations/3">
-                <strong>null</strong>
-                <p>this doesn't display, but should...</p>
-            </figure>
+            <figcaption>
+                Empty here?
+            </figcaption>
+            <div class="yith-items">
+                <figure class="yith-annotation"
+                        data-annotation="https://digital.lib.utk.edu/static/iiif/uw-maps-68-tacoma/canvas/1/annotations/1">
+                    <figcaption>
+                        <strong>c.1890, Tacoma, Wash.</strong>
+                        <p>Curabitur ullamcorper, purus sit amet posuere pretium, velit est vulputate ante, non sollicitudin
+                            ipsum quam a nibh. Nullam et accumsan ligula.</p>
+                    </figcaption>
+                </figure>
+                <figure class="yith-annotation"
+                        data-annotation="https://digital.lib.utk.edu/static/iiif/uw-maps-68-tacoma/canvas/1/annotations/2">
+                    <figcaption>
+                        <strong>Alaskan Trade Effect</strong>
+                        <p>Maecenas consequat quam vel egestas euismod. Morbi tincidunt nec ante id mollis. Suspendisse in nibh
+                            mi.</p>
+                    </figcaption>
+                </figure>
+                <figure class="yith-annotation"
+                        data-annotation="https://digital.lib.utk.edu/static/iiif/uw-maps-68-tacoma/canvas/1/annotations/4">
+                    <figcaption>
+                        <strong>Thriving Local Economy</strong>
+                        <p>Proin in tristique libero, non porta metus. Sed pretium mattis tellus ut pharetra. Mauris quis
+                            molestie ipsum. </p>
+                    </figcaption>
+                </figure>
+                <figure class="yith-annotation"
+                        data-annotation="https://digital.lib.utk.edu/static/iiif/uw-maps-68-tacoma/canvas/1/annotations/6">
+                    <figcaption>
+                        <strong>Roosevelt's 1902 Visit</strong>
+                        <p>Mauris quis molestie ipsum. Proin in tristique libero, non porta metus. Sed pretium mattis tellus ut
+                            pharetra.</p>
+                    </figcaption>
+                </figure>
+                <figure class="yith-annotation"
+                        data-annotation="https://digital.lib.utk.edu/static/iiif/uw-maps-68-tacoma/canvas/1/annotations/7">
+                    <figcaption>
+                        <strong>A Grand Parade</strong>
+                        <p>Proin in tristique libero, non porta metus. Sed pretium mattis tellus ut pharetra. Mauris quis
+                            molestie ipsum. Donec consectetur convallis eros, vitae ornare dui.</p>
+                    </figcaption>
+                </figure>
+                <figure class="yith-annotation"
+                        data-annotation="https://digital.lib.utk.edu/static/iiif/uw-maps-68-tacoma/canvas/1/annotations/5">
+                    <figcaption>
+                        <strong>Great Fire of 1906</strong>
+                        <p>Sed pretium mattis tellus ut pharetra. Mauris quis molestie ipsum eros, vitae ornare dui.</p>
+                    </figcaption>
+                </figure>
+                <figure class="yith-annotation"
+                        data-annotation="https://digital.lib.utk.edu/static/iiif/uw-maps-68-tacoma/canvas/1/annotations/9">
+                    <figcaption>
+                        <strong>Population Growth</strong>
+                        <p>Proin in tristique libero, non porta metus. Sed pretium mattis tellus ut pharetra. Mauris quis
+                            molestie ipsum. Donec consectetur convallis eros, vitae ornare dui.</p>
+                    </figcaption>
+                </figure>
+                <figure class="yith-annotation"
+                        data-annotation="https://digital.lib.utk.edu/static/iiif/uw-maps-68-tacoma/canvas/1/annotations/15">
+                    <figcaption>
+                    <strong>East Tacoma</strong>
+                    <p>Paellus tincidunt nec ante id mollis. Mauris quis molestie ipsum. Donec consectetur convallis
+                        eros.</p>
+                    </figcaption>
+                </figure>
+                <figure class="yith-annotation"
+                        data-annotation="https://digital.lib.utk.edu/static/iiif/uw-maps-68-tacoma/canvas/1/annotations/8">
+                    <figcaption>
+                        <strong>Industry of the Puget Sound</strong>
+                        <p>Mauris quis molestie ipsum. Donec consectetur convallis eros, vitae ornare dui.</p>
+                    </figcaption>
+                </figure>
+                <figure class="yith-annotation"
+                        data-annotation="https://digital.lib.utk.edu/static/iiif/uw-maps-68-tacoma/canvas/1/annotations/14">
+                    <figcaption>
+                        <strong>Pacific Ave.</strong>
+                        <p>Velit est vulputate ante, non porta metus. Sed pretium mattis tellus ut pharetra. Mauris quis
+                            molestie ipsum. Donec consectetur convallis eros, vitae ornare dui.</p>
+                    </figcaption>
+                </figure>
+                <figure class="yith-annotation"
+                        data-annotation="https://digital.lib.utk.edu/static/iiif/uw-maps-68-tacoma/canvas/1/annotations/13">
+                    <figcaption>
+                        <strong>Metal and Alloy Processing</strong>
+                        <p>Sed pretium mattis tellus ut pharetra. Donec consectetur convallis eros, vitae ornare dui.</p>
+                    </figcaption>
+                </figure>
+                <figure class="yith-annotation"
+                        data-annotation="https://digital.lib.utk.edu/static/iiif/uw-maps-68-tacoma/canvas/1/annotations/12">
+                    <figcaption>
+                        <strong>Clothing Manufacturing</strong>
+                        <p>Mattis tristique libero, non porta metus. Sed pretium mattis tellus ut pharetra.Donec consectetur
+                            convallis eros, vitae ornare dui.</p>
+                    </figcaption>
+                </figure>
+                <figure class="yith-annotation"
+                        data-annotation="https://digital.lib.utk.edu/static/iiif/uw-maps-68-tacoma/canvas/1/annotations/11">
+                    <figcaption>
+                        <strong>Transportation to Seattle</strong>
+                        <p>Donec consectetur convallis eros, vitae ornare dui. Proin in tristique libero, non porta metus. </p>
+                    </figcaption>
+                </figure>
+                <figure class="yith-annotation"
+                        data-annotation="https://digital.lib.utk.edu/static/iiif/uw-maps-68-tacoma/canvas/1/annotations/10">
+                    <figcaption>
+                        <strong>Commencement Bay</strong>
+                        <p>Mauris quis molestie ipsum. Donec consectetur convallis eros, vitae ornare dui.</p>
+                    </figcaption>
+                </figure>
+            </div>
         </figure>
+    </div>
+</div>
+
+<p>Multiple Canvas - Manifests Only</p>
+<div class="yith yith-projection" id="flowers-projection" data-mode="projection">
+    <a class="yith-expand" href="#">Heilman's Flora</a>
+    <div class="yith-structure">
+        <figure class="yith-manifest"
+                data-manifest="https://digital.lib.utk.edu/assemble/manifest/heilman/197">
+            <figcaption>
+                <b>Butterfly Maple, Acer japonicum</b>
+            </figcaption>
+        </figure>
+        <figure class="yith-manifest"
+                data-manifest="https://digital.lib.utk.edu/assemble/manifest/heilman/264">
+            <figcaption>
+                <b>Red Maple, Acer rubrum</b>
+            </figcaption>
+        </figure>
+        <figure class="yith-manifest"
+                data-manifest="https://digital.lib.utk.edu/assemble/manifest/heilman/1122">
+            <figcaption>
+                <b>Dwarf Bald Cypress, Taxodium distichum</b>
+            </figcaption>
+        </figure>
+        <figure class="yith-manifest"
+                data-manifest="https://digital.lib.utk.edu/assemble/manifest/heilman/1182">
+            <figcaption>
+                <b>View from Clingman's Road, Oct. 1965</b>
+            </figcaption>
+        </figure>
+    </div>
+</div>
+
+<p>Multiple Canvas - Mixed Manifests, Canvases, and Annotations</p>
+<div class="yith yith-projection" id="stuidenbuch-projection" data-mode="projection">
+    <a class="yith-expand" href="#">Studienbuch</a>
+    <div class="yith-structure">
+        <figure class="yith-manifest"
+                data-manifest="https://digital.lib.utk.edu/assemble/manifest/galston/684">
+            <figcaption>
+                <strong>Galston</strong>
+                <p>Curabitur ullamcorper, purus sit amet posuere pretium, velit est vulputate ante, non sollicitudin
+                    ipsum quam a nibh. Nullam et accumsan ligula.</p>
+            </figcaption>
+        </figure>
+        <figure class="yith-manifest"
+                data-manifest="https://digital.lib.utk.edu/static/iiif/studienbuch-guided-tour.json">
+            <figcaption>
+                <strong>Galston</strong>
+                <p>Curabitur ullamcorper, purus sit amet posuere pretium, velit est vulputate ante, non sollicitudin
+                    ipsum quam a nibh. Nullam et accumsan ligula.</p>
+            </figcaption>
+            <div class="yith-items">
+                <figure class="yith-annotation"
+                        data-annotation="https://digital.lib.utk.edu/assemble/manifest/galston/178/canvas/0/annotations/1">
+                    <figcaption>
+                        <strong>The Studienbuch</strong>
+                        <p>Purus sit amet posuere pretium, velit est vulputate ante, non sollicitudin ipsum quam a
+                            nibh.</p>
+                    </figcaption>
+                </figure>
+                <figure class="yith-annotation"
+                        data-annotation="https://digital.lib.utk.edu/assemble/manifest/galston/178/canvas/0/annotations/2">
+                    <figcaption>
+                        <strong>Proin in tincidunt leo</strong>
+                        <p>Curabitur ullamcorper, purus sit amet posuere pretium, velit est vulputate ante, non
+                            sollicitudin ipsum quam a nibh. Nullam et accumsan ligula.</p>
+                    </figcaption>
+                </figure>
+                <figure class="yith-annotation"
+                        data-annotation="https://digital.lib.utk.edu/assemble/manifest/galston/178/canvas/498/annotations/1">
+                    <figcaption>
+                        <strong>Proin in tincidunt leo</strong>
+                        <p>Curabitur ullamcorper, purus sit amet posuere pretium, velit est vulputate ante, non
+                            sollicitudin ipsum quam a nibh. Nullam et accumsan ligula.</p>
+                    </figcaption>
+                </figure>
+                <figure class="yith-annotation"
+                        data-annotation="https://digital.lib.utk.edu/assemble/manifest/galston/178/canvas/498/annotations/2">
+                    <figcaption>
+                        <strong>Proin in tincidunt leo</strong>
+                        <p>Curabitur ullamcorper, purus sit amet posuere pretium, velit est vulputate ante, non
+                            sollicitudin ipsum quam a nibh. Nullam et accumsan ligula.</p>
+                    </figcaption>
+                </figure>
+                <figure class="yith-annotation"
+                        data-annotation="https://digital.lib.utk.edu/assemble/manifest/galston/178/canvas/498/annotations/3">
+                    <figcaption>
+                        <strong>Proin in tincidunt leo</strong>
+                        <p>Curabitur ullamcorper, purus sit amet posuere pretium, velit est vulputate ante, non
+                            sollicitudin ipsum quam a nibh. Nullam et accumsan ligula.</p>
+                    </figcaption>
+                </figure>
+                <figure class="yith-annotation"
+                        data-annotation="https://digital.lib.utk.edu/assemble/manifest/galston/178/canvas/1/annotations/1">
+                    <figcaption>
+                        <strong>Proin in tincidunt leo</strong>
+                        <p>Curabitur ullamcorper, purus sit amet posuere pretium, velit est vulputate ante, non
+                            sollicitudin ipsum quam a nibh. Nullam et accumsan ligula.</p>
+                    </figcaption>
+                </figure>
+            </div>
+        </figure>
+        <figure class="yith-manifest"
+                data-manifest="https://digital.lib.utk.edu/assemble/manifest/galston/694">
+            <figcaption>
+                <strong>Galston</strong>
+                <p>Curabitur ullamcorper, purus sit amet posuere pretium, velit est vulputate ante, non sollicitudin
+                    ipsum quam a nibh. Nullam et accumsan ligula.</p>
+            </figcaption>
+        </figure>
+        <figure class="yith-manifest"
+                data-manifest="https://digital.lib.utk.edu/static/iiif/studienbuch-guided-tour.json">
+            <div class="yith-items">
+                <figure class="yith-annotation"
+                        data-annotation="https://digital.lib.utk.edu/assemble/manifest/galston/178/canvas/7/annotations/1">
+                    <figcaption>
+                        <strong>Proin in tincidunt leo</strong>
+                        <p>Curabitur ullamcorper, purus sit amet posuere pretium, velit est vulputate ante, non
+                            sollicitudin ipsum quam a nibh. Nullam et accumsan ligula.</p>
+                    </figcaption>
+                </figure>
+                <figure class="yith-annotation"
+                        data-annotation="https://digital.lib.utk.edu/assemble/manifest/galston/178/canvas/10/annotations/1">
+                    <figcaption>
+                        <strong>Proin in tincidunt leo</strong>
+                        <p>Curabitur ullamcorper, purus sit amet posuere pretium, velit est vulputate ante, non
+                            sollicitudin ipsum quam a nibh. Nullam et accumsan ligula.</p>
+                    </figcaption>
+                </figure>
+                <figure class="yith-annotation"
+                        data-annotation="https://digital.lib.utk.edu/assemble/manifest/galston/178/canvas/10/annotations/2">
+                    <figcaption>
+                        <strong>Proin in tincidunt leo</strong>
+                        <p>Curabitur ullamcorper, purus sit amet posuere pretium, velit est vulputate ante, non
+                            sollicitudin ipsum quam a nibh. Nullam et accumsan ligula.</p>
+                    </figcaption>
+                </figure>
+                <figure class="yith-annotation"
+                        data-annotation="https://digital.lib.utk.edu/assemble/manifest/galston/178/canvas/260/annotations/1">
+                    <figcaption>
+                        <strong>Proin in tincidunt leo</strong>
+                        <p>Curabitur ullamcorper, purus sit amet posuere pretium, velit est vulputate ante, non
+                            sollicitudin ipsum quam a nibh. Nullam et accumsan ligula.</p>
+                    </figcaption>
+                </figure>
+                <figure class="yith-annotation"
+                        data-annotation="https://digital.lib.utk.edu/assemble/manifest/galston/178/canvas/260/annotations/2">
+                    <figcaption>
+                        <strong>Proin in tincidunt leo</strong>
+                        <p>Curabitur ullamcorper, purus sit amet posuere pretium, velit est vulputate ante, non
+                            sollicitudin ipsum quam a nibh. Nullam et accumsan ligula.</p>
+                    </figcaption>
+                </figure>
+                <figure class="yith-annotation"
+                        data-annotation="https://digital.lib.utk.edu/assemble/manifest/galston/178/canvas/260/annotations/3">
+                    <figcaption>
+                        <strong>Proin in tincidunt leo</strong>
+                        <p>Curabitur ullamcorper, purus sit amet posuere pretium, velit est vulputate ante, non
+                            sollicitudin ipsum quam a nibh. Nullam et accumsan ligula.</p>
+                    </figcaption>
+                </figure>
+            </div>
+        </figure>
+        <figure class="yith-manifest"
+                data-manifest="https://digital.lib.utk.edu/assemble/manifest/galston/704"></figure>
     </div>
 </div>
 

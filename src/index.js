@@ -105,13 +105,22 @@ function buildStructure(source) {
 
     }
 
-    structure.push({
-      "tag": item.localName,
-      "value": itemTextContent,
-      "data": itemDataset,
-      "class": itemClass,
-      'annotations': annotationStructure
-    });
+    if (item.localName === 'figure') {
+      structure.push({
+        "tag": item.localName,
+        "value": itemTextContent,
+        "data": itemDataset,
+        "class": itemClass,
+        'annotations': annotationStructure
+      });
+    } else {
+      structure.push({
+        "tag": item.localName,
+        "value": item.innerHTML,
+        "data": item.dataset,
+        "class": item.className
+      });
+    }
   }
 
   return structure;

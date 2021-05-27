@@ -42,7 +42,7 @@ class Yith extends Component {
 
   renderStructure = (structure, active, mode) => {
     if (mode === 'chronology') {
-      return <Chronology dom={structure} />
+      return <Chronology sequence={this.state.sequence}  />
     } else if (mode === 'projection' && this.state.data.length > 0) {
       return (
         <div className={`yith-modal-wrapper yith-modal-${active}`}>
@@ -69,27 +69,45 @@ class Yith extends Component {
 
   buildSequence = (dom) => {
     let sequence = []
+
     dom.map((item, mIndex) => {
-      this.getManifest(item.data.manifest, mIndex);
-      if (!item.annotations) {
-        sequence.push({
-          "mIndex": mIndex,
-          "type": "manifest",
-          "manifest": item.data.manifest,
-          "canvas": item.data.canvas,
-          "value": item.value
-        })
-      } else {
-        item.annotations.map((annotation, aIndex) => {
+      if (item.tag === 'figure') {
+        this.getManifest(item.data.manifest, mIndex);
+        if (!item.annotations) {
           sequence.push({
+            "type": "manifest",
+            "tag": item.tag,
+            "value": item.value,
             "mIndex": mIndex,
-            "aIndex": aIndex,
-            "type": "annotation",
             "manifest": item.data.manifest,
-            "annotation": annotation.data.annotation,
-            "value": annotation.value,
+            "canvas": item.data.canvas,
+            "region": item.data.region,
+            "autozoom": item.data.autozoom,
+            "class": item.class
           })
-        });
+        } else {
+          item.annotations.map((annotation, aIndex) => {
+            sequence.push({
+              "type": "annotation",
+              "tag": item.tag,
+              "value": annotation.value,
+              "mIndex": mIndex,
+              "aIndex": aIndex,
+              "manifest": item.data.manifest,
+              "annotation": annotation.data.annotation,
+              "region": item.data.region,
+              "autozoom": item.data.autozoom,
+              "class": item.class
+            })
+          });
+        }
+      } else {
+        sequence.push({
+          "type": "html",
+          "tag": item.tag,
+          "value": item.value,
+          "class": item.class
+        })
       }
     });
 

@@ -30,23 +30,29 @@ class Modal extends Component {
         <div className="yith-modal">
           <Mirador
             config={{
-              id: 'yith-modal',
+              id: 'yith-mirador-default',
               window: {
+                hideWindowTitle: false,
+                sideBarOpen: true,
+                defaultSidebarPanelWidth: 320,
+                allowTopMenuButton: true,
+                allowWindowSideBar: true,
                 allowMaximize: false,
-                allowClose: false
+                allowClose: false,
+                forceDrawAnnotations: true
               },
-              windows: [
-                {
-                  loadedManifest: this.props.iiif.id,
-                },
-              ],
+              windows: [{
+                manifestId: this.props.iiif.id
+              }],
               workspaceControlPanel: {
                 enabled: false,
               },
             }}
             plugins={[]}
-            autozoom={this.props.autozoom}
+            manifest={this.props.iiif.id}
             region={this.props.region}
+            autozoom={this.props.autozoom}
+            mode="initial"
           />
         </div>
       </React.Fragment>

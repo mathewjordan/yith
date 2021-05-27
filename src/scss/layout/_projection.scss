@@ -26,11 +26,12 @@
 
       nav {
         margin-bottom: 1em;
-        background-color: #111;
+        background-color: $darken1;
         display: flex;
         width: 100%;
 
-        > a {
+        > a,
+        > a:visited {
           padding: 0.75em 1.25em;
           font-size: 0.8333em;
           font-weight: 700;
@@ -41,12 +42,13 @@
           text-transform: uppercase;
           color: white;
           width: 50%;
-          border-left: 1px solid #222;
           transition: all 200ms ease;
+
+
 
           &:hover,
           &:focus {
-            background-color: #222;
+            background-color: $accent;
           }
 
           &:first-child {

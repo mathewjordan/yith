@@ -11,7 +11,7 @@
   flex-grow: 0;
   display: inline-flex;
   margin: 0 2em;
-  background-color: #000;
+  background-color: $darken1;
   text-decoration: none;
   font-family: $sans;
   padding: 1em 2em;
@@ -20,6 +20,6 @@
 
   &:hover,
   &:focus {
-    background-color: #78afca;
+    background-color: $accent;
   }
 }

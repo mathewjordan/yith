@@ -8,7 +8,7 @@
       left: 85px;
       width: 10px;
       height: 100%;
-      background-color: #78afca;
+      background-color: $lighten2;
       display: block;
       content: '';
       position: absolute;
@@ -27,7 +27,7 @@
       &::after {
         width: 14px;
         height: 3px;
-        background-color: #93bcd0;
+        background-color: $lighten2;
         display: block;
         content: '';
         right: -15px;
@@ -41,16 +41,16 @@
 
       &.yith-emblem {
         width: auto;
-        font-weight: 800;
+        font-weight: 100;
         font-family: $sans;
-        font-size: 4em;
+        font-size: 3em;
         letter-spacing: -0.05em;
         transform: rotate(270deg);
         position: absolute;
-        left: -15px;
+        left: -22px;
         padding: 0 15px;
-        margin-top: 60px;
-        color: #78afca;
+        margin-top: 30px;
+        color: $accent;
         background-color: white;
         display: block;
         z-index: 3;
@@ -69,7 +69,7 @@
       &::before {
         width: 22px;
         height: 22px;
-        background-color: #032d40;
+        background-color: $accent;
         border-radius: 50%;
         display: block;
         content: '';
@@ -85,18 +85,18 @@
       &::after {
         width: 10px;
         height: calc(100% - 25px);
-        background-color: #0b4f6e;
+        background-color: $lighten2;
         display: block;
         content: '';
         left: -40px;
         top: 16px;
         position: absolute;
-        background: -webkit-linear-gradient(90deg, #78afca, #0b4f6e);
+        background: -webkit-linear-gradient(90deg, $lighten2, $lighten1);
       }
 
       &:hover {
         &::before {
-          background-color: #00202d;
+          background-color: $darken1;
           transform: scale3d(1.15,1.15,1.15);
         }
       }

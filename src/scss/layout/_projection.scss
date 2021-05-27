@@ -21,7 +21,25 @@
       line-height: 1.25rem;
 
       &--html {
-        padding: 1em 2em;
+        padding: 0 1em;
+      }
+
+      &--details {
+        background-color: #e0e0e0;
+        padding: 1em;
+
+        > div {
+          font-size: 0.8333em;
+          margin-bottom: 0.5em;
+        }
+
+        > span {
+          display: block;
+          font-size: 0.7222em;
+          line-height: 1.25em;
+          font-style: italic;
+          color: #666;
+        }
       }
 
       nav {

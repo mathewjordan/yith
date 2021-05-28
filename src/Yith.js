@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import Chronology from "./components/Chronology";
 import Projection from "./components/Projection";
+import Comparison from "./components/Comparison";
+import Teaser from "./components/Teaser";
 
 class Yith extends Component {
 
@@ -28,21 +30,44 @@ class Yith extends Component {
     }));
   }
 
-  renderExpand = (data) => {
-    if (data) {
-      return (
-        <a href="#"
-           class="yith-expand"
-           onClick={this.isActive}>
-          {data.value}
-        </a>
-      )
+  renderExpand = (data, mode) => {
+    if (mode === 'comparison') {
+      if (data) {
+        return (
+          <div className="yith-comparison-tease">
+            <Teaser sequence={this.state.sequence} />
+            <a href="#"
+               className="yith-expand"
+               onClick={this.isActive}>
+              {data.value}
+            </a>
+          </div>
+        )
+      }
+    } else {
+      if (data) {
+        return (
+          <a href="#"
+             className="yith-expand"
+             onClick={this.isActive}>
+            {data.value}
+          </a>
+        )
+      }
     }
   }
 
   renderStructure = (structure, active, mode) => {
     if (mode === 'chronology') {
-      return <Chronology sequence={this.state.sequence}  />
+      return (
+        <Chronology sequence={this.state.sequence}  />
+      )
+    } else if (mode === 'compare') {
+      return (
+        <div className={`yith-modal-wrapper yith-modal-${active}`}>
+          <Comparison sequence={this.state.sequence} active={active} showModal={this.showModal}  />
+        </div>
+      )
     } else if (mode === 'projection' && this.state.data.length > 0) {
       return (
         <div className={`yith-modal-wrapper yith-modal-${active}`}>
@@ -133,7 +158,7 @@ class Yith extends Component {
     if (this.state.sequence) {
       return (
         <React.Fragment>
-          {this.renderExpand(expand)}
+          {this.renderExpand(expand, mode)}
           {this.renderStructure(structure, active, mode)}
         </React.Fragment>
       )

@@ -16,6 +16,9 @@ A frontend tool that leverages IIIF manifests and interweaves them into flexible
 ## Components
 
 ### Projection
+
+<img width="1131" alt="image" src="https://user-images.githubusercontent.com/7376450/120081345-3cebb700-c08b-11eb-851c-47febf3456f1.png"/>
+
 The Projection component presents an immersive modal display with the ability for a user to navigate through manifests. Projections are hidden by default and expanded using a toggle.
 #### Multiple Manifests
 ```
@@ -69,6 +72,9 @@ The Projection component presents an immersive modal display with the ability fo
 
 ### Chronology
 A Chrononology component renders a fully responsive vertical timeline with manifests interweaved into its structure. Manifests can be expanded onto a modal with an embedded Miradror 3 viewer for deep zoom capability, additional metadata, and annotations. 
+
+<img width="567" alt="image" src="https://user-images.githubusercontent.com/7376450/120081289-f72eee80-c08a-11eb-81c0-c0ce5f85efa6.png">
+
 ```
 <div class="yith yith-chronology" id="galston-chronology" data-mode="chronology">
     <div class="yith-structure">

@@ -9,7 +9,7 @@ A frontend tool that leverages IIIF manifests and interweaves them into flexible
 ## Limitations
 
 - Yith is a proof of concept and should net yet be used for production sites.
-- Yith currently only works with IIIF Presentation 3.0 API manifests. 2.1 and 2.0 support will be coming soon.
+- Yith currently only works with IIIF Presentation 3.0 API manifests.
 - Yith is optimized for usage with manifests where the initial index of `items` in the `body` is of `"type": "Image"`.
 
 

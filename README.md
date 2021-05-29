@@ -34,18 +34,6 @@ The Projection component presents an immersive modal display with the ability fo
                 <b>Red Maple, Acer rubrum</b>
             </figcaption>
         </figure>
-        <figure class="yith-manifest"
-                data-manifest="https://digital.lib.utk.edu/assemble/manifest/heilman/1122">
-            <figcaption>
-                <b>Dwarf Bald Cypress, Taxodium distichum</b>
-            </figcaption>
-        </figure>
-        <figure class="yith-manifest"
-                data-manifest="https://digital.lib.utk.edu/assemble/manifest/heilman/1182">
-            <figcaption>
-                <b>View from Clingman's Road, Oct. 1965</b>
-            </figcaption>
-        </figure>
     </div>
 </div>
 ```
@@ -57,9 +45,6 @@ The Projection component presents an immersive modal display with the ability fo
     <div class="yith-structure">
         <figure class="yith-manifest"
                 data-manifest="https://digital.lib.utk.edu/static/iiif/uw-maps-68-tacoma.json">
-            <figcaption>
-                Empty here?
-            </figcaption>
             <div class="yith-items">
                 <figure class="yith-annotation"
                         data-annotation="https://digital.lib.utk.edu/static/iiif/uw-maps-68-tacoma/canvas/1/annotations/1">
@@ -67,98 +52,6 @@ The Projection component presents an immersive modal display with the ability fo
                         <strong>c.1890, Tacoma, Wash.</strong>
                         <p>Curabitur ullamcorper, purus sit amet posuere pretium, velit est vulputate ante, non sollicitudin
                             ipsum quam a nibh. Nullam et accumsan ligula.</p>
-                    </figcaption>
-                </figure>
-                <figure class="yith-annotation"
-                        data-annotation="https://digital.lib.utk.edu/static/iiif/uw-maps-68-tacoma/canvas/1/annotations/2">
-                    <figcaption>
-                        <strong>Alaskan Trade Effect</strong>
-                        <p>Maecenas consequat quam vel egestas euismod. Morbi tincidunt nec ante id mollis. Suspendisse in nibh
-                            mi.</p>
-                    </figcaption>
-                </figure>
-                <figure class="yith-annotation"
-                        data-annotation="https://digital.lib.utk.edu/static/iiif/uw-maps-68-tacoma/canvas/1/annotations/4">
-                    <figcaption>
-                        <strong>Thriving Local Economy</strong>
-                        <p>Proin in tristique libero, non porta metus. Sed pretium mattis tellus ut pharetra. Mauris quis
-                            molestie ipsum. </p>
-                    </figcaption>
-                </figure>
-                <figure class="yith-annotation"
-                        data-annotation="https://digital.lib.utk.edu/static/iiif/uw-maps-68-tacoma/canvas/1/annotations/6">
-                    <figcaption>
-                        <strong>Roosevelt's 1902 Visit</strong>
-                        <p>Mauris quis molestie ipsum. Proin in tristique libero, non porta metus. Sed pretium mattis tellus ut
-                            pharetra.</p>
-                    </figcaption>
-                </figure>
-                <figure class="yith-annotation"
-                        data-annotation="https://digital.lib.utk.edu/static/iiif/uw-maps-68-tacoma/canvas/1/annotations/7">
-                    <figcaption>
-                        <strong>A Grand Parade</strong>
-                        <p>Proin in tristique libero, non porta metus. Sed pretium mattis tellus ut pharetra. Mauris quis
-                            molestie ipsum. Donec consectetur convallis eros, vitae ornare dui.</p>
-                    </figcaption>
-                </figure>
-                <figure class="yith-annotation"
-                        data-annotation="https://digital.lib.utk.edu/static/iiif/uw-maps-68-tacoma/canvas/1/annotations/5">
-                    <figcaption>
-                        <strong>Great Fire of 1906</strong>
-                        <p>Sed pretium mattis tellus ut pharetra. Mauris quis molestie ipsum eros, vitae ornare dui.</p>
-                    </figcaption>
-                </figure>
-                <figure class="yith-annotation"
-                        data-annotation="https://digital.lib.utk.edu/static/iiif/uw-maps-68-tacoma/canvas/1/annotations/9">
-                    <figcaption>
-                        <strong>Population Growth</strong>
-                        <p>Proin in tristique libero, non porta metus. Sed pretium mattis tellus ut pharetra. Mauris quis
-                            molestie ipsum. Donec consectetur convallis eros, vitae ornare dui.</p>
-                    </figcaption>
-                </figure>
-                <figure class="yith-annotation"
-                        data-annotation="https://digital.lib.utk.edu/static/iiif/uw-maps-68-tacoma/canvas/1/annotations/15">
-                    <figcaption>
-                    <strong>East Tacoma</strong>
-                    <p>Paellus tincidunt nec ante id mollis. Mauris quis molestie ipsum. Donec consectetur convallis
-                        eros.</p>
-                    </figcaption>
-                </figure>
-                <figure class="yith-annotation"
-                        data-annotation="https://digital.lib.utk.edu/static/iiif/uw-maps-68-tacoma/canvas/1/annotations/8">
-                    <figcaption>
-                        <strong>Industry of the Puget Sound</strong>
-                        <p>Mauris quis molestie ipsum. Donec consectetur convallis eros, vitae ornare dui.</p>
-                    </figcaption>
-                </figure>
-                <figure class="yith-annotation"
-                        data-annotation="https://digital.lib.utk.edu/static/iiif/uw-maps-68-tacoma/canvas/1/annotations/14">
-                    <figcaption>
-                        <strong>Pacific Ave.</strong>
-                        <p>Velit est vulputate ante, non porta metus. Sed pretium mattis tellus ut pharetra. Mauris quis
-                            molestie ipsum. Donec consectetur convallis eros, vitae ornare dui.</p>
-                    </figcaption>
-                </figure>
-                <figure class="yith-annotation"
-                        data-annotation="https://digital.lib.utk.edu/static/iiif/uw-maps-68-tacoma/canvas/1/annotations/13">
-                    <figcaption>
-                        <strong>Metal and Alloy Processing</strong>
-                        <p>Sed pretium mattis tellus ut pharetra. Donec consectetur convallis eros, vitae ornare dui.</p>
-                    </figcaption>
-                </figure>
-                <figure class="yith-annotation"
-                        data-annotation="https://digital.lib.utk.edu/static/iiif/uw-maps-68-tacoma/canvas/1/annotations/12">
-                    <figcaption>
-                        <strong>Clothing Manufacturing</strong>
-                        <p>Mattis tristique libero, non porta metus. Sed pretium mattis tellus ut pharetra.Donec consectetur
-                            convallis eros, vitae ornare dui.</p>
-                    </figcaption>
-                </figure>
-                <figure class="yith-annotation"
-                        data-annotation="https://digital.lib.utk.edu/static/iiif/uw-maps-68-tacoma/canvas/1/annotations/11">
-                    <figcaption>
-                        <strong>Transportation to Seattle</strong>
-                        <p>Donec consectetur convallis eros, vitae ornare dui. Proin in tristique libero, non porta metus. </p>
                     </figcaption>
                 </figure>
                 <figure class="yith-annotation"

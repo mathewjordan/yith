@@ -13,6 +13,12 @@ A frontend tool that leverages IIIF manifests and interweaves them into flexible
 - Yith is optimized for usage with manifests where the initial index of `items` in the `body` is of `"type": "Image"`.
 
 
+## Next Steps
+
+- Introduce casual loading mechanism and refine manifest request order.
+- Introduce _Comparison_ component for 2-up analysis
+- Simplify and modularize componentry
+
 ## Components
 
 ### Projection

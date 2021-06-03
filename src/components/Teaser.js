@@ -33,12 +33,23 @@ class Teaser extends Component {
 
     if (this.state.loaded) {
       if (this.state.data.length > 1) {
-        return (
-          <div>
-            <span>{this.state.data[0].label.en[0]}</span>
-            <span>{this.state.data[1].label.en[0]}</span>
-          </div>
-        )
+        if (typeof(this.state.data[0]) !== 'undefined') {
+
+          let region = 'full';
+
+          const itemA = this.state.data[0].items[0].items[0].items[0].body[0].service['@id'] + '/' + region + '/300,300/0/default.jpg'
+          const itemB = this.state.data[1].items[0].items[0].items[0].body[0].service['@id'] + '/' + region + '/300,300/0/default.jpg'
+
+          return (
+            <React.Fragment>
+              <img src={itemA} alt={this.state.data[0].label.en[0]} />
+              <img src={itemB} alt={this.state.data[1].label.en[0]} />
+            </React.Fragment>
+          )
+          
+        } else {
+          return null
+        }
       } else {
         return null
       }

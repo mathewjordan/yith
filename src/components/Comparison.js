@@ -9,7 +9,6 @@ class Comparison extends Component {
     return (
       <React.Fragment>
         <div className="yith-structure">
-          comparison
         </div>
       </React.Fragment>
     )

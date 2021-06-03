@@ -11,7 +11,8 @@ class Projection extends Component {
       loaded: false,
       annotations: false,
       activeWindow: null,
-      slideMode: 'initial'
+      slideMode: 'initial',
+      contextLayout: 'default'
     }
 
     this.showModal = this.showModal.bind(this);

@@ -62,7 +62,7 @@ class Yith extends Component {
       return (
         <Chronology sequence={this.state.sequence}  />
       )
-    } else if (mode === 'compare') {
+    } else if (mode === 'comparison') {
       return (
         <div className={`yith-modal-wrapper yith-modal-${active}`}>
           <Comparison sequence={this.state.sequence} active={active} showModal={this.showModal}  />

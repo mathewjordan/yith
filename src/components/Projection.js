@@ -11,7 +11,8 @@ class Projection extends Component {
       loaded: false,
       annotations: false,
       activeWindow: null,
-      slideMode: 'initial'
+      slideMode: 'initial',
+      minimized: false
     }
 
     this.showModal = this.showModal.bind(this);
@@ -56,6 +57,20 @@ class Projection extends Component {
         slideMode: 'nextAnnotation'
       });
     }
+  }
+
+  minimize = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+
+    this.setState({minimized: true});
+  }
+
+  maximize = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+
+    this.setState({minimized: false});
   }
 
   hasAnnotations = (current) => {
@@ -166,13 +181,21 @@ class Projection extends Component {
               Close Viewer
             </a>
             <div className="yith-modal">
-              <div className="yith-context">
+              <div className={this.state.minimized ? "yith-context yith-hidden" : "yith-context"}>
                 <nav>
                   <a href="#" onClick={this.selectPrev}>Prev</a>
                   <a href="#" onClick={this.selectNext}>Next</a>
+                  <a href="#" className="yith-minimize-button" onClick={this.minimize}>_</a>
                 </nav>
                 <div className="yith-context--html" dangerouslySetInnerHTML={{__html:this.props.sequence[this.state.index].value}}></div>
               </div>
+              <a 
+                href="#"
+                className={!this.state.minimized ? "yith-maximize-button yith-hidden" : "yith-maximize-button"}
+                onClick={this.maximize}
+              >
+                +
+              </a>
               {this.getMirador()}
             </div>
           </div>

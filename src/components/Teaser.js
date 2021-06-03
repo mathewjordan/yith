@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import TeaserFigure from "./TeaserFigure";
 
 class Teaser extends Component {
 
@@ -36,17 +37,15 @@ class Teaser extends Component {
         if (typeof(this.state.data[0]) !== 'undefined') {
 
           let region = 'full';
-
-          const itemA = this.state.data[0].items[0].items[0].items[0].body[0].service['@id'] + '/' + region + '/300,300/0/default.jpg'
-          const itemB = this.state.data[1].items[0].items[0].items[0].body[0].service['@id'] + '/' + region + '/300,300/0/default.jpg'
+          let size = '!400,400';
 
           return (
             <React.Fragment>
-              <img src={itemA} alt={this.state.data[0].label.en[0]} />
-              <img src={itemB} alt={this.state.data[1].label.en[0]} />
+              <TeaserFigure data={this.state.data[0]} region={region} size={size} />
+              <TeaserFigure data={this.state.data[1]} region={region} size={size} />
             </React.Fragment>
           )
-          
+
         } else {
           return null
         }

@@ -40,10 +40,10 @@ class Teaser extends Component {
           let size = '!400,400';
 
           return (
-            <React.Fragment>
+            <div className="yith-teaser">
               <TeaserFigure data={this.state.data[0]} region={region} size={size} />
               <TeaserFigure data={this.state.data[1]} region={region} size={size} />
-            </React.Fragment>
+            </div>
           )
 
         } else {

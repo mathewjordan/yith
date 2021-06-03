@@ -34,14 +34,12 @@ class Yith extends Component {
     if (mode === 'comparison') {
       if (data) {
         return (
-          <div className="yith-comparison-tease">
+          <a href="#"
+             className="yith-comparison-teaser"
+             onClick={this.isActive}>
+            <span className="yith-expand">{data.value}</span>
             <Teaser sequence={this.state.sequence} />
-            <a href="#"
-               className="yith-expand"
-               onClick={this.isActive}>
-              {data.value}
-            </a>
-          </div>
+          </a>
         )
       }
     } else {

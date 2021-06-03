@@ -1,0 +1,30 @@
+.yith-comparison {
+  margin-left: 2em;
+
+  .yith-comparison-teaser {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+
+    .yith-expand {
+      position: absolute;
+      z-index: 1;
+      width: auto;
+      text-align: center;
+      bottom: 2em;
+      margin: 0;
+
+    }
+  }
+}
+
+.yith-teaser {
+  display: flex;
+  width: 600px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

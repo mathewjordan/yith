@@ -37,7 +37,7 @@ class Teaser extends Component {
         if (typeof(this.state.data[0]) !== 'undefined') {
 
           let region = 'full';
-          let size = '!400,400';
+          let size = '!700,700';
 
           return (
             <div className="yith-teaser">

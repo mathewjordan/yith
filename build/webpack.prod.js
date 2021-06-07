@@ -2,9 +2,13 @@ const path = require('path');
 const Dotenv = require('dotenv-webpack');
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
+  externals: {
+    "react": "React",
+    "react-dom": "ReactDOM"
+  },
   optimization: {
-    concatenateModules: true,
+    concatenateModules: false,
   },
   plugins: [
     new Dotenv({

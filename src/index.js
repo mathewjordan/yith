@@ -127,4 +127,4 @@ function buildStructure(source) {
 
 }
 
-// module.hot.accept();
+module.hot.accept();

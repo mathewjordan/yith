@@ -189,13 +189,11 @@ class Projection extends Component {
                 </nav>
                 <div className="yith-context--html" dangerouslySetInnerHTML={{__html:this.props.sequence[this.state.index].value}}></div>
               </div>
-              <a 
-                href="#"
-                className={!this.state.minimized ? "yith-maximize-button yith-hidden" : "yith-maximize-button"}
-                onClick={this.maximize}
-              >
-                +
-              </a>
+              <div className={!this.state.minimized ? "yith-minibar yith-hidden" : "yith-minibar"}>
+                <a href="#" onClick={this.selectPrev}>prev</a>
+                <a href="#" onClick={this.selectNext}>next</a>
+                <a href="#" onClick={this.maximize}>+</a>
+              </div>
               {this.getMirador()}
             </div>
           </div>

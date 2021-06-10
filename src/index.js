@@ -53,8 +53,8 @@ function buildStructure(source) {
     }
 
     let itemTextContent = null;
-    if (item.textContent != '') {
-      itemTextContent = item.textContent
+    if (item.querySelector('figcaption')) {
+      itemTextContent = item.querySelector('figcaption').innerHTML
     }
 
     let itemDataset = null;
@@ -63,14 +63,17 @@ function buildStructure(source) {
     }
 
     let annotationStructure = null;
-    if (item.childElementCount !== 0) {
+
+    if (item.querySelector('div.yith-items')) {
+
+      let items = item.querySelector('div.yith-items');
 
       let annotationIndex = 0;
       annotationStructure = [];
 
-      while(item.children.length > annotationStructure.length) {
+      while(items.children.length > annotationStructure.length) {
 
-        let annotation = item.children.item(annotationIndex);
+        let annotation = items.children.item(annotationIndex);
         annotationIndex++;
 
         if (annotation) {
@@ -79,10 +82,12 @@ function buildStructure(source) {
           if (annotation.className != '') {
             itemAnnotationClass = annotation.className
           }
+
           let itemAnnotationTextContent = null;
-          if (annotation.textContent != '') {
-            itemAnnotationTextContent = annotation.innerHTML
+          if (annotation.querySelector('figcaption')) {
+            itemAnnotationTextContent = annotation.querySelector('figcaption').innerHTML
           }
+
           let itemAnnotationDataset = null;
           if (Object.keys(annotation.dataset).length > 0) {
             itemAnnotationDataset = JSON.parse(JSON.stringify(annotation.dataset))
@@ -100,13 +105,22 @@ function buildStructure(source) {
 
     }
 
-    structure.push({
-      "tag": item.localName,
-      "value": itemTextContent,
-      "data": itemDataset,
-      "class": itemClass,
-      'annotations': annotationStructure
-    });
+    if (item.localName === 'figure') {
+      structure.push({
+        "tag": item.localName,
+        "value": itemTextContent,
+        "data": itemDataset,
+        "class": itemClass,
+        'annotations': annotationStructure
+      });
+    } else {
+      structure.push({
+        "tag": item.localName,
+        "value": item.innerHTML,
+        "data": item.dataset,
+        "class": item.className
+      });
+    }
   }
 
   return structure;

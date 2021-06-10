@@ -41,7 +41,7 @@
 
   &:hover,
   &:focus {
-    background-color: #0b4f6e;
+    background-color: $darken1;
     box-shadow: 0 0 0.5em rgba(0, 0, 0, 1);
   }
 }

@@ -1,0 +1,34 @@
+.yith-comparison {
+  .yith-comparison-teaser {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+
+    .yith-expand {
+      position: absolute;
+      z-index: 1;
+      width: auto;
+      text-align: center;
+      bottom: 2em;
+      margin: 0;
+
+    }
+  }
+}
+
+.yith-teaser {
+  display: flex;
+  width: 100%;
+
+  .yith-teaser-figure {
+    width: 50%;
+  }
+
+  img {
+    min-width: 100%;
+    min-height: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

@@ -10,8 +10,8 @@
   flex-shrink: 1;
   flex-grow: 0;
   display: inline-flex;
-  margin: 0 2em;
-  background-color: #000;
+  margin: 0;
+  background-color: $darken1;
   text-decoration: none;
   font-family: $sans;
   padding: 1em 2em;
@@ -20,6 +20,6 @@
 
   &:hover,
   &:focus {
-    background-color: #0b4f6e;
+    background-color: $accent;
   }
 }

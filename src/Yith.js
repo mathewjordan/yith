@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import Chronology from "./components/Chronology";
 import Projection from "./components/Projection";
+import Comparison from "./components/Comparison";
+import Teaser from "./components/Teaser";
 
 class Yith extends Component {
 
@@ -28,21 +30,42 @@ class Yith extends Component {
     }));
   }
 
-  renderExpand = (data) => {
-    if (data) {
-      return (
-        <a href="#"
-           class="yith-expand"
-           onClick={this.isActive}>
-          {data.value}
-        </a>
-      )
+  renderExpand = (data, mode) => {
+    if (mode === 'comparison') {
+      if (data) {
+        return (
+          <a href="#"
+             className="yith-comparison-teaser"
+             onClick={this.isActive}>
+            <span className="yith-expand">{data.value}</span>
+            <Teaser sequence={this.state.sequence} />
+          </a>
+        )
+      }
+    } else {
+      if (data) {
+        return (
+          <a href="#"
+             className="yith-expand"
+             onClick={this.isActive}>
+            {data.value}
+          </a>
+        )
+      }
     }
   }
 
   renderStructure = (structure, active, mode) => {
     if (mode === 'chronology') {
-      return <Chronology dom={structure} />
+      return (
+        <Chronology sequence={this.state.sequence}  />
+      )
+    } else if (mode === 'comparison') {
+      return (
+        <div className={`yith-modal-wrapper yith-modal-${active}`}>
+          <Comparison sequence={this.state.sequence} active={active} showModal={this.showModal}  />
+        </div>
+      )
     } else if (mode === 'projection' && this.state.data.length > 0) {
       return (
         <div className={`yith-modal-wrapper yith-modal-${active}`}>
@@ -69,27 +92,45 @@ class Yith extends Component {
 
   buildSequence = (dom) => {
     let sequence = []
+
     dom.map((item, mIndex) => {
-      this.getManifest(item.data.manifest, mIndex);
-      if (!item.annotations) {
-        sequence.push({
-          "mIndex": mIndex,
-          "type": "manifest",
-          "manifest": item.data.manifest,
-          "canvas": item.data.canvas,
-          "value": item.value
-        })
-      } else {
-        item.annotations.map((annotation, aIndex) => {
+      if (item.tag === 'figure') {
+        this.getManifest(item.data.manifest, mIndex);
+        if (!item.annotations) {
           sequence.push({
+            "type": "manifest",
+            "tag": item.tag,
+            "value": item.value,
             "mIndex": mIndex,
-            "aIndex": aIndex,
-            "type": "annotation",
             "manifest": item.data.manifest,
-            "annotation": annotation.data.annotation,
-            "value": annotation.value,
+            "canvas": item.data.canvas,
+            "region": item.data.region,
+            "autozoom": item.data.autozoom,
+            "class": item.class
           })
-        });
+        } else {
+          item.annotations.map((annotation, aIndex) => {
+            sequence.push({
+              "type": "annotation",
+              "tag": item.tag,
+              "value": annotation.value,
+              "mIndex": mIndex,
+              "aIndex": aIndex,
+              "manifest": item.data.manifest,
+              "annotation": annotation.data.annotation,
+              "region": item.data.region,
+              "autozoom": item.data.autozoom,
+              "class": item.class
+            })
+          });
+        }
+      } else {
+        sequence.push({
+          "type": "html",
+          "tag": item.tag,
+          "value": item.value,
+          "class": item.class
+        })
       }
     });
 
@@ -115,7 +156,7 @@ class Yith extends Component {
     if (this.state.sequence) {
       return (
         <React.Fragment>
-          {this.renderExpand(expand)}
+          {this.renderExpand(expand, mode)}
           {this.renderStructure(structure, active, mode)}
         </React.Fragment>
       )

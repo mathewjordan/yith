@@ -43,23 +43,42 @@
       left: 0;
       top: 0;
       background-color: white;
-      margin: 2em;
+      margin: 1em;
       width: 25vw;
       box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.25);
       font-family: $sans;
       line-height: 1.25rem;
 
       &--html {
-        padding: 1em 2em;
+        padding: 0 1em;
+      }
+
+      &--details {
+        background-color: #e0e0e0;
+        padding: 1em;
+
+        > div {
+          font-size: 0.8333em;
+          margin-bottom: 0.5em;
+        }
+
+        > span {
+          display: block;
+          font-size: 0.7222em;
+          line-height: 1.25em;
+          font-style: italic;
+          color: #666;
+        }
       }
 
       nav {
         margin-bottom: 1em;
-        background-color: #111;
+        background-color: $darken1;
         display: flex;
         width: 100%;
 
-        > a {
+        > a,
+        > a:visited {
           padding: 0.75em 1.25em;
           font-size: 0.8333em;
           font-weight: 700;
@@ -70,12 +89,13 @@
           text-transform: uppercase;
           color: white;
           width: 50%;
-          border-left: 1px solid #222;
           transition: all 200ms ease;
+
+
 
           &:hover,
           &:focus {
-            background-color: #222;
+            background-color: $accent;
           }
 
           &:first-child {

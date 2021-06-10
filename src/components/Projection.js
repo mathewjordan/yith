@@ -12,7 +12,8 @@ class Projection extends Component {
       annotations: false,
       activeWindow: null,
       slideMode: 'initial',
-      minimized: false
+      minimized: false,
+      contextLayout: 'default'
     }
 
     this.showModal = this.showModal.bind(this);
@@ -130,6 +131,31 @@ class Projection extends Component {
     }
   }
 
+  getAnnotationBody = () => {
+    if (this.state.annotation) {
+      return <div>{this.state.annotation.body.value}</div>
+    } else {
+      return null
+    }
+  }
+
+  getAttribution = () => {
+    let manifestIndex = this.props.sequence[this.state.index].mIndex;
+    let manifest = this.props.manifests[manifestIndex];
+    let attribution = manifest.requiredStatement;
+
+    return <span>{attribution.label.en[0]}: {attribution.value.en[0]}</span>
+  }
+
+  getManifestDetails = () => {
+    return (
+      <React.Fragment>
+        {this.getAnnotationBody()}
+        {this.getAttribution()}
+      </React.Fragment>
+    )
+  }
+
   getMirador = () => {
     return (
       <Mirador
@@ -188,6 +214,9 @@ class Projection extends Component {
                   <a href="#" className="yith-minimize-button" onClick={this.minimize}>_</a>
                 </nav>
                 <div className="yith-context--html" dangerouslySetInnerHTML={{__html:this.props.sequence[this.state.index].value}}></div>
+                <div className="yith-context--details">
+                  {this.getManifestDetails()}
+                </div>
               </div>
               <div className={!this.state.minimized ? "yith-minibar yith-hidden" : "yith-minibar"}>
                 <a href="#" onClick={this.selectPrev}>prev</a>

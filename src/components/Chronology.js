@@ -3,8 +3,9 @@ import Manifest from "./Manifest";
 
 class Chronology extends Component {
 
-  mapStructure = (dom) => {
-    return dom.map((element) => {
+  mapStructure = (sequence) => {
+
+    return sequence.map((element) => {
       if (element.tag === 'span') {
         return (
           <React.Fragment>
@@ -14,16 +15,24 @@ class Chronology extends Component {
       } else if (element.tag === 'figure') {
 
         let region = null
-        if (element.data.region === typeof('string')) {
-          region = element.data.region
+        if (typeof element.region === 'string') {
+          region = element.region
+        }
+
+        let autozoom = false
+        if (typeof element.autozoom === 'string') {
+          if (element.autozoom === 'true') {
+            autozoom = true
+          }
         }
 
         return (
           <React.Fragment>
             <div className={element.class}>
               <Manifest
-                manifest={element.data.manifest}
-                region={region} />
+                manifest={element.manifest}
+                region={region}
+                autozoom={autozoom}  />
             </div>
           </React.Fragment>
         )
@@ -35,12 +44,12 @@ class Chronology extends Component {
 
   render() {
 
-    const {dom} = this.props
+    const {sequence} = this.props
 
     return (
       <React.Fragment>
         <div className="yith-structure">
-          {this.mapStructure(dom)}
+          {this.mapStructure(sequence)}
         </div>
       </React.Fragment>
     )

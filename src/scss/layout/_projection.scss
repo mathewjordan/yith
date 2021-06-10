@@ -7,6 +7,35 @@
     background-color: black;
     display: block;
 
+    .yith-hidden {
+      display: none;
+    }
+
+    .yith-minibar {
+      position: absolute;
+      z-index: 2;
+      left: 0;
+      bottom: 0;
+      margin: 2em;
+
+      a {
+        padding: 1.25em 1.5em;
+        font-size: 0.8333em;
+        font-weight: 700;
+        text-decoration: none;
+        font-family: $sans;
+        justify-content: center;
+        background-color: white;
+        transition: all 200ms ease;
+        text-transform: uppercase;
+        color: black;
+  
+        &:hover {
+          background-color: #ddd;
+        }
+      }
+    }
+
     .yith-context {
       font-family: $sans;
       position: absolute;
@@ -71,6 +100,10 @@
 
           &:first-child {
             border: none;
+          }
+
+          &.yith-minimize-button {
+            flex: 1;
           }
         }
       }

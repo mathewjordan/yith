@@ -201,17 +201,17 @@ class Projection extends Component {
             </a>
             <div className="yith-modal">
               <div className="yith-context">
-                <nav>
-                  <a href="#" onClick={this.selectPrev}>Prev</a>
-                  <a href="#" onClick={this.selectNext}>Next</a>
-                  <a href="#" className="yith-minimize-button" onClick={this.toggleContext}>{this.state.minimized ? "+" : "_"}</a>
-                </nav>
                 <div className={this.state.minimized ? "yith-hidden" : ""}>
                   <div className="yith-context--html" dangerouslySetInnerHTML={{__html:this.props.sequence[this.state.index].value}}></div>
                   <div className="yith-context--details">
                     {this.getManifestDetails()}
                   </div>
                 </div>
+                <nav>
+                  <a href="#" onClick={this.selectPrev}>Prev</a>
+                  <a href="#" onClick={this.selectNext}>Next</a>
+                  <a href="#" className="yith-minimize-button" onClick={this.toggleContext}>{this.state.minimized ? "+" : "_"}</a>
+                </nav>
               </div>
               
               {this.getMirador()}

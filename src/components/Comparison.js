@@ -1,18 +1,67 @@
 import React, { Component } from 'react';
+import Mirador from "./Mirador";
 
 class Comparison extends Component {
 
+  constructor(props) {
+    super(props);
+
+    this.showModal = this.showModal.bind(this);
+  }
+
+  showModal(e) {
+    e.stopPropagation();
+    e.preventDefault();
+    this.props.showModal(false);
+  }
+
   render() {
 
-    console.log(this.props)
-
+  if (this.props.active) {
     return (
       <React.Fragment>
-        <div className="yith-structure">
+        <a className="yith-close"
+           tabIndex="0"
+           href="#"
+           aria-label={`Close Viewer`}
+           onClick={this.showModal}
+        >
+          Close Viewer
+        </a>
+        <div className="yith-modal">
+          <Mirador
+            config={{
+              id: 'yith-mirador-default',
+              window: {
+                hideWindowTitle: false,
+                sideBarOpen: false,
+                defaultSidebarPanelWidth: 320,
+                allowTopMenuButton: true,
+                allowWindowSideBar: true,
+                allowMaximize: false,
+                allowClose: false,
+                forceDrawAnnotations: true
+              },
+              windows: [
+                {
+                  manifestId: this.props.sequence[0].manifest
+                },
+                {
+                  manifestId: this.props.sequence[1].manifest
+                }
+              ],
+              workspaceControlPanel: {
+                enabled: false,
+              },
+            }}
+            plugins={[]}
+            mode="initial"
+          />
         </div>
       </React.Fragment>
     )
-
+  } else
+    return null
   }
 
 }

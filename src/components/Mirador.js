@@ -63,7 +63,11 @@ class Mirador extends Component {
   }
 
   render() {
+
     const { config } = this.props;
+
+    console.log(config)
+
     return <div id={config.id} />;
   }
 }

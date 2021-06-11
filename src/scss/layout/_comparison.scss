@@ -1,4 +1,9 @@
 .yith-comparison {
+  max-width: 100%;
+  width: 500px;
+  box-shadow: $box-shadow;
+  display: flex;
+
   .yith-comparison-teaser {
     position: relative;
     display: inline-flex;
@@ -11,7 +16,6 @@
       text-align: center;
       bottom: 2em;
       margin: 0;
-
     }
   }
 }

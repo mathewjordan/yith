@@ -10,9 +10,10 @@
 
     .yith-figure--preview--inner {
       display: flex;
-      background-color: purple;
+      background-color: $lighten2;
       position: relative;
       overflow: hidden;
+      box-shadow: $box-shadow;
 
       img {
         margin: 0;

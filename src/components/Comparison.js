@@ -43,7 +43,7 @@ class Comparison extends Component {
                   forceDrawAnnotations: true,
                   views: [
                     { key: 'single', behaviors: ['individuals'] },
-                    { key: 'book', behaviors: ['individuals'] },
+                    { key: 'book', behaviors: ['paged'] },
                   ],
                 },
                 windows: [

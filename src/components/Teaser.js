@@ -41,8 +41,8 @@ class Teaser extends Component {
 
           return (
             <div className="yith-teaser">
-              <TeaserFigure data={this.state.data[0]} region={region} size={size} />
-              <TeaserFigure data={this.state.data[1]} region={region} size={size} />
+              <TeaserFigure data={this.state.data[0]} canvas={this.props.sequence[0].canvas} region={region} size={size} />
+              <TeaserFigure data={this.state.data[1]} canvas={this.props.sequence[1].canvas} region={region} size={size} />
             </div>
           )
 

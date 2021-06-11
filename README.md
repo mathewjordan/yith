@@ -8,15 +8,15 @@ A frontend tool that leverages IIIF manifests and interweaves them into flexible
 
 ## Limitations
 
-- Yith is a proof of concept and should net yet be used for production sites.
-- Yith currently only works with IIIF Presentation 3.0 API manifests.
-- Yith is optimized for usage with manifests where the initial index of `items` in the `body` is of `"type": "Image"`.
+- Yith is a proof of concept and should net yet be used for production sites
+- Yith currently only works with IIIF Presentation 3.0 API manifests
+- Yith is optimized for usage with manifests where the initial index of `items` in the `body` is of `"type": "Image"`
 
 
 ## Next Steps
 
-- Introduce casual loading mechanism and refine manifest request order.
-- Introduce _Comparison_ component for 2-up analysis
+- Introduce casual loading mechanism and refine manifest request order
+- Add attribution to _Comparison_ component teasers
 - Simplify and modularize componentry
 
 ## Components
@@ -82,28 +82,31 @@ A Chrononology component renders a fully responsive vertical timeline with manif
 <img width="567" alt="image" src="https://user-images.githubusercontent.com/7376450/120081289-f72eee80-c08a-11eb-81c0-c0ce5f85efa6.png">
 
 ```
-<div class="yith yith-chronology" id="galston-chronology" data-mode="chronology">
+<div class="yith yith-chronology" id="stuidenbuch-chronology" data-mode="chronology">
     <div class="yith-structure">
         <span>1900</span>
         <span>1901</span>
         <span class="yith-date">1902</span>
         <span class="yith-emblem">1902</span>
-        <div class="yith-manifest"
-             data-manifest="https://digital.lib.utk.edu/assemble/manifest/galston/710"></div>
+        <figure class="yith-manifest"
+                data-manifest="https://digital.lib.utk.edu/assemble/manifest/galston/710"></figure>
         <span>1903</span>
         <span>1904</span>
-        <span>1905</span>
+        <span class="yith-date">1905</span>
+        <span class="yith-emblem">1905</span>
+        <figure class="yith-manifest"
+                data-manifest="https://digital.lib.utk.edu/assemble/manifest/galston/700"
+                data-region="2450,1400,3000,2300"
+                data-autozoom="true"></figure>
         <span>1906</span>
         <span>1907</span>
         <span class="yith-date">1908</span>
         <span class="yith-emblem">1908</span>
-        <div class="yith-manifest"
-             data-manifest="https://digital.lib.utk.edu/assemble/manifest/galston/703"
-             data-region="1050,600,2000,1400"
-             data-autozoom="true"></div>
+        <figure class="yith-manifest"
+                data-manifest="https://digital.lib.utk.edu/assemble/manifest/galston/703"
+                data-region="1050,600,2000,1400"></figure>
         <span>1909</span>
         <span>1910</span>
-        <span>1911</span>
     </div>
 </div>
 ```

@@ -60,18 +60,11 @@ class Projection extends Component {
     }
   }
 
-  minimize = (e) => {
+  toggleContext = (e) => {
     e.stopPropagation();
     e.preventDefault();
 
-    this.setState({minimized: true});
-  }
-
-  maximize = (e) => {
-    e.stopPropagation();
-    e.preventDefault();
-
-    this.setState({minimized: false});
+    this.setState({minimized: !this.state.minimized});
   }
 
   hasAnnotations = (current) => {
@@ -207,22 +200,20 @@ class Projection extends Component {
               Close Viewer
             </a>
             <div className="yith-modal">
-              <div className={this.state.minimized ? "yith-context yith-hidden" : "yith-context"}>
+              <div className="yith-context">
                 <nav>
                   <a href="#" onClick={this.selectPrev}>Prev</a>
                   <a href="#" onClick={this.selectNext}>Next</a>
-                  <a href="#" className="yith-minimize-button" onClick={this.minimize}>_</a>
+                  <a href="#" className="yith-minimize-button" onClick={this.toggleContext}>{this.state.minimized ? "+" : "_"}</a>
                 </nav>
-                <div className="yith-context--html" dangerouslySetInnerHTML={{__html:this.props.sequence[this.state.index].value}}></div>
-                <div className="yith-context--details">
-                  {this.getManifestDetails()}
+                <div className={this.state.minimized ? "yith-hidden" : ""}>
+                  <div className="yith-context--html" dangerouslySetInnerHTML={{__html:this.props.sequence[this.state.index].value}}></div>
+                  <div className="yith-context--details">
+                    {this.getManifestDetails()}
+                  </div>
                 </div>
               </div>
-              <div className={!this.state.minimized ? "yith-minibar yith-hidden" : "yith-minibar"}>
-                <a href="#" onClick={this.selectPrev}>prev</a>
-                <a href="#" onClick={this.selectNext}>next</a>
-                <a href="#" onClick={this.maximize}>+</a>
-              </div>
+              
               {this.getMirador()}
             </div>
           </div>

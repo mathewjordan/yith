@@ -3870,10 +3870,10 @@ minimist@^1.2.0, minimist@^1.2.5:
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
   integrity sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==
 
-mirador@^3.1.1:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/mirador/-/mirador-3.1.1.tgz#53d2c3a4c6f2686ffc0214c5f3d626d673db1d28"
-  integrity sha512-CHNzlfiS7Zag+JpXLjRmfq1nAu5+EGZFxRS4I2HP1i7BQ1W6B5zzw/wLVGuZYconCjuR1PwRK3LsSllnuvOh1Q==
+mirador@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/mirador/-/mirador-3.2.0.tgz#0171478d09ca810ba67bca4a34243434e4dac8f9"
+  integrity sha512-AVyI8fi06ELWIGqDjCp+fFmY4FzKvJKlr24vubISxS/s5aB1O+bfqOH+H9+kaMh9msb9OCJGmD90SMO/+Kc+6A==
   dependencies:
     "@material-ui/core" "^4.11.0"
     "@material-ui/icons" "^4.9.1"
@@ -3912,7 +3912,7 @@ mirador@^3.1.1:
     react-sizeme "^2.6.7"
     react-virtualized-auto-sizer "^1.0.2"
     react-window "^1.8.5"
-    redux "4.0.5"
+    redux "^4.0.5"
     redux-devtools-extension "^2.13.2"
     redux-saga "^1.1.3"
     redux-thunk "^2.3.0"
@@ -4826,15 +4826,7 @@ redux-thunk@^2.3.0:
   resolved "https://registry.yarnpkg.com/redux-thunk/-/redux-thunk-2.3.0.tgz#51c2c19a185ed5187aaa9a2d08b666d0d6467622"
   integrity sha512-km6dclyFnmcvxhAcrQV2AkZmPQjzPDjgVlQtR0EQjxZPyJ0BnMf3in1ryuR8A2qU0HldVRfxYXbFSKlI3N7Slw==
 
-redux@4.0.5:
-  version "4.0.5"
-  resolved "https://registry.yarnpkg.com/redux/-/redux-4.0.5.tgz#4db5de5816e17891de8a80c424232d06f051d93f"
-  integrity sha512-VSz1uMAH24DM6MF72vcojpYPtrTUu3ByVWfPL1nPfVRb5mZVTve5GnNCUV53QM/BZ66xfWrm0CTWoM+Xlz8V1w==
-  dependencies:
-    loose-envify "^1.4.0"
-    symbol-observable "^1.2.0"
-
-redux@^4.0.0, redux@^4.0.4:
+redux@^4.0.0, redux@^4.0.4, redux@^4.0.5:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/redux/-/redux-4.1.0.tgz#eb049679f2f523c379f1aff345c8612f294c88d4"
   integrity sha512-uI2dQN43zqLWCt6B/BMGRMY6db7TTY4qeHHfGeKb3EOhmOKjU3KdWvNLJyqaHRksv/ErdNH7cFZWg9jXtewy4g==
@@ -5475,7 +5467,7 @@ supports-color@^7.0.0:
   dependencies:
     has-flag "^4.0.0"
 
-symbol-observable@1.2.0, symbol-observable@^1.2.0:
+symbol-observable@1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.2.0.tgz#c22688aed4eab3cdc2dfeacbb561660560a00804"
   integrity sha512-e900nM8RRtGhlV36KGEU9k65K3mPb1WV70OdjfxlG2EAuM1noi/E/BaW/uMhL7bPEssK8QV57vN3esixjUvcXQ==

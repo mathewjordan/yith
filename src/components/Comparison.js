@@ -33,18 +33,13 @@ class Comparison extends Component {
               config={{
                 id: 'yith-mirador-default',
                 window: {
-                  defaultView: 'single',
                   hideWindowTitle: false,
                   sideBarOpen: false,
                   allowTopMenuButton: true,
                   allowWindowSideBar: true,
                   allowMaximize: false,
                   allowClose: false,
-                  forceDrawAnnotations: true,
-                  views: [
-                    { key: 'single', behaviors: ['individuals'] },
-                    { key: 'book', behaviors: ['paged'] },
-                  ],
+                  forceDrawAnnotations: true
                 },
                 windows: [
                   {

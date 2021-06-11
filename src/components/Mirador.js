@@ -55,6 +55,7 @@ class Mirador extends Component {
   }
 
   componentDidMount() {
+    console.log(true)
     this.handleInstance(this.props.mode)
   }
 

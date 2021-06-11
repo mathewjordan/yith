@@ -17,52 +17,58 @@ class Comparison extends Component {
 
   render() {
 
-  if (this.props.active) {
-    return (
-      <React.Fragment>
-        <a className="yith-close"
-           tabIndex="0"
-           href="#"
-           aria-label={`Close Viewer`}
-           onClick={this.showModal}
-        >
-          Close Viewer
-        </a>
-        <div className="yith-modal">
-          <Mirador
-            config={{
-              id: 'yith-mirador-default',
-              window: {
-                hideWindowTitle: false,
-                sideBarOpen: false,
-                defaultSidebarPanelWidth: 320,
-                allowTopMenuButton: true,
-                allowWindowSideBar: true,
-                allowMaximize: false,
-                allowClose: false,
-                forceDrawAnnotations: true
-              },
-              windows: [
-                {
-                  manifestId: this.props.sequence[0].manifest
+    if (this.props.active) {
+      return (
+        <React.Fragment>
+          <a className="yith-close"
+             tabIndex="0"
+             href="#"
+             aria-label={`Close Viewer`}
+             onClick={this.showModal}
+          >
+            Close Viewer
+          </a>
+          <div className="yith-modal">
+            <Mirador
+              config={{
+                id: 'yith-mirador-default',
+                window: {
+                  defaultView: 'single',
+                  hideWindowTitle: false,
+                  sideBarOpen: false,
+                  allowTopMenuButton: true,
+                  allowWindowSideBar: true,
+                  allowMaximize: false,
+                  allowClose: false,
+                  forceDrawAnnotations: true,
+                  views: [
+                    { key: 'single', behaviors: ['individuals'] },
+                    { key: 'book', behaviors: ['individuals'] },
+                  ],
                 },
-                {
-                  manifestId: this.props.sequence[1].manifest
-                }
-              ],
-              workspaceControlPanel: {
-                enabled: false,
-              },
-            }}
-            plugins={[]}
-            mode="initial"
-          />
-        </div>
-      </React.Fragment>
-    )
-  } else
-    return null
-  }
+                windows: [
+                  {
+                    manifestId: this.props.sequence[0].manifest,
+                    canvasId: this.props.sequence[0].canvas
+                  },
+                  {
+                    manifestId: this.props.sequence[1].manifest,
+                    canvasId: this.props.sequence[1].canvas
+                  }
+                ],
+                workspaceControlPanel: {
+                  enabled: false,
+                },
+              }}
+              plugins={[]}
+              mode="initial"
+            />
+          </div>
+        </React.Fragment>
+      )
+    } else
+      return null
+    }
 
 }
 

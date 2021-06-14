@@ -9,6 +9,18 @@
     display: inline-flex;
     justify-content: center;
 
+    &::after {
+      background-color: red;
+      display: block;
+      width: 100%;
+      height: 61.8%;
+      content: '';
+      position: absolute;
+      bottom: 0;
+      background:$accent;
+      background: linear-gradient(0deg, rgba($accent, 61.8%) 38.2%, rgba($accent, 0) 100%);
+    }
+
     .yith-expand {
       position: absolute;
       z-index: 1;

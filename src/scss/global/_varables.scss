@@ -1,7 +1,0 @@
-$accent: #1a181a;
-$darken1: desaturate(darken($accent, 10), 10);
-$lighten1: desaturate(lighten($accent, 20), 20);
-$lighten2: desaturate(lighten($accent, 50), 50);
-$sans: 'Gotham', system-ui, -apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-
-$box-shadow: 8px 8px 23px rgba($darken1, 0.15);

@@ -1,0 +1,41 @@
+{
+  "description": [
+    "Photographed in 2003."
+  ],
+  "label": "Yonghegong Monastery. Interior: Qianlong Emperor dressed as Tibetan teacher in Panchen hat, detail: retinue figures",
+  "sequences": [
+    {
+      "canvases": [
+        {
+          "height": "480",
+          "images": [
+            {
+              "motivation": "sc:painting",
+              "resource": {
+                "label": "inu-dil-d756ec3d-8bcc-4589-bbd3-3681bf1dec26.tif",
+                "service": {
+                  "profile": "http://iiif.io/api/image/2/level2.json",
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://iiif.stack.rdc.library.northwestern.edu/iiif/2/7b51a759-a34b-4352-8a8f-f9785057d19e"
+                },
+                "@id": "https://iiif.stack.rdc.library.northwestern.edu/iiif/2/7b51a759-a34b-4352-8a8f-f9785057d19e/full/600,/0/default.jpg",
+                "@type": "dctypes:Image"
+              },
+              "@type": "oa:Annotation"
+            }
+          ],
+          "label": "inu-dil-d756ec3d-8bcc-4589-bbd3-3681bf1dec26.tif",
+          "width": "640",
+          "@id": "https://iiif.stack.rdc.library.northwestern.edu/public/87/9d/c5/5a/-3/14/e-/4a/08/-9/1b/2-/78/c9/98/ef/c6/5c-manifest.json/canvas/7b51a759-a34b-4352-8a8f-f9785057d19e",
+          "@type": "sc:Canvas"
+        }
+      ],
+      "@context": "http://iiif.io/api/presentation/2/context.json",
+      "@id": "/sequence/normal",
+      "@type": "sc:Sequence"
+    }
+  ],
+  "@context": "http://iiif.io/api/presentation/2/context.json",
+  "@id": "https://iiif.stack.rdc.library.northwestern.edu/public/87/9d/c5/5a/-3/14/e-/4a/08/-9/1b/2-/78/c9/98/ef/c6/5c-manifest.json",
+  "@type": "sc:Manifest"
+}

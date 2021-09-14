@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from "react";
-import Presentation from "./screens/presentation";
-import Projection from "./screens/projection";
+import Presentation from "../screens/Presentation";
+import Projection from "../screens/Projection";
 import { Validator } from '@hyperion-framework/validator';
 import { Vault } from '@hyperion-framework/vault';
 
@@ -24,6 +24,7 @@ const validateManifest = ( uri: string ) => {
     const vault = new Vault();
     const validator = new Validator();
     vault.loadManifest(uri).then(manifest => {
+        console.log(manifest)
         return validator.validateManifest(manifest);
     }).catch(error => {
         console.log(`Manifest failed to load: ${error}`);

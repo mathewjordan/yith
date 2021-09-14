@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/mathewjordan/yith#readme",
   "dependencies": {
+    "@types/node": "^16.9.1",
     "@types/react": "^17.0.20",
     "@types/react-dom": "^17.0.9",
     "esbuild": "^0.12.27",

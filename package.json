@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "esbuild src/index.tsx --bundle --minify --sourcemap --outfile=dist/bundle.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -19,12 +19,14 @@
   },
   "homepage": "https://github.com/mathewjordan/yith#readme",
   "dependencies": {
-    "@types/node": "^16.9.1",
+    "@types/jest": "^27.0.1",
     "@types/react": "^17.0.20",
     "@types/react-dom": "^17.0.9",
     "esbuild": "^0.12.27",
+    "jest": "^27.2.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "ts-jest": "^27.0.5",
     "typescript": "^4.4.3"
   }
 }

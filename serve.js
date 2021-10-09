@@ -14,7 +14,7 @@ const liveServer = require("live-server");
     // is propagated with a fallback.
     define: {
       "process.env.NODE_ENV": JSON.stringify(
-        process.env.NODE_ENV || "development"
+        process.env.NODE_ENV || "development",
       ),
     },
     entryPoints: ["src/dev.tsx"],

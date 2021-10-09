@@ -1,31 +1,16 @@
-import React, { useCallback, useState } from "react";
-import Presentation from "../screens/Presentation";
-import Projection from "../screens/Projection";
+import React from "react";
 import { Validator } from "@hyperion-framework/validator";
 import { Vault } from "@hyperion-framework/vault";
 
 interface Props {
-  screen: string;
+  id: string;
 }
 
-const Manifest: React.FC<Props> = () => {
-  validateManifest(
-    "https://iiif.stack.rdc.library.northwestern.edu/public/87/9d/c5/5a/-3/14/e-/4a/08/-9/1b/2-/78/c9/98/ef/c6/5c-manifest.json?manifest=https://iiif.stack.rdc.library.northwestern.edu/public/87/9d/c5/5a/-3/14/e-/4a/08/-9/1b/2-/78/c9/98/ef/c6/5c-manifest.json",
-  );
-
-  return (
-    <>
-      <Presentation manifest={{}} />
-      <Projection manifest={{}} />
-    </>
-  );
-};
-
-const validateManifest = (uri: string) => {
+const Manifest: React.FC<Props> = ({ id }) => {
   const vault = new Vault();
   const validator = new Validator();
   vault
-    .loadManifest(uri)
+    .loadManifest(id)
     .then((manifest) => {
       console.log(manifest);
       return validator.validateManifest(manifest);
@@ -33,8 +18,8 @@ const validateManifest = (uri: string) => {
     .catch((error) => {
       console.log(`Manifest failed to load: ${error}`);
     });
-};
 
-export { validateManifest };
+  return <></>;
+};
 
 export default Manifest;

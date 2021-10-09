@@ -6,8 +6,8 @@
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "rm -rf dist && node build.js && tsc --emitDeclarationOnly --outDir dist",
-    "dev": "node serve.js",
+    "build": "rm -rf dist && node build.ts && tsc --emitDeclarationOnly --outDir dist",
+    "dev": "node serve.ts",
     "test": "jest --watch",
     "clean": "rimraf dist"
   },

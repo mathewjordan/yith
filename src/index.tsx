@@ -1,2 +1,12 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import Manifest from "components/Manifest";
+
+interface Props {
+  manifestId: string;
+}
+
+const Yith: React.FC<Props> = ({ manifestId }) => {
+  return <Manifest id={manifestId}></Manifest>;
+};
+
+export default Yith;

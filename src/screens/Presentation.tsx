@@ -1,14 +1,11 @@
-import React, { useCallback, useState } from "react";
+import React from "react";
 
 interface Props {
-    manifest: object;
+  manifest: object;
 }
 
 const Presentation: React.FC<Props> = () => {
-    return (
-        <>
-        </>
-    );
+  return <></>;
 };
 
 export default Presentation;

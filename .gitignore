@@ -1,9 +1,11 @@
-# Standard
+#
 node_modules
 dist
+public/script.js
+public/script.js.map
 
-# OS
+#
 .DS_Store
 
-# IDE
+#
 .idea

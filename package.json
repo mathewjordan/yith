@@ -20,6 +20,7 @@
   "homepage": "https://github.com/mathewjordan/yith#readme",
   "dependencies": {
     "@hyperion-framework/parser": "^1.0.0",
+    "@hyperion-framework/types": "^1.0.0",
     "@hyperion-framework/validator": "^1.0.0",
     "@hyperion-framework/vault": "^1.0.2",
     "@types/jest": "^27.0.1",

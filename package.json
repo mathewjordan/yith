@@ -2,36 +2,64 @@
   "name": "yith",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "build": "esbuild src/index.tsx --bundle --minify --sourcemap --outfile=dist/bundle.js",
-    "test": "jest"
+    "build": "rm -rf dist && node build.js && tsc --emitDeclarationOnly --outDir dist",
+    "dev": "node serve.js",
+    "test": "jest --watch",
+    "clean": "rimraf dist"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mathewjordan/yith.git"
   },
-  "keywords": [],
+  "keywords": [
+    "IIIF",
+    "mirador"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/mathewjordan/yith/issues"
   },
   "homepage": "https://github.com/mathewjordan/yith#readme",
+  "devDependencies": {
+    "@testing-library/react": "^12.1.0",
+    "@types/jest": "^27.0.2",
+    "@types/testing-library__react": "^10.2.0",
+    "@typescript-eslint/eslint-plugin": "^4.31.2",
+    "@typescript-eslint/parser": "^4.31.2",
+    "chokidar": "^3.5.2",
+    "esbuild": "^0.12.28",
+    "esbuild-css-modules-plugin": "^2.0.9",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.26.0",
+    "jest": "^27.2.1",
+    "live-server": "^1.2.1",
+    "prettier": "^2.4.1",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^27.0.5",
+    "ts-node": "^10.2.1"
+  },
   "dependencies": {
     "@hyperion-framework/parser": "^1.0.0",
     "@hyperion-framework/types": "^1.0.0",
     "@hyperion-framework/validator": "^1.0.0",
     "@hyperion-framework/vault": "^1.0.2",
-    "@types/jest": "^27.0.1",
-    "@types/react": "^17.0.20",
+    "@stitches/react": "^1.2.0",
+    "@types/jest": "^27.0.2",
+    "@types/react": "^17.0.21",
     "@types/react-dom": "^17.0.9",
-    "esbuild": "^0.12.27",
-    "jest": "^27.2.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "ts-jest": "^27.0.5",
-    "ts-node": "^10.2.1",
     "typescript": "^4.4.3"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   }
 }

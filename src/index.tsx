@@ -6,7 +6,12 @@ interface Props {
 }
 
 const Yith: React.FC<Props> = ({ manifestId }) => {
-  return <Manifest id={manifestId}></Manifest>;
+  return (
+    <>
+      {manifestId}
+      <Manifest id={manifestId}></Manifest>
+    </>
+  );
 };
 
 export default Yith;

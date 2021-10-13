@@ -6,6 +6,7 @@ interface YithProps {
   type: string;
   children: ReactChildren;
 }
+
 interface YithComposition {
   Figure: React.FC<FigureProps>;
 }

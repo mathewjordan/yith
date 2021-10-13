@@ -2,11 +2,11 @@ import { ManifestNormalized } from "@hyperion-framework/types";
 import { useYithState } from "context/yith-context";
 import React from "react";
 
-interface FigureProps {
+export interface FigureProps {
   manifest: string;
 }
 
-const Figure: React.FC<FigureProps> = ({ manifest }) => {
+export const Figure: React.FC<FigureProps> = ({ manifest }) => {
   const state: any = useYithState();
   const { vault } = state;
 
@@ -31,5 +31,3 @@ const Figure: React.FC<FigureProps> = ({ manifest }) => {
 
   return <>{manifest}</>;
 };
-
-export default Figure;

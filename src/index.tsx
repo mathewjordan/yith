@@ -4,14 +4,18 @@ import {
   useYithState,
   useYithDispatch,
 } from "context/yith-context";
-import Figure from "components/Figure";
+import { Figure, FigureProps } from "components/Figure";
 
 interface YithProps {
   type: string;
   children: ReactChildren;
 }
+interface YithComposition {
+  Figure: React.FC<FigureProps>;
+}
 
-export const Yith: React.FC<YithProps> = ({ type, children }) => {
+const Yith: React.FC<YithProps> & YithComposition = (props) => {
+  const { type, children } = props;
   return (
     <YithProvider>
       {type}

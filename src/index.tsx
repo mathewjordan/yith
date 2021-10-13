@@ -1,9 +1,5 @@
 import React, { ReactChildren } from "react";
-import {
-  YithProvider,
-  useYithState,
-  useYithDispatch,
-} from "context/yith-context";
+import { YithProvider } from "context/yith-context";
 import { Figure, FigureProps } from "components/Figure";
 
 interface YithProps {

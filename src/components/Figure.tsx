@@ -6,23 +6,27 @@ interface Props {
 }
 
 const Figure: React.FC<Props> = ({ manifest }) => {
-  // Get Context state
-  const yithState: any = useYithState();
-  const { vault } = yithState;
+  const state: any = useYithState();
+  const { vault } = state;
 
-  const entity = vault.fromRef({
-    id: manifest,
-    type: "Manifest",
-  });
-  console.log(entity);
   vault
     .loadManifest(manifest)
     .then((data) => {
-      console.log(data);
+      // dispatch action?
     })
     .catch((error) => {
       console.log(`Manifest failed to load: ${error}`);
+    })
+    .finally(() => {
+      // verify exists in vault
+      console.log(
+        vault.fromRef({
+          id: manifest,
+          type: "Manifest",
+        })
+      );
     });
+
   return <>{manifest}</>;
 };
 

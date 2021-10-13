@@ -1,11 +1,11 @@
-import React from "react";
+import React, { ReactChildren } from "react";
 
 interface Props {
-  manifest: object;
+  children: ReactChildren;
 }
 
-const Projection: React.FC<Props> = () => {
-  return <></>;
+const Projection: React.FC<Props> = ({ children }) => {
+  return <>{children}</>;
 };
 
 export default Projection;

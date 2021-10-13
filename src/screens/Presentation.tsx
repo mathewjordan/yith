@@ -1,11 +1,11 @@
-import React from "react";
+import React, { ReactChildren } from "react";
 
 interface Props {
-  manifest: object;
+  children: ReactChildren;
 }
 
-const Presentation: React.FC<Props> = () => {
-  return <></>;
+const Presentation: React.FC<Props> = ({ children }) => {
+  return <>{children}</>;
 };
 
 export default Presentation;

@@ -1,20 +1,22 @@
+import { ManifestNormalized } from "@hyperion-framework/types";
 import { useYithState } from "context/yith-context";
 import React from "react";
 
-interface Props {
+interface FigureProps {
   manifest: string;
 }
 
-const Figure: React.FC<Props> = ({ manifest }) => {
+const Figure: React.FC<FigureProps> = ({ manifest }) => {
   const state: any = useYithState();
   const { vault } = state;
 
   vault
     .loadManifest(manifest)
-    .then((data) => {
+    .then((data: ManifestNormalized) => {
       // dispatch action?
+      console.log(data.label);
     })
-    .catch((error) => {
+    .catch((error: any) => {
       console.log(`Manifest failed to load: ${error}`);
     })
     .finally(() => {

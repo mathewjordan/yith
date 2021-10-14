@@ -11,6 +11,7 @@ const shared = {
   logLevel: "info",
   minify: true,
   sourcemap: true,
+  platform: "node",
 };
 
 build({

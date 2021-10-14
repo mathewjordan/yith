@@ -12,13 +12,15 @@ const Dev: React.FC = () => {
         <Yith.Figure manifest={manifest} />
       </Yith>
 
-      <Yith type="presentation">
+      {/* <Yith type="presentation">
         <Yith.Figure manifest={manifest} canvas={{}} />
       </Yith>
 
       <Yith type="projection">
         <Yith.Figure manifest={manifest} />
-      </Yith>
+        <Yith.Figure manifest={manifest} />
+        <Yith.Figure manifest={manifest} />
+      </Yith> */}
     </>
   );
 };

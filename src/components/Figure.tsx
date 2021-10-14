@@ -24,9 +24,9 @@ export const Figure: FC<FigureProps> = ({
       <StyledTrigger>
         <figure>
           <img
-            src={`${paintedAnnotation.body[0].service[0].id}/full/300,300/0/default.jpg`}
+            src={`${paintedAnnotation.body[0].service[0].id}/full/!300,300/0/default.jpg`}
           />
-          {/* <figcaption>{manifestLabel.none[0]}</figcaption> */}
+          <figcaption>{manifestLabel.none[0]}</figcaption>
           <span>Expand in Viewer</span>
         </figure>
       </StyledTrigger>

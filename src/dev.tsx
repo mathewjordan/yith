@@ -6,7 +6,7 @@ const Dev: FC = () => {
   return (
     <>
       <Yith type="presentation">
-        <Yith.Content manifestId="https://raw.githubusercontent.com/mathewjordan/mirador-playground/main/assets/iiif/manifest/cabin.json" />
+        <Yith.Content manifestId="https://api.artic.edu/api/v1/artworks/193664/manifest.json" />
       </Yith>
 
       <Yith type="presentation">

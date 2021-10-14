@@ -48,6 +48,7 @@ export const Content: FC<ContentProps> = ({ manifestId }) => {
         return annotation;
       }
     });
+
     return (
       <Figure
         canvaslabel={canvas.label}

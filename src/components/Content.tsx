@@ -20,6 +20,7 @@ export const Content: FC<ContentProps> = ({ manifestId }) => {
   vault
     .loadManifest(manifestId)
     .then((data: ManifestNormalized) => {
+      console.log(data);
       // dispatch action to set sequence?
       setManifest(data);
     })

@@ -6,6 +6,10 @@ const Dev: FC = () => {
   return (
     <>
       <Yith type="presentation">
+        <Yith.Content manifestId="https://raw.githubusercontent.com/mathewjordan/mirador-playground/main/assets/iiif/manifest/cabin.json" />
+      </Yith>
+
+      <Yith type="presentation">
         <Yith.Content manifestId="https://iiif.stack.rdc.library.northwestern.edu/public/97/21/96/ff/-d/61/4-/4b/76/-9/d1/2-/80/e1/8f/1f/37/c9-manifest.json" />
       </Yith>
 
@@ -18,7 +22,11 @@ const Dev: FC = () => {
       </Yith>
 
       <Yith type="presentation">
-        <Yith.Content manifestId="https://iiif.stack.rdc.library.northwestern.edu/public/14/a6/aa/15/-9/e1/2-/47/a7/-9/61/7-/91/f4/30/d4/f4/7b-manifest.json" />
+        <Yith.Content manifestId="https://iiif.harvardartmuseums.org/manifests/object/295813" />
+      </Yith>
+
+      <Yith type="presentation">
+        <Yith.Content manifestId="https://api.artic.edu/api/v1/artworks/144971/manifest.json" />
       </Yith>
     </>
   );

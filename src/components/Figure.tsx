@@ -24,9 +24,9 @@ export const Figure: FC<FigureProps> = ({
       <StyledTrigger>
         <figure>
           <img
-            src={`${paintedAnnotation.body[0].service[0].id}/full/!300,300/0/default.jpg`}
+            src={`${paintedAnnotation.body[0].service[0].id}/full/300,300/0/default.jpg`}
           />
-          <figcaption>{manifestLabel.none[0]}</figcaption>
+          {/* <figcaption>{manifestLabel.none[0]}</figcaption> */}
           <span>Expand in Viewer</span>
         </figure>
       </StyledTrigger>
@@ -52,7 +52,6 @@ export const Figure: FC<FigureProps> = ({
 };
 
 const StyledTrigger = styled(Dialog.Trigger, {
-  display: "flex",
   cursor: "pointer",
   backgroundColor: "transparent",
   border: "none",
@@ -62,8 +61,7 @@ const StyledTrigger = styled(Dialog.Trigger, {
   },
 
   figcaption: {
-    display: "flex",
-    whiteSpace: "normal",
+    display: "flex-inline",
   },
 });
 

@@ -1,7 +1,7 @@
-import React, { ReactChildren } from "react";
+import React, { FC, ReactChildren } from "react";
 import { YithProvider } from "context/yith-context";
-import { Figure, FigureProps } from "components/Figure";
-import { Presentation } from "screens";
+import { Content, ContentProps } from "components/Content";
+import { Presentation, Projection } from "screens";
 
 interface YithProps {
   type: string;
@@ -9,16 +9,18 @@ interface YithProps {
 }
 
 interface YithComposition {
-  Figure: React.FC<FigureProps>;
+  Figure: React.FC<ContentProps>;
 }
 
-const Yith: React.FC<YithProps> & YithComposition = (props) => {
+const Yith: FC<YithProps> & YithComposition = (props) => {
   const { type, children } = props;
 
   const screen = (type: string) => {
     switch (type) {
       case "presentation":
         return <Presentation children={children} />;
+      case "projection":
+        return <Projection children={children} />;
       default:
         return (
           <span>
@@ -31,6 +33,6 @@ const Yith: React.FC<YithProps> & YithComposition = (props) => {
   return <YithProvider>{screen(type)}</YithProvider>;
 };
 
-Yith.Figure = Figure;
+Yith.Content = Content;
 
 export default Yith;

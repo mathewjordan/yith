@@ -1,33 +1,30 @@
-import { ManifestNormalized } from "@hyperion-framework/types";
-import { useYithState } from "context/yith-context";
-import React from "react";
+import React, { FC } from "react";
+import { Annotation, InternationalString } from "@hyperion-framework/types";
 
 export interface FigureProps {
-  manifest: string;
+  canvasLabel: InternationalString;
+  manifestLabel: InternationalString;
+  paintedAnnotation: Annotation;
 }
 
-export const Figure: React.FC<FigureProps> = ({ manifest }) => {
-  const state: any = useYithState();
-  const { vault } = state;
+export const Figure: FC<FigureProps> = ({
+  canvasLabel,
+  manifestLabel,
+  paintedAnnotation,
+}) => {
+  /*
+   * todo: build a hook that gets the image from the image server
+   */
 
-  vault
-    .loadManifest(manifest)
-    .then((data: ManifestNormalized) => {
-      // dispatch action?
-      console.log(data.label);
-    })
-    .catch((error: any) => {
-      console.log(`Manifest failed to load: ${error}`);
-    })
-    .finally(() => {
-      // verify exists in vault
-      console.log(
-        vault.fromRef({
-          id: manifest,
-          type: "Manifest",
-        })
-      );
-    });
-
-  return <>{manifest}</>;
+  return (
+    <figure>
+      <img
+        src={`${paintedAnnotation.body[0].service[0].id}/full/!300,300/0/default.jpg`}
+      />
+      <figcaption>
+        {canvasLabel && canvasLabel.none[0]}
+        {manifestLabel.none[0]}
+      </figcaption>
+    </figure>
+  );
 };

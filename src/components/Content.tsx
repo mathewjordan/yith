@@ -20,7 +20,7 @@ export const Content: FC<ContentProps> = ({ manifestId }) => {
   vault
     .loadManifest(manifestId)
     .then((data: ManifestNormalized) => {
-      // dispatch action?
+      // dispatch action to set sequence?
       setManifest(data);
     })
     .catch((error: any) => {
@@ -50,11 +50,7 @@ export const Content: FC<ContentProps> = ({ manifestId }) => {
     });
 
     return (
-      <Figure
-        canvaslabel={canvas.label}
-        manifestLabel={manifest.label}
-        paintedAnnotation={painting[0]}
-      />
+      <Figure manifestLabel={manifest.label} paintedAnnotation={painting[0]} />
     );
   }
 };

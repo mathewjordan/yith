@@ -1,16 +1,11 @@
 import React, { FC, useEffect } from "react";
 import mirador from "mirador";
 
-export const Mirador: FC = ({ manifestId }) => {
+export const Mirador: FC = ({ config }) => {
   useEffect(() => {
-    mirador.viewer(
-      {
-        id: "mirador", // id selector where Mirador should be instantiated
-      },
-      []
-    );
+    mirador.viewer(config, []);
   }, []);
 
   //   miradorInstance.store.dispatch(actions.addWindow());
-  return <div id="mirador">this</div>;
+  return <div id={config.id} />;
 };

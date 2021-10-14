@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import { Annotation, InternationalString } from "@hyperion-framework/types";
 import * as Dialog from "@radix-ui/react-dialog";
 import { Mirador } from "./Mirador";
-
+import { styled } from "@stitches/react";
 export interface FigureProps {
   manifestId: string;
   manifestLabel: InternationalString;
@@ -18,8 +18,6 @@ export const Figure: FC<FigureProps> = ({
    * todo: build a hook that gets the image from the image server
    */
 
-  console.log(manifestId);
-
   return (
     <Dialog.Root modal={true}>
       <Dialog.Trigger>
@@ -30,12 +28,31 @@ export const Figure: FC<FigureProps> = ({
           <figcaption>{manifestLabel.none[0]}</figcaption>
         </figure>
       </Dialog.Trigger>
-      <Dialog.Content>
+      <StyledContent>
         <Dialog.Title />
         <Dialog.Description />
         <Dialog.Close />
-        <Mirador manifestId={manifestId} />
-      </Dialog.Content>
+        <Mirador
+          config={{
+            id: `yith`,
+            createGenerateClassNameOptions: {
+              // Options passed directly to createGenerateClassName in Material-UI https://material-ui.com/styles/api/#creategenerateclassname-options-class-name-generator
+              productionPrefix: `yith`,
+            },
+            windows: [
+              {
+                manifestId: manifestId,
+              },
+            ],
+          }}
+        />
+      </StyledContent>
     </Dialog.Root>
   );
 };
+
+const StyledContent = styled(Dialog.Content, {
+  position: "fixed",
+  width: "100%",
+  height: "100%",
+});

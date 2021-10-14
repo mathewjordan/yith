@@ -50,7 +50,11 @@ export const Content: FC<ContentProps> = ({ manifestId }) => {
     });
 
     return (
-      <Figure manifestLabel={manifest.label} paintedAnnotation={painting[0]} />
+      <Figure
+        manifestId={manifestId}
+        manifestLabel={manifest.label}
+        paintedAnnotation={painting[0]}
+      />
     );
   }
 };

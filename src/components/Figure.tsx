@@ -1,8 +1,9 @@
 import React, { FC } from "react";
 import { Annotation, InternationalString } from "@hyperion-framework/types";
 import * as Dialog from "@radix-ui/react-dialog";
-import { Mirador } from "./Mirador";
 import { styled } from "@stitches/react";
+import { Mirador } from "./Mirador";
+
 export interface FigureProps {
   manifestId: string;
   manifestLabel: InternationalString;
@@ -20,17 +21,16 @@ export const Figure: FC<FigureProps> = ({
 
   return (
     <Dialog.Root modal={true}>
-      <Dialog.Trigger>
+      <StyledTrigger>
         <figure>
           <img
             src={`${paintedAnnotation.body[0].service[0].id}/full/!300,300/0/default.jpg`}
           />
           <figcaption>{manifestLabel.none[0]}</figcaption>
+          <span>Expand in Viewer</span>
         </figure>
-      </Dialog.Trigger>
+      </StyledTrigger>
       <StyledContent>
-        <Dialog.Title />
-        <Dialog.Description />
         <Dialog.Close />
         <Mirador
           config={{
@@ -50,6 +50,22 @@ export const Figure: FC<FigureProps> = ({
     </Dialog.Root>
   );
 };
+
+const StyledTrigger = styled(Dialog.Trigger, {
+  display: "flex",
+  cursor: "pointer",
+  backgroundColor: "transparent",
+  border: "none",
+
+  figure: {
+    margin: "0",
+  },
+
+  figcaption: {
+    display: "flex",
+    whiteSpace: "normal",
+  },
+});
 
 const StyledContent = styled(Dialog.Content, {
   position: "fixed",

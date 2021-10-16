@@ -17,7 +17,7 @@ A frontend tool that leverages IIIF manifests and interweaves them into flexible
 
 ## Build
 
-- Hyperion Framework
-- Mirador
-- Radiux UI
-- Stitches
+- [Hyperion Framework](https://github.com/digirati-labs/hyperion) by [@stephenwf](https://github.com/stephenwf) of [Digirati](https://digirati.com/)
+- [Mirador](https://github.com/ProjectMirador/mirador)
+- [Radiux Primitives](https://www.radix-ui.com/docs/primitives)
+- [Stitches](https://stitches.dev/)

@@ -1,5 +1,4 @@
 import React, { FC } from "react";
-import { uuid } from "services/uuid";
 import { Annotation, InternationalString } from "@hyperion-framework/types";
 import * as Dialog from "@radix-ui/react-dialog";
 import { styled } from "@stitches/react";
@@ -39,8 +38,6 @@ export const Figure: FC<FigureProps> = ({
    * todo: build a hook that gets the image from the image server
    */
 
-  const prefix: string = `yith-${uuid()}`;
-
   return (
     <Dialog.Root modal={true}>
       <StyledTrigger>
@@ -56,10 +53,6 @@ export const Figure: FC<FigureProps> = ({
         <Dialog.Close>Close Viewer</Dialog.Close>
         <Mirador
           config={{
-            id: prefix,
-            createGenerateClassNameOptions: {
-              productionPrefix: `${prefix}-mirador-`,
-            },
             windows: [
               {
                 manifestId: manifestId,
@@ -67,6 +60,7 @@ export const Figure: FC<FigureProps> = ({
             ],
             ...defaultConfig,
           }}
+          plugins={[]}
         />
       </StyledContent>
     </Dialog.Root>

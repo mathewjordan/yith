@@ -1,13 +1,23 @@
 import React, { FC, useEffect } from "react";
 import mirador from "mirador";
+import { uuid } from "services/uuid";
 
-export const Mirador: FC = ({ config }) => {
-  console.log(config.id);
+export const Mirador: FC = ({ config, plugins }) => {
+  let miradorInstance = undefined;
+  const prefix: string = `yith-${uuid()}`;
+  const miradorConfig = {
+    id: prefix,
+    createGenerateClassNameOptions: {
+      productionPrefix: prefix,
+    },
+    ...config,
+  };
 
   useEffect(() => {
-    mirador.viewer(config, []);
-  }, [config.id]);
+    miradorInstance = mirador.viewer(miradorConfig, plugins);
+    console.log(miradorInstance);
+  }, [prefix]);
 
   //   miradorInstance.store.dispatch(actions.addWindow());
-  return <div id={config.id} />;
+  return <div id={prefix} />;
 };

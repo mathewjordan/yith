@@ -4,7 +4,7 @@ A frontend tool that leverages IIIF manifests and interweaves them into flexible
 
 ## Types
 
-- **Presentation** - Showcase individual manifests or compare multiple in seperate deep-zoom windows
+- **Presentation** - Showcase individual manifests or compare multiple in separate deep-zoom windows
 - **Progression** - Tell a narrative story walking end users through multiple manifests
 - **Projection** - Provide an immersive guided tour driven by region targeted annotations
 

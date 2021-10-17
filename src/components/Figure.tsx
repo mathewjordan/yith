@@ -11,6 +11,25 @@ export interface FigureProps {
   paintedAnnotation: Annotation;
 }
 
+const defaultConfig = {
+  workspace: {
+    showZoomControls: true,
+  },
+  workspaceControlPanel: {
+    enabled: false,
+  },
+  window: {
+    allowClose: false,
+    allowMaximize: false,
+    allowTopMenuButton: true,
+    allowWindowSideBar: true,
+    defaultSidebarPanelWidth: 320,
+    forceDrawAnnotations: false,
+    hideWindowTitle: false,
+    sideBarOpen: true,
+  },
+};
+
 export const Figure: FC<FigureProps> = ({
   manifestId,
   manifestLabel,
@@ -20,7 +39,7 @@ export const Figure: FC<FigureProps> = ({
    * todo: build a hook that gets the image from the image server
    */
 
-  let prefix: string = `yith-${uuid()}`;
+  const prefix: string = `yith-${uuid()}`;
 
   return (
     <Dialog.Root modal={true}>
@@ -34,12 +53,11 @@ export const Figure: FC<FigureProps> = ({
         </figure>
       </StyledTrigger>
       <StyledContent>
-        <Dialog.Close>Close Viewer {prefix}</Dialog.Close>
+        <Dialog.Close>Close Viewer</Dialog.Close>
         <Mirador
           config={{
             id: prefix,
             createGenerateClassNameOptions: {
-              // Options passed directly to createGenerateClassName in Material-UI https://material-ui.com/styles/api/#creategenerateclassname-options-class-name-generator
               productionPrefix: `${prefix}-mirador-`,
             },
             windows: [
@@ -47,22 +65,7 @@ export const Figure: FC<FigureProps> = ({
                 manifestId: manifestId,
               },
             ],
-            workspace: {
-              showZoomControls: true, // Configure if zoom controls should be displayed by default
-            },
-            workspaceControlPanel: {
-              enabled: false,
-            },
-            window: {
-              allowClose: false,
-              allowMaximize: false,
-              allowTopMenuButton: true,
-              allowWindowSideBar: true,
-              defaultSidebarPanelWidth: 320,
-              forceDrawAnnotations: false,
-              hideWindowTitle: false,
-              sideBarOpen: true,
-            },
+            ...defaultConfig,
           }}
         />
       </StyledContent>

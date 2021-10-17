@@ -83,8 +83,13 @@ const StyledTrigger = styled(Dialog.Trigger, {
       flexDirection: "column",
       justifyContent: "center",
       textAlign: "center",
+      backgroundColor: "black",
 
-      "> span": {
+      img: {
+        opacity: "1",
+      },
+
+      span: {
         position: "absolute",
         display: "inline",
         backgroundColor: "blue",
@@ -101,8 +106,14 @@ const StyledTrigger = styled(Dialog.Trigger, {
   },
 
   "&:hover": {
-    "figure > div > span": {
-      opacity: "1",
+    "figure > div": {
+      img: {
+        opacity: "0.5",
+      },
+
+      span: {
+        opacity: "1",
+      },
     },
   },
 });

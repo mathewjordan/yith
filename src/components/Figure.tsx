@@ -21,7 +21,6 @@ export const Figure: FC<FigureProps> = ({
    */
 
   let prefix: string = `yith-${uuid()}`;
-  console.log(prefix);
 
   return (
     <Dialog.Root modal={true}>
@@ -32,7 +31,6 @@ export const Figure: FC<FigureProps> = ({
           />
           <figcaption>{manifestLabel.none[0]}</figcaption>
           <span>Expand in Viewer</span>
-          {prefix}
         </figure>
       </StyledTrigger>
       <StyledContent>
@@ -42,13 +40,29 @@ export const Figure: FC<FigureProps> = ({
             id: prefix,
             createGenerateClassNameOptions: {
               // Options passed directly to createGenerateClassName in Material-UI https://material-ui.com/styles/api/#creategenerateclassname-options-class-name-generator
-              productionPrefix: prefix,
+              productionPrefix: `${prefix}-mirador-`,
             },
             windows: [
               {
                 manifestId: manifestId,
               },
             ],
+            workspace: {
+              showZoomControls: true, // Configure if zoom controls should be displayed by default
+            },
+            workspaceControlPanel: {
+              enabled: false,
+            },
+            window: {
+              allowClose: false,
+              allowMaximize: false,
+              allowTopMenuButton: true,
+              allowWindowSideBar: true,
+              defaultSidebarPanelWidth: 320,
+              forceDrawAnnotations: false,
+              hideWindowTitle: false,
+              sideBarOpen: true,
+            },
           }}
         />
       </StyledContent>

@@ -84,6 +84,10 @@ const StyledContent = styled(Dialog.Content, {
     border: "none",
     padding: "1rem",
     cursor: "pointer",
+
+    "&:hover, &:focus": {
+      backgroundColor: "blue",
+    },
   },
 
   "> [id^='yith-']": {

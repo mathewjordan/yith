@@ -42,11 +42,13 @@ export const Figure: FC<FigureProps> = ({
     <Dialog.Root modal={true}>
       <StyledTrigger>
         <figure>
-          <img
-            src={`${paintedAnnotation.body[0].service[0].id}/full/!300,300/0/default.jpg`}
-          />
+          <div>
+            <img
+              src={`${paintedAnnotation.body[0].service[0].id}/full/!300,300/0/default.jpg`}
+            />
+            <span>Expand in Viewer</span>
+          </div>
           <figcaption>{manifestLabel.none[0]}</figcaption>
-          <span>Expand in Viewer</span>
         </figure>
       </StyledTrigger>
       <StyledContent>
@@ -74,10 +76,34 @@ const StyledTrigger = styled(Dialog.Trigger, {
 
   figure: {
     margin: "0",
+
+    "> div": {
+      position: "relative",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      textAlign: "center",
+
+      "> span": {
+        position: "absolute",
+        display: "inline",
+        backgroundColor: "blue",
+        color: "white",
+        padding: "0.5rem 1rem",
+        alignSelf: "center",
+        opacity: "0",
+      },
+    },
   },
 
   figcaption: {
     display: "flex-inline",
+  },
+
+  "&:hover": {
+    "figure > div > span": {
+      opacity: "1",
+    },
   },
 });
 

@@ -20,14 +20,12 @@ export const Content: FC<ContentProps> = ({ manifestId }) => {
   vault
     .loadManifest(manifestId)
     .then((data: ManifestNormalized) => {
-      console.log(data);
       // dispatch action to set sequence?
       setManifest(data);
     })
     .catch((error: any) => {
       console.log(`Manifest failed to load: ${error}`);
-    })
-    .finally((data) => {});
+    });
 
   if (!manifest) return <>Loading...</>;
 

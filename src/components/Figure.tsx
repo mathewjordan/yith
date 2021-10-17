@@ -20,7 +20,8 @@ export const Figure: FC<FigureProps> = ({
    * todo: build a hook that gets the image from the image server
    */
 
-  const prefix: string = `yith-${uuid()}`;
+  let prefix: string = `yith-${uuid()}`;
+  console.log(prefix);
 
   return (
     <Dialog.Root modal={true}>
@@ -31,10 +32,11 @@ export const Figure: FC<FigureProps> = ({
           />
           <figcaption>{manifestLabel.none[0]}</figcaption>
           <span>Expand in Viewer</span>
+          {prefix}
         </figure>
       </StyledTrigger>
       <StyledContent>
-        <Dialog.Close />
+        <Dialog.Close>Close Viewer {prefix}</Dialog.Close>
         <Mirador
           config={{
             id: prefix,
@@ -70,6 +72,22 @@ const StyledTrigger = styled(Dialog.Trigger, {
 
 const StyledContent = styled(Dialog.Content, {
   position: "fixed",
+  display: "flex",
+  flexDirection: "column",
   width: "100%",
   height: "100%",
+  backgroundColor: "white",
+
+  "> button": {
+    backgroundColor: "black",
+    color: "white",
+    border: "none",
+    padding: "1rem",
+    cursor: "pointer",
+  },
+
+  "> [id^='yith-']": {
+    position: "relative",
+    flexGrow: "1",
+  },
 });

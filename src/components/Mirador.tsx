@@ -5,7 +5,7 @@ import { uuid } from "services/uuid";
 export const Mirador: FC = ({ config, plugins }) => {
   let miradorInstance = undefined;
   const prefix: string = `yith-${uuid()}`;
-  const miradorConfig = {
+  const miradorConfig: object = {
     id: prefix,
     createGenerateClassNameOptions: {
       productionPrefix: prefix,

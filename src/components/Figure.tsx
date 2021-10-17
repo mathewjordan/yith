@@ -10,7 +10,7 @@ export interface FigureProps {
   paintedAnnotation: Annotation;
 }
 
-const defaultConfig = {
+const figureConfig = {
   workspace: {
     showZoomControls: true,
   },
@@ -58,7 +58,7 @@ export const Figure: FC<FigureProps> = ({
                 manifestId: manifestId,
               },
             ],
-            ...defaultConfig,
+            ...figureConfig,
           }}
           plugins={[]}
         />

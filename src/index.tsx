@@ -1,4 +1,5 @@
 import React, { FC, ReactChildren } from "react";
+import { styled } from "@stitches/react";
 import { YithProvider } from "context/yith-context";
 import { Content, ContentProps } from "components/Content";
 import { Presentation, Projection } from "screens";
@@ -30,9 +31,17 @@ const Yith: FC<YithProps> & YithComposition = (props) => {
     }
   };
 
-  return <YithProvider>{screen(type)}</YithProvider>;
+  return (
+    <YithProvider>
+      <Screen>{screen(type)}</Screen>
+    </YithProvider>
+  );
 };
 
 Yith.Content = Content;
+
+const Screen = styled("div", {
+  fontFamily: "inherit, system-ui, -apple-system, Helvetica, Arial, sans-serif",
+});
 
 export default Yith;

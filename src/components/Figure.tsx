@@ -48,11 +48,9 @@ export const Figure: FC<FigureProps> = ({
         <figure>
           <div>
             <div>
-              <img src={thumbnail} />
               <span>Expand in Viewer</span>
-              <Placeholder css={{ backgroundImage: `url(${thumbnail})` }}>
-                .
-              </Placeholder>
+              <img src={thumbnail} />
+              <Placeholder css={{ backgroundImage: `url(${thumbnail})` }} />
             </div>
           </div>
           <figcaption>{manifestLabel.none[0]}</figcaption>
@@ -117,27 +115,35 @@ const StyledTrigger = styled(Dialog.Trigger, {
         left: "0",
         width: "100%",
         height: "100%",
-      },
+        zIndex: "0",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
 
-      img: {
-        opacity: "1",
-        width: "100%",
-        height: "100%",
-        objectFit: "contain",
-        zIndex: "1",
-        position: "relative",
-      },
+        span: {
+          position: "absolute",
+          display: "inline",
+          backgroundColor: "white",
+          color: "#000000",
+          padding: "0.5rem 1rem",
+          alignSelf: "center",
+          opacity: "1",
+          zIndex: "2",
+          fontSize: "0.722rem",
+          textTransform: "uppercase",
+          fontWeight: "700",
+          borderRadius: "3px",
+          boxShadow: "2px 2px 5px #00000011",
+        },
 
-      span: {
-        position: "absolute",
-        display: "inline",
-        backgroundColor: "blue",
-        color: "white",
-        padding: "0.5rem 1rem",
-        alignSelf: "center",
-        opacity: "0",
-        left: "0",
-        zIndex: "2",
+        img: {
+          opacity: "1",
+          width: "100%",
+          height: "100%",
+          objectFit: "contain",
+          zIndex: "1",
+          position: "relative",
+        },
       },
     },
   },
@@ -147,18 +153,6 @@ const StyledTrigger = styled(Dialog.Trigger, {
     display: "flex-inline",
     fontSize: "1rem",
     fontWeight: "700",
-  },
-
-  "&:hover": {
-    "figure > div": {
-      img: {
-        opacity: "0.5",
-      },
-
-      span: {
-        opacity: "1",
-      },
-    },
   },
 });
 

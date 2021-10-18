@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { Annotation, InternationalString } from "@hyperion-framework/types";
 import * as Dialog from "@radix-ui/react-dialog";
-import { styled } from "@stitches/react";
+import { css, styled } from "@stitches/react";
 import { Mirador } from "./Mirador";
 
 export interface FigureProps {
@@ -9,6 +9,8 @@ export interface FigureProps {
   manifestLabel: InternationalString;
   paintedAnnotation: Annotation;
 }
+
+const size: number = 275;
 
 const figureConfig = {
   workspace: {
@@ -38,15 +40,20 @@ export const Figure: FC<FigureProps> = ({
    * todo: build a hook that gets the image from the image server
    */
 
+  const thumbnail: string = `${paintedAnnotation.body[0].service[0].id}/full/!${size},${size}/0/default.jpg`;
+
   return (
     <Dialog.Root modal={true}>
       <StyledTrigger>
         <figure>
           <div>
-            <img
-              src={`${paintedAnnotation.body[0].service[0].id}/full/!300,300/0/default.jpg`}
-            />
-            <span>Expand in Viewer</span>
+            <div>
+              <img src={thumbnail} />
+              <span>Expand in Viewer</span>
+              <Placeholder css={{ backgroundImage: `url(${thumbnail})` }}>
+                .
+              </Placeholder>
+            </div>
           </div>
           <figcaption>{manifestLabel.none[0]}</figcaption>
         </figure>
@@ -69,24 +76,56 @@ export const Figure: FC<FigureProps> = ({
   );
 };
 
+const Placeholder = styled("div", {
+  position: "absolute",
+  display: "flex",
+  left: "0",
+  top: "0",
+  width: "100%",
+  height: "100%",
+  zIndex: "0",
+  opacity: "0.38",
+  filter: "blur(10px)",
+  transform: "scale3d(1.15,1.15,1.15)",
+});
+
 const StyledTrigger = styled(Dialog.Trigger, {
   cursor: "pointer",
   backgroundColor: "transparent",
   border: "none",
+  width: size,
 
   figure: {
     margin: "0",
+    width: "100%",
 
     "> div": {
       position: "relative",
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "center",
-      textAlign: "center",
-      backgroundColor: "black",
+      backgroundColor: "white",
+      height: "0",
+      width: "100%",
+      overflow: "hidden",
+      paddingTop: "100%",
+      background: "white",
+      borderRadius: "3px",
+      boxShadow: "2px 2px 5px #00000011",
+
+      "> div": {
+        backgroundColor: "#000000",
+        position: "absolute",
+        top: "0",
+        left: "0",
+        width: "100%",
+        height: "100%",
+      },
 
       img: {
         opacity: "1",
+        width: "100%",
+        height: "100%",
+        objectFit: "contain",
+        zIndex: "1",
+        position: "relative",
       },
 
       span: {
@@ -97,12 +136,17 @@ const StyledTrigger = styled(Dialog.Trigger, {
         padding: "0.5rem 1rem",
         alignSelf: "center",
         opacity: "0",
+        left: "0",
+        zIndex: "2",
       },
     },
   },
 
   figcaption: {
+    margin: "0.5rem 0",
     display: "flex-inline",
+    fontSize: "1rem",
+    fontWeight: "700",
   },
 
   "&:hover": {

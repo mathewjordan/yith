@@ -13,4 +13,4 @@ const config: Config.InitialOptions = {
     "^.+\\.(ts|tsx)$": "ts-jest",
   },
 };
-export default config;
+module.exports = { config };

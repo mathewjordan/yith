@@ -1,7 +1,7 @@
-import React, { ReactChildren } from "react";
+import React from "react";
 
 interface Props {
-  children: ReactChildren;
+  children: React.ReactChildren;
 }
 
 const Progression: React.FC<Props> = ({ children }) => {

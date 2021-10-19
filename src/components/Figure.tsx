@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React from "react";
 import { Annotation, InternationalString } from "@hyperion-framework/types";
 import * as Dialog from "@radix-ui/react-dialog";
 import { css, styled } from "@stitches/react";
@@ -31,7 +31,7 @@ const figureConfig = {
   },
 };
 
-export const Figure: FC<FigureProps> = ({
+export const Figure: React.FC<FigureProps> = ({
   manifestId,
   manifestLabel,
   paintedAnnotation,
@@ -178,9 +178,9 @@ const StyledContent = styled(Dialog.Content, {
   position: "fixed",
   display: "flex",
   flexDirection: "column",
-  width: "100%",
-  height: "100%",
-  margin: "0",
+  width: "80vw",
+  height: "80vh",
+  margin: "10vh 10vw",
   backgroundColor: "white",
 
   "> button": {

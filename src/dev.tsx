@@ -1,8 +1,8 @@
-import React, { FC } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 import Yith from "./index";
 
-const Dev: FC = () => {
+const Dev: React.FC = () => {
   return (
     <>
       <h1>Yith</h1>

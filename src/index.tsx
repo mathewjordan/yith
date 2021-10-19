@@ -1,4 +1,4 @@
-import React, { FC, ReactChildren } from "react";
+import React from "react";
 import { styled } from "@stitches/react";
 import { YithProvider } from "context/yith-context";
 import { Content, ContentProps } from "components/Content";
@@ -7,14 +7,14 @@ import { uuid } from "services/uuid";
 
 interface YithProps {
   type: string;
-  children: ReactChildren;
+  children: React.ReactChildren;
 }
 
 interface YithComposition {
   Content: React.FC<ContentProps>;
 }
 
-const Yith: FC<YithProps> & YithComposition = (props) => {
+const Yith: React.FC<YithProps> & YithComposition = (props) => {
   const { type, children } = props;
   const instance: string = `yith-${uuid()}`;
 
@@ -63,4 +63,4 @@ const Screen = styled("div", {
   alignItems: "flex-start",
 });
 
-export default Yith;
+module.exports = Yith;

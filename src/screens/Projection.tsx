@@ -1,7 +1,7 @@
-import React, { ReactChildren } from "react";
+import React from "react";
 
 interface Props {
-  children: ReactChildren;
+  children: React.ReactChildren;
 }
 
 const Projection: React.FC<Props> = ({ children }) => {

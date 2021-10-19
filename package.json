@@ -7,6 +7,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "rm -rf dist && node build.ts && tsc --emitDeclarationOnly --outDir dist",
+    "build:demo": "rm -rf dist && node demo.ts",
     "dev": "node serve.ts",
     "test": "jest --watch",
     "clean": "rimraf dist"

@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect } from "react";
+import React from "react";
 import {
   Annotation,
   AnnotationPageNormalized,
@@ -13,12 +13,12 @@ export interface ContentProps {
   instance: string;
 }
 
-export const Content: FC<ContentProps> = ({ manifestId, instance }) => {
-  const [manifest, setManifest] = useState<ManifestNormalized>();
+export const Content: React.FC<ContentProps> = ({ manifestId, instance }) => {
+  const [manifest, setManifest] = React.useState<ManifestNormalized>();
   const state: any = useYithState();
   const { vault } = state;
 
-  useEffect(() => {
+  React.useEffect(() => {
     vault
       .loadManifest(manifestId)
       .then((data: ManifestNormalized) => {

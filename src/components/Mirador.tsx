@@ -1,8 +1,8 @@
-import React, { FC, useEffect } from "react";
+import React from "react";
 import mirador from "mirador";
 import { uuid } from "services/uuid";
 
-export const Mirador: FC = ({ config, plugins }) => {
+export const Mirador: React.FC = ({ config, plugins }) => {
   let miradorInstance = undefined;
   const prefix: string = `mirador-${uuid()}`;
   const miradorConfig: object = {
@@ -13,7 +13,7 @@ export const Mirador: FC = ({ config, plugins }) => {
     ...config,
   };
 
-  useEffect(() => {
+  React.useEffect(() => {
     miradorInstance = mirador.viewer(miradorConfig, plugins);
     console.log(miradorInstance);
   }, [prefix]);

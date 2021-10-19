@@ -1,11 +1,11 @@
-import React, { FC, useState } from "react";
+import React, { FC, useState, useEffect } from "react";
 import {
   Annotation,
   AnnotationPageNormalized,
   CanvasNormalized,
   ManifestNormalized,
 } from "@hyperion-framework/types";
-import { useYithState } from "context/yith-context";
+import { useYithDispatch, useYithState } from "context/yith-context";
 import { Figure } from "./Figure";
 
 export interface ContentProps {
@@ -14,18 +14,22 @@ export interface ContentProps {
 
 export const Content: FC<ContentProps> = ({ manifestId }) => {
   const [manifest, setManifest] = useState<ManifestNormalized>();
+  const dispatch: any = useYithDispatch();
   const state: any = useYithState();
-  const { vault } = state;
+  const { vault, sequences } = state;
 
-  vault
-    .loadManifest(manifestId)
-    .then((data: ManifestNormalized) => {
-      // dispatch action to set sequence?
-      setManifest(data);
-    })
-    .catch((error: any) => {
-      console.log(`Manifest failed to load: ${error}`);
-    });
+  console.log(`sequences`, sequences);
+
+  useEffect(() => {
+    vault
+      .loadManifest(manifestId)
+      .then((data: ManifestNormalized) => {
+        setManifest(data);
+      })
+      .catch((error: any) => {
+        console.log(`Manifest failed to load: ${error}`);
+      });
+  }, [manifestId]);
 
   if (!manifest) return <>Loading...</>;
 

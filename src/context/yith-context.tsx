@@ -3,15 +3,19 @@ import { Vault } from "@hyperion-framework/vault";
 
 interface YithContextStore {
   expanded: boolean;
+  sequences: Array<string>;
   vault: Vault;
 }
 
 interface YithAction {
+  type: string;
   expanded: boolean;
+  sequences: Array<string>;
 }
 
 const defaultState: YithContextStore = {
   expanded: false,
+  sequences: [],
   vault: new Vault(),
 };
 
@@ -26,6 +30,12 @@ function yithReducer(state: YithContextStore, action: YithAction) {
         expanded: action.expanded,
       };
     }
+    case "updateSequence": {
+      return {
+        ...state,
+        sequences: action.sequences,
+      };
+    }
     default: {
       throw new Error(`Unhandled action type: ${action.type}`);
     }
@@ -33,17 +43,21 @@ function yithReducer(state: YithContextStore, action: YithAction) {
 }
 
 interface YithProviderProps {
+  instance: string;
   initialState?: YithContextStore;
   children: React.ReactNode;
 }
 
 const YithProvider: React.FC<YithProviderProps> = ({
+  instance,
   initialState = defaultState,
   children,
 }) => {
   const [state, dispatch] = React.useReducer<
     React.Reducer<YithContextStore, YithAction>
   >(yithReducer, initialState);
+
+  if (!state.sequences.includes(instance)) state.sequences.push(instance);
 
   return (
     <YithStateContext.Provider value={state}>

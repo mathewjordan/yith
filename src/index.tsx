@@ -3,6 +3,7 @@ import { styled } from "@stitches/react";
 import { YithProvider } from "context/yith-context";
 import { Content, ContentProps } from "components/Content";
 import { Presentation, Projection } from "screens";
+import { uuid } from "services/uuid";
 
 interface YithProps {
   type: string;
@@ -15,6 +16,7 @@ interface YithComposition {
 
 const Yith: FC<YithProps> & YithComposition = (props) => {
   const { type, children } = props;
+  const instance: string = `yith-${uuid()}`;
 
   const screen = (type: string) => {
     switch (type) {
@@ -32,7 +34,8 @@ const Yith: FC<YithProps> & YithComposition = (props) => {
   };
 
   return (
-    <YithProvider>
+    <YithProvider instance={instance}>
+      {instance}
       <Screen>{screen(type)}</Screen>
     </YithProvider>
   );

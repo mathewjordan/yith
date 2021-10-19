@@ -5,28 +5,29 @@ import Yith from "./index";
 const Dev: FC = () => {
   return (
     <>
-      <Yith type="presentation">
-        <Yith.Content manifestId="https://api.artic.edu/api/v1/artworks/193664/manifest.json" />
+      <h1>Yith</h1>
+      <h2>Projection</h2>
+      <p>Multiple Manifest</p>
+      <Yith type="projection">
+        <Yith.Content manifestId="https://api.artic.edu/api/v1/artworks/76395/manifest.json" />
+        <Yith.Content manifestId="https://api.artic.edu/api/v1/artworks/90291/manifest.json" />
+        <Yith.Content manifestId="https://api.artic.edu/api/v1/artworks/79355/manifest.json" />
+        <Yith.Content manifestId="https://api.artic.edu/api/v1/artworks/90295/manifest.json" />
+        <Yith.Content manifestId="https://api.artic.edu/api/v1/artworks/110982/manifest.json" />
       </Yith>
 
+      <h2>Presentation</h2>
+      <p>Single Manifest</p>
       <Yith type="presentation">
-        <Yith.Content manifestId="https://iiif.stack.rdc.library.northwestern.edu/public/97/21/96/ff/-d/61/4-/4b/76/-9/d1/2-/80/e1/8f/1f/37/c9-manifest.json" />
+        <Yith.Content manifestId="https://api.artic.edu/api/v1/artworks/76395/manifest.json" />
       </Yith>
 
+      <p>Multiple Manifest</p>
       <Yith type="presentation">
-        <Yith.Content manifestId="https://iiif.stack.rdc.library.northwestern.edu/public/b7/7f/b6/58/-4/ac/f-/4f/58/-b/b2/7-/86/fd/f7/f3/4c/83-manifest.json" />
-      </Yith>
-
-      <Yith type="presentation">
-        <Yith.Content manifestId="https://iiif.stack.rdc.library.northwestern.edu/public/8c/c2/49/76/-3/38/3-/40/7d/-9/f4/f-/85/9d/0c/b7/0a/8c-manifest.json" />
-      </Yith>
-
-      <Yith type="presentation">
-        <Yith.Content manifestId="https://iiif.harvardartmuseums.org/manifests/object/295813" />
-      </Yith>
-
-      <Yith type="presentation">
-        <Yith.Content manifestId="https://api.artic.edu/api/v1/artworks/144971/manifest.json" />
+        <Yith.Content manifestId="https://api.artic.edu/api/v1/artworks/90291/manifest.json" />
+        <Yith.Content manifestId="https://api.artic.edu/api/v1/artworks/79355/manifest.json" />
+        <Yith.Content manifestId="https://api.artic.edu/api/v1/artworks/90295/manifest.json" />
+        <Yith.Content manifestId="https://api.artic.edu/api/v1/artworks/110982/manifest.json" />
       </Yith>
     </>
   );

@@ -42,6 +42,8 @@ Yith.Content = Content;
 
 const Screen = styled("div", {
   fontFamily: "inherit, system-ui, -apple-system, Helvetica, Arial, sans-serif",
+  display: "flex",
+  alignItems: "flex-start",
 });
 
 export default Yith;

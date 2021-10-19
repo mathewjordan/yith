@@ -82,8 +82,8 @@ const Placeholder = styled("div", {
   width: "100%",
   height: "100%",
   zIndex: "0",
-  opacity: "0.38",
-  filter: "blur(10px)",
+  opacity: "0.5",
+  filter: "blur(12px)",
   transform: "scale3d(1.15,1.15,1.15)",
 });
 
@@ -126,23 +126,27 @@ const StyledTrigger = styled(Dialog.Trigger, {
           backgroundColor: "white",
           color: "#000000",
           padding: "0.5rem 1rem",
-          alignSelf: "center",
-          opacity: "1",
+          alignSelf: "flex-end",
+          opacity: "0",
           zIndex: "2",
           fontSize: "0.722rem",
           textTransform: "uppercase",
           fontWeight: "700",
+          marginBottom: "2rem",
           borderRadius: "3px",
           boxShadow: "2px 2px 5px #00000011",
+          transition: "all 200ms ease-in-out",
         },
 
         img: {
           opacity: "1",
-          width: "100%",
-          height: "100%",
+          width: "calc(100% - 2rem)",
+          height: "calc(100% - 2rem)",
           objectFit: "contain",
           zIndex: "1",
           position: "relative",
+          margin: "1rem",
+          transition: "all 200ms ease-in-out",
         },
       },
     },
@@ -154,6 +158,20 @@ const StyledTrigger = styled(Dialog.Trigger, {
     fontSize: "1rem",
     fontWeight: "700",
   },
+
+  "&:hover, &:focus": {
+    img: {
+      opacity: "0.5",
+    },
+
+    span: {
+      opacity: "1",
+    },
+
+    [`& ${Placeholder}`]: {
+      opacity: "0.25",
+    },
+  },
 });
 
 const StyledContent = styled(Dialog.Content, {
@@ -162,6 +180,7 @@ const StyledContent = styled(Dialog.Content, {
   flexDirection: "column",
   width: "100%",
   height: "100%",
+  margin: "0",
   backgroundColor: "white",
 
   "> button": {

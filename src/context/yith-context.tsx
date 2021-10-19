@@ -3,7 +3,7 @@ import { Vault } from "@hyperion-framework/vault";
 
 interface YithContextStore {
   expanded: boolean;
-  sequences: Array<string>;
+  sequences: Array<any>;
   vault: Vault;
 }
 

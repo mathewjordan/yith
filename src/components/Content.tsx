@@ -10,6 +10,7 @@ import { Figure } from "./Figure";
 
 export interface ContentProps {
   manifestId: string;
+  instance: string;
 }
 
 export const Content: FC<ContentProps> = ({ manifestId }) => {

@@ -56,8 +56,11 @@ export const Figure: React.FC<FigureProps> = ({
           <figcaption>{manifestLabel.none[0]}</figcaption>
         </figure>
       </StyledTrigger>
+      <StyledOverlay />
       <StyledContent>
-        <Dialog.Close>Close Viewer</Dialog.Close>
+        <ContentActions>
+          <Dialog.Close>Close Viewer</Dialog.Close>
+        </ContentActions>
         <Mirador
           config={{
             windows: [
@@ -87,6 +90,32 @@ const Placeholder = styled("div", {
   transform: "scale3d(1.15,1.15,1.15)",
 });
 
+const ContentActions = styled("div", {
+  display: "flex",
+
+  "> button": {
+    display: "flex",
+    flexGrow: "1",
+    backgroundColor: "white",
+    color: "#000000",
+    padding: "0.75rem 1rem",
+    alignSelf: "flex-end",
+    zIndex: "2",
+    fontSize: "0.722rem",
+    textTransform: "uppercase",
+    fontWeight: "700",
+    border: "none",
+    transition: "all 200ms ease-in-out",
+    cursor: "pointer",
+    justifyContent: "center",
+
+    "&:hover, &:focus": {
+      color: "#fff",
+      backgroundColor: "#000",
+    },
+  },
+});
+
 const StyledTrigger = styled(Dialog.Trigger, {
   cursor: "pointer",
   backgroundColor: "transparent",
@@ -106,7 +135,7 @@ const StyledTrigger = styled(Dialog.Trigger, {
       paddingTop: "100%",
       background: "white",
       borderRadius: "3px",
-      boxShadow: "2px 2px 5px #00000011",
+      boxShadow: "2px 2px 5px #00000033",
 
       "> div": {
         backgroundColor: "#000000",
@@ -132,7 +161,7 @@ const StyledTrigger = styled(Dialog.Trigger, {
           fontSize: "0.722rem",
           textTransform: "uppercase",
           fontWeight: "700",
-          marginBottom: "2rem",
+          bottom: "1rem",
           borderRadius: "3px",
           boxShadow: "2px 2px 5px #00000011",
           transition: "all 200ms ease-in-out",
@@ -178,25 +207,20 @@ const StyledContent = styled(Dialog.Content, {
   position: "fixed",
   display: "flex",
   flexDirection: "column",
-  width: "80vw",
-  height: "80vh",
-  margin: "10vh 10vw",
-  backgroundColor: "white",
-
-  "> button": {
-    backgroundColor: "black",
-    color: "white",
-    border: "none",
-    padding: "1rem",
-    cursor: "pointer",
-
-    "&:hover, &:focus": {
-      backgroundColor: "blue",
-    },
-  },
+  width: "calc(100% - 8rem)",
+  height: "calc(100% - 8rem)",
+  margin: "4rem",
+  backgroundColor: "#DCDCDC",
 
   "> [id^='mirador-']": {
     position: "relative",
     flexGrow: "1",
   },
+});
+
+const StyledOverlay = styled(Dialog.Overlay, {
+  position: "fixed",
+  width: "100%",
+  height: "100%",
+  backgroundColor: "#000000DD",
 });

@@ -15,6 +15,8 @@ const Dev: FC = () => {
       <Yith type="presentation">
         <Yith.Content manifestId="https://api.artic.edu/api/v1/artworks/90295/manifest.json" />
         <Yith.Content manifestId="https://api.artic.edu/api/v1/artworks/110982/manifest.json" />
+        <Yith.Content manifestId="https://api.artic.edu/api/v1/artworks/90291/manifest.json" />
+        <Yith.Content manifestId="https://api.artic.edu/api/v1/artworks/79355/manifest.json" />
       </Yith>
 
       {/* <h2>Presentation</h2>

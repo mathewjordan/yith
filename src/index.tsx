@@ -1,4 +1,4 @@
-import React, { FC, ReactChildren, Children, cloneElement } from "react";
+import React, { FC, ReactChildren } from "react";
 import { styled } from "@stitches/react";
 import { YithProvider } from "context/yith-context";
 import { Content, ContentProps } from "components/Content";
@@ -18,11 +18,19 @@ const Yith: FC<YithProps> & YithComposition = (props) => {
   const { type, children } = props;
   const instance: string = `yith-${uuid()}`;
 
-  const clonedChildren = Children.toArray(children).map((child) => {
-    var clonedElementWithMoreProps = React.cloneElement(child, {
+  let sequence = {};
+  sequence.id = instance;
+  sequence.items = [];
+
+  const clonedChildren = React.Children.toArray(children).map((child) => {
+    sequence.items.push({
+      manifestId: child.props.manifestId,
+      annotations: [],
+    });
+    const clonedChild = React.cloneElement(child, {
       instance,
     });
-    return clonedElementWithMoreProps;
+    return clonedChild;
   });
 
   const screen = (type: string) => {
@@ -41,8 +49,8 @@ const Yith: FC<YithProps> & YithComposition = (props) => {
   };
 
   return (
-    <YithProvider instance={instance}>
-      <Screen id={instance}>{screen(type)}</Screen>
+    <YithProvider sequence={sequence}>
+      <Screen>{screen(type)}</Screen>
     </YithProvider>
   );
 };

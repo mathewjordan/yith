@@ -10,7 +10,7 @@ interface YithContextStore {
 interface YithAction {
   type: string;
   expanded: boolean;
-  sequences: Array<string>;
+  sequences: Array<any>;
 }
 
 const defaultState: YithContextStore = {
@@ -30,7 +30,7 @@ function yithReducer(state: YithContextStore, action: YithAction) {
         expanded: action.expanded,
       };
     }
-    case "updateSequence": {
+    case "updateSequences": {
       return {
         ...state,
         sequences: action.sequences,
@@ -43,13 +43,13 @@ function yithReducer(state: YithContextStore, action: YithAction) {
 }
 
 interface YithProviderProps {
-  instance: string;
+  sequence: Array<any>;
   initialState?: YithContextStore;
   children: React.ReactNode;
 }
 
 const YithProvider: React.FC<YithProviderProps> = ({
-  instance,
+  sequence,
   initialState = defaultState,
   children,
 }) => {
@@ -57,7 +57,13 @@ const YithProvider: React.FC<YithProviderProps> = ({
     React.Reducer<YithContextStore, YithAction>
   >(yithReducer, initialState);
 
-  if (!state.sequences.includes(instance)) state.sequences.push(instance);
+  if (
+    state.sequences.filter(function (e) {
+      return e.id === sequence.id;
+    }).length === 0
+  ) {
+    state.sequences.push(sequence);
+  }
 
   return (
     <YithStateContext.Provider value={state}>

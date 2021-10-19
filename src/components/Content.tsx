@@ -5,7 +5,7 @@ import {
   CanvasNormalized,
   ManifestNormalized,
 } from "@hyperion-framework/types";
-import { useYithDispatch, useYithState } from "context/yith-context";
+import { useYithState } from "context/yith-context";
 import { Figure } from "./Figure";
 
 export interface ContentProps {
@@ -13,13 +13,10 @@ export interface ContentProps {
   instance: string;
 }
 
-export const Content: FC<ContentProps> = ({ manifestId }) => {
+export const Content: FC<ContentProps> = ({ manifestId, instance }) => {
   const [manifest, setManifest] = useState<ManifestNormalized>();
-  const dispatch: any = useYithDispatch();
   const state: any = useYithState();
-  const { vault, sequences } = state;
-
-  console.log(`sequences`, sequences);
+  const { vault } = state;
 
   useEffect(() => {
     vault

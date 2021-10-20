@@ -6,17 +6,21 @@ import {
   ManifestNormalized,
 } from "@hyperion-framework/types";
 import { useYithState } from "context/yith-context";
-import { Figure } from "./Figure";
+import { getSequence } from "hooks/getSequence";
+import { Modal } from "./Modal";
 
 export interface ManifestProps {
   id: string;
   instance: string;
+  type: string;
 }
 
-export const Manifest: React.FC<ManifestProps> = ({ id, instance }) => {
+export const Manifest: React.FC<ManifestProps> = ({ id, instance, type }) => {
   const [manifest, setManifest] = React.useState<ManifestNormalized>();
   const state: any = useYithState();
-  const { vault } = state;
+  const { vault, sequences } = state;
+
+  const sequence = getSequence(sequences, instance);
 
   React.useEffect(() => {
     vault
@@ -50,11 +54,14 @@ export const Manifest: React.FC<ManifestProps> = ({ id, instance }) => {
       }
     });
 
+    if (sequence[0].id !== id) return null;
+
     return (
-      <Figure
+      <Modal
         manifestId={id}
         manifestLabel={manifest.label}
         paintedAnnotation={painting[0]}
+        sequence={sequence}
       />
     );
   }

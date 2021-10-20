@@ -29,6 +29,7 @@ const Yith: React.FC<YithProps> & YithComposition = (props) => {
     });
     const clonedChild = React.cloneElement(child, {
       instance,
+      type,
     });
     return clonedChild;
   });

@@ -24,7 +24,7 @@ const Yith: React.FC<YithProps> & YithComposition = (props) => {
 
   const clonedChildren = React.Children.toArray(children).map((child) => {
     sequence.items.push({
-      manifestId: child.props.manifestId,
+      id: child.props.id,
       annotations: [],
     });
     const clonedChild = React.cloneElement(child, {

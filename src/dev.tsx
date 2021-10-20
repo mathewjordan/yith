@@ -6,22 +6,16 @@ const Dev: React.FC = () => {
   return (
     <>
       <h1>Yith</h1>
-      <h2>Projection</h2>
-      <p>Multiple Manifest</p>
-      <Yith type="presentation">
-        <Yith.Manifest manifestId="https://api.artic.edu/api/v1/artworks/76395/manifest.json" />
-      </Yith>
 
-      <Yith type="presentation">
-        <Yith.Manifest manifestId="https://api.artic.edu/api/v1/artworks/90295/manifest.json" />
-        <Yith.Manifest manifestId="https://api.artic.edu/api/v1/artworks/110982/manifest.json" />
+      <h2>Projection</h2>
+      <Yith type="projection">
+        <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/76395/manifest.json" />
+        <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/90291/manifest.json" />
       </Yith>
 
       <h2>Presentation</h2>
-      <p>Single Manifest</p>
       <Yith type="presentation">
-        <Yith.Manifest manifestId="https://api.artic.edu/api/v1/artworks/90291/manifest.json" />
-        <Yith.Manifest manifestId="https://api.artic.edu/api/v1/artworks/79355/manifest.json" />
+        <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/79355/manifest.json" />
       </Yith>
     </>
   );

@@ -9,25 +9,25 @@ import { useYithState } from "context/yith-context";
 import { Figure } from "./Figure";
 
 export interface ManifestProps {
-  manifestId: string;
+  id: string;
   instance: string;
 }
 
-export const Manifest: React.FC<ManifestProps> = ({ manifestId, instance }) => {
+export const Manifest: React.FC<ManifestProps> = ({ id, instance }) => {
   const [manifest, setManifest] = React.useState<ManifestNormalized>();
   const state: any = useYithState();
   const { vault } = state;
 
   React.useEffect(() => {
     vault
-      .loadManifest(manifestId)
+      .loadManifest(id)
       .then((data: ManifestNormalized) => {
         setManifest(data);
       })
       .catch((error: any) => {
         console.log(`Manifest failed to load: ${error}`);
       });
-  }, [manifestId]);
+  }, [id]);
 
   if (!manifest) return <>Loading...</>;
 
@@ -52,7 +52,7 @@ export const Manifest: React.FC<ManifestProps> = ({ manifestId, instance }) => {
 
     return (
       <Figure
-        manifestId={manifestId}
+        manifestId={id}
         manifestLabel={manifest.label}
         paintedAnnotation={painting[0]}
       />

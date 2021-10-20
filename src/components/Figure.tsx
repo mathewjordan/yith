@@ -10,7 +10,7 @@ export interface FigureProps {
   paintedAnnotation: Annotation;
 }
 
-const size: number = 275;
+const size: number = 200;
 
 const figureConfig = {
   workspace: {

@@ -1,7 +1,7 @@
 import React from "react";
 import { styled } from "@stitches/react";
 import { YithProvider } from "context/yith-context";
-import { Content, ContentProps } from "components/Content";
+import { Manifest, ManifestProps } from "components/Manifest";
 import { Presentation, Projection } from "screens";
 import { uuid } from "services/uuid";
 
@@ -11,7 +11,7 @@ interface YithProps {
 }
 
 interface YithComposition {
-  Content: React.FC<ContentProps>;
+  Manifest: React.FC<ManifestProps>;
 }
 
 const Yith: React.FC<YithProps> & YithComposition = (props) => {
@@ -55,7 +55,7 @@ const Yith: React.FC<YithProps> & YithComposition = (props) => {
   );
 };
 
-Yith.Content = Content;
+Yith.Manifest = Manifest;
 
 const Screen = styled("div", {
   fontFamily: "inherit, system-ui, -apple-system, Helvetica, Arial, sans-serif",

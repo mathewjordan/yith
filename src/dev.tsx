@@ -9,29 +9,20 @@ const Dev: React.FC = () => {
       <h2>Projection</h2>
       <p>Multiple Manifest</p>
       <Yith type="presentation">
-        <Yith.Content manifestId="https://api.artic.edu/api/v1/artworks/76395/manifest.json" />
+        <Yith.Manifest manifestId="https://api.artic.edu/api/v1/artworks/76395/manifest.json" />
       </Yith>
 
       <Yith type="presentation">
-        <Yith.Content manifestId="https://api.artic.edu/api/v1/artworks/90295/manifest.json" />
-        <Yith.Content manifestId="https://api.artic.edu/api/v1/artworks/110982/manifest.json" />
-        <Yith.Content manifestId="https://api.artic.edu/api/v1/artworks/90291/manifest.json" />
-        <Yith.Content manifestId="https://api.artic.edu/api/v1/artworks/79355/manifest.json" />
+        <Yith.Manifest manifestId="https://api.artic.edu/api/v1/artworks/90295/manifest.json" />
+        <Yith.Manifest manifestId="https://api.artic.edu/api/v1/artworks/110982/manifest.json" />
       </Yith>
 
-      {/* <h2>Presentation</h2>
+      <h2>Presentation</h2>
       <p>Single Manifest</p>
       <Yith type="presentation">
-        <Yith.Content manifestId="https://api.artic.edu/api/v1/artworks/76395/manifest.json" />
+        <Yith.Manifest manifestId="https://api.artic.edu/api/v1/artworks/90291/manifest.json" />
+        <Yith.Manifest manifestId="https://api.artic.edu/api/v1/artworks/79355/manifest.json" />
       </Yith>
-
-      <p>Multiple Manifest</p>
-      <Yith type="presentation">
-        <Yith.Content manifestId="https://api.artic.edu/api/v1/artworks/90291/manifest.json" />
-        <Yith.Content manifestId="https://api.artic.edu/api/v1/artworks/79355/manifest.json" />
-        <Yith.Content manifestId="https://api.artic.edu/api/v1/artworks/90295/manifest.json" />
-        <Yith.Content manifestId="https://api.artic.edu/api/v1/artworks/110982/manifest.json" />
-      </Yith> */}
     </>
   );
 };

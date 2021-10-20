@@ -8,12 +8,12 @@ import {
 import { useYithState } from "context/yith-context";
 import { Figure } from "./Figure";
 
-export interface ContentProps {
+export interface ManifestProps {
   manifestId: string;
   instance: string;
 }
 
-export const Content: React.FC<ContentProps> = ({ manifestId, instance }) => {
+export const Manifest: React.FC<ManifestProps> = ({ manifestId, instance }) => {
   const [manifest, setManifest] = React.useState<ManifestNormalized>();
   const state: any = useYithState();
   const { vault } = state;

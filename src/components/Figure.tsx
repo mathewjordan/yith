@@ -10,7 +10,7 @@ export interface FigureProps {
   paintedAnnotation: Annotation;
 }
 
-const size: number = 200;
+const size: number = 275;
 
 const figureConfig = {
   workspace: {
@@ -207,9 +207,9 @@ const StyledContent = styled(Dialog.Content, {
   position: "fixed",
   display: "flex",
   flexDirection: "column",
-  width: "calc(100% - 8rem)",
-  height: "calc(100% - 8rem)",
-  margin: "4rem",
+  width: "100%",
+  height: "100%",
+  margin: "0",
   backgroundColor: "#DCDCDC",
 
   "> [id^='mirador-']": {

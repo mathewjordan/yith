@@ -1,23 +1,30 @@
 import * as Dialog from "@radix-ui/react-dialog";
 import { styled } from "@stitches/react";
+import { FigureStyled, LQIP } from "./Figure.styled";
 
-const StyledTrigger = styled(Dialog.Trigger, {
+const TriggerStyled = styled(Dialog.Trigger, {
   cursor: "pointer",
   backgroundColor: "transparent",
   border: "none",
 
   "&:hover, &:focus": {
-    img: {
-      opacity: "0.5",
-    },
+    [`${FigureStyled}`]: {
+      img: {
+        opacity: "0.75",
+      },
 
-    span: {
-      opacity: "1",
+      span: {
+        opacity: "1",
+      },
+
+      [`${LQIP}`]: {
+        opacity: "0.25",
+      },
     },
   },
 });
 
-const StyledContent = styled(Dialog.Content, {
+const ContentStyled = styled(Dialog.Content, {
   position: "fixed",
   display: "flex",
   flexDirection: "column",
@@ -32,11 +39,11 @@ const StyledContent = styled(Dialog.Content, {
   },
 });
 
-const StyledOverlay = styled(Dialog.Overlay, {
+const OverlayStyled = styled(Dialog.Overlay, {
   position: "fixed",
   width: "100%",
   height: "100%",
   backgroundColor: "#000000DD",
 });
 
-export { StyledContent, StyledOverlay, StyledTrigger };
+export { ContentStyled, OverlayStyled, TriggerStyled };

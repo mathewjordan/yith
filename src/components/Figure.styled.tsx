@@ -75,7 +75,8 @@ const LQIP = styled("div", {
   height: "100%",
   zIndex: "0",
   opacity: "0.5",
-  filter: "blur(12px)",
+  backgroundSize: "cover",
+  filter: "blur(8px)",
   transform: "scale3d(1.15,1.15,1.15)",
 });
 

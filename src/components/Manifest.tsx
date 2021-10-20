@@ -60,7 +60,7 @@ export const Manifest: React.FC<ManifestProps> = ({ id, instance, type }) => {
       <Modal
         manifestId={id}
         manifestLabel={manifest.label}
-        paintedAnnotation={painting[0]}
+        painting={painting[0]}
         sequence={sequence}
       />
     );

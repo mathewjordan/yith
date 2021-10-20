@@ -1,6 +1,6 @@
 import { styled } from "@stitches/react";
 
-const ContentActions = styled("div", {
+const ViewerControls = styled("div", {
   display: "flex",
 
   "> button": {
@@ -26,4 +26,4 @@ const ContentActions = styled("div", {
   },
 });
 
-export { ContentActions };
+export { ViewerControls };

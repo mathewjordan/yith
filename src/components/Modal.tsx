@@ -7,7 +7,6 @@ import { ViewerControls } from "./ViewerControls";
 import { Viewer } from "./Viewer";
 
 export interface FigureProps {
-  manifestId: string;
   manifestLabel: InternationalString;
   painting: Annotation;
   sequence: Array<any>;
@@ -16,7 +15,6 @@ export interface FigureProps {
 export const size: number = 275;
 
 export const Modal: React.FC<FigureProps> = ({
-  manifestId,
   manifestLabel,
   painting,
   sequence,
@@ -36,8 +34,7 @@ export const Modal: React.FC<FigureProps> = ({
       </TriggerStyled>
       <OverlayStyled />
       <ContentStyled>
-        <ViewerControls sequence={sequence} />
-        <Viewer manifestId={manifestId} />
+        <Viewer sequence={sequence} />
       </ContentStyled>
     </Dialog.Root>
   );

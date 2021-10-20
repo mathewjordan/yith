@@ -27,19 +27,20 @@ export const Viewer: React.FC = ({ sequence }) => {
   // const windows = sequence.map((manifest) => {
   //   return { manifestId: manifest.id };
   // });
-  const [manifestId, setManifestId] = React.useState<string>(sequence[0].id);
+  const [key, setKey] = React.useState<number>(0);
 
-  const updateSequence = (event: Event) => {
-    if (event.target) setManifestId(event.target.dataset.step);
+  const manifestId: string = sequence[key].id;
+
+  const doStep = (step) => {
+    setKey(step);
   };
 
   return (
     <>
       <ViewerControls>
         <DialogClose>Close Viewer</DialogClose>
-        <button onClick={updateSequence} data-step={sequence[1].id}>
-          Next
-        </button>
+        {renderNavigation("Previous", key, sequence, doStep)}
+        {renderNavigation("Next", key, sequence, doStep)}
       </ViewerControls>
       <Mirador
         config={{
@@ -53,5 +54,29 @@ export const Viewer: React.FC = ({ sequence }) => {
         plugins={[]}
       />
     </>
+  );
+};
+
+const renderNavigation = (label, key, sequence, doStep) => {
+  let disabled = undefined;
+  let step = undefined;
+
+  switch (label) {
+    case "Previous":
+      if (key === 0) disabled = true;
+      else step = key + -1;
+      break;
+    case "Next":
+      if (key === sequence.length - 1) disabled = true;
+      else step = key + 1;
+      break;
+    default:
+      console.error(`Label "${label}" is unknown.`);
+  }
+
+  return (
+    <button data-step={step} disabled={disabled} onClick={() => doStep(step)}>
+      {label}
+    </button>
   );
 };

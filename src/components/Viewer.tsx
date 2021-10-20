@@ -1,4 +1,5 @@
 import React from "react";
+import findkey from "lodash.findkey";
 import { ViewerControls } from "./Viewer.styled";
 import { DialogClose } from "@radix-ui/react-dialog";
 import { Mirador } from "./Mirador";
@@ -22,14 +23,17 @@ const defaultConfig = {
   },
 };
 
-export const Viewer: React.FC = ({ sequence }) => {
+export const Viewer: React.FC = ({ manifestId, sequence }) => {
   // todo: allow presentation to send multiple windows
   // const windows = sequence.map((manifest) => {
   //   return { manifestId: manifest.id };
   // });
-  const [key, setKey] = React.useState<number>(0);
 
-  const manifestId: string = sequence[key].id;
+  const defaultKey: number = parseInt(findkey(sequence, { id: manifestId }));
+
+  const [key, setKey] = React.useState<number>(defaultKey);
+
+  let currentManifestId: string = sequence[key].id;
 
   const doStep = (step) => {
     setKey(step);
@@ -46,7 +50,7 @@ export const Viewer: React.FC = ({ sequence }) => {
         config={{
           windows: [
             {
-              manifestId: manifestId,
+              manifestId: currentManifestId,
             },
           ],
           ...defaultConfig,

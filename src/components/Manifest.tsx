@@ -54,10 +54,11 @@ export const Manifest: React.FC<ManifestProps> = ({ id, instance, type }) => {
       }
     });
 
-    if (sequence[0].id !== id) return null;
+    // if (sequence[0].id !== id) return null;
 
     return (
       <Modal
+        manifestId={id}
         manifestLabel={manifest.label}
         painting={painting[0]}
         sequence={sequence}

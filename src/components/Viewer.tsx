@@ -22,7 +22,7 @@ export const Viewer: React.FC = ({ manifestId, sequence, type }) => {
   const config = getMiradorConfig(type);
 
   return (
-    <ViewerWrapper>
+    <ViewerWrapper data-screen={type}>
       <ViewerControls>
         <DialogClose>Close Viewer</DialogClose>
         {renderNavigation("Previous", key, sequence, doStep)}

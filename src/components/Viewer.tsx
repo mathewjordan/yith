@@ -1,46 +1,28 @@
 import React from "react";
 import findkey from "lodash.findkey";
-import { ViewerControls } from "./Viewer.styled";
+import { ViewerControls, ViewerWrapper } from "./Viewer.styled";
 import { DialogClose } from "@radix-ui/react-dialog";
 import { Mirador } from "./Mirador";
+import { getMiradorConfig } from "hooks/viewer/getMiradorConfig";
 
-const defaultConfig = {
-  workspace: {
-    showZoomControls: true,
-  },
-  workspaceControlPanel: {
-    enabled: false,
-  },
-  window: {
-    allowClose: false,
-    allowMaximize: false,
-    allowTopMenuButton: true,
-    allowWindowSideBar: true,
-    defaultSidebarPanelWidth: 300,
-    forceDrawAnnotations: false,
-    hideWindowTitle: false,
-    sideBarOpen: false,
-  },
-};
-
-export const Viewer: React.FC = ({ manifestId, sequence }) => {
+export const Viewer: React.FC = ({ manifestId, sequence, type }) => {
   // todo: allow presentation to send multiple windows
   // const windows = sequence.map((manifest) => {
   //   return { manifestId: manifest.id };
   // });
 
   const defaultKey: number = parseInt(findkey(sequence, { id: manifestId }));
-
   const [key, setKey] = React.useState<number>(defaultKey);
-
   let currentManifestId: string = sequence[key].id;
 
   const doStep = (step) => {
     setKey(step);
   };
 
+  const config = getMiradorConfig(type);
+
   return (
-    <>
+    <ViewerWrapper>
       <ViewerControls>
         <DialogClose>Close Viewer</DialogClose>
         {renderNavigation("Previous", key, sequence, doStep)}
@@ -53,11 +35,11 @@ export const Viewer: React.FC = ({ manifestId, sequence }) => {
               manifestId: currentManifestId,
             },
           ],
-          ...defaultConfig,
+          ...config,
         }}
         plugins={[]}
       />
-    </>
+    </ViewerWrapper>
   );
 };
 

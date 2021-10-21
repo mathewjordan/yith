@@ -26,4 +26,18 @@ const ViewerControls = styled("div", {
   },
 });
 
-export { ViewerControls };
+const ViewerWrapper = styled("div", {
+  display: "flex",
+  flexDirection: "column",
+  width: "100%",
+  height: "100%",
+  margin: "0",
+  backgroundColor: "#DCDCDC",
+
+  "> [id^='mirador-']": {
+    position: "relative",
+    flexGrow: "1",
+  },
+});
+
+export { ViewerControls, ViewerWrapper };

@@ -11,6 +11,7 @@ export interface FigureProps {
   manifestLabel: InternationalString;
   painting: Annotation;
   sequence: Array<any>;
+  type: string;
 }
 
 export const size: number = 275;
@@ -20,6 +21,7 @@ export const Modal: React.FC<FigureProps> = ({
   manifestLabel,
   painting,
   sequence,
+  type,
 }) => {
   /*
    * todo: build a hook that gets the image from the image server
@@ -36,7 +38,7 @@ export const Modal: React.FC<FigureProps> = ({
       </TriggerStyled>
       <OverlayStyled />
       <ContentStyled>
-        <Viewer manifestId={manifestId} sequence={sequence} />
+        <Viewer manifestId={manifestId} sequence={sequence} type={type} />
       </ContentStyled>
     </Dialog.Root>
   );

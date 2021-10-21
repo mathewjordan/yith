@@ -27,16 +27,10 @@ const TriggerStyled = styled(Dialog.Trigger, {
 const ContentStyled = styled(Dialog.Content, {
   position: "fixed",
   display: "flex",
-  flexDirection: "column",
   width: "100%",
   height: "100%",
   margin: "0",
   backgroundColor: "#DCDCDC",
-
-  "> [id^='mirador-']": {
-    position: "relative",
-    flexGrow: "1",
-  },
 });
 
 const OverlayStyled = styled(Dialog.Overlay, {

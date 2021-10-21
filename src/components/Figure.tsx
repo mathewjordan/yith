@@ -10,8 +10,8 @@ export interface FigureProps {
 
 export const Figure: React.FC<FigureProps> = ({ caption, painting, size }) => {
   const resource: string = `${painting.body[0].service[0].id}`;
-  const img: string = `${resource}/full/!${size},${size}/0/default.jpg`;
-  const lqip: string = `${resource}/full/!20,20/0/default.jpg`;
+  const img: string = `${resource}/full/${size},/0/default.jpg`;
+  const lqip: string = `${resource}/full/20,/0/default.jpg`;
 
   return (
     <FigureStyled>

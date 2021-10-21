@@ -1,0 +1,284 @@
+{
+  "@context": "https://iiif.io/api/presentation/3/context.json",
+  "id": "https://yith.dev/fixtures/iiif/manifests/tacoma.json",
+  "type": "Manifest",
+  "label": {
+    "none": ["Tacoma"]
+  },
+  "summary": {
+    "en": [
+      "Color printed lithograph.\\r\\n\\r\\nNorth oriented to lower right.\\r\\n\\r\\nPrinted at bottom:\\r\\n\\\"Tacoma.  Published by Geo. W. Traver.\\\"\\r\\n\\r\\nPrinted beneath key:\\r\\n\\\"Copyrighted by Geo. W. Traver, Tacoma, 1890.\\\"\\r\\n\\r\\nDepicts Tacoma and Commencement Bay in three dimensional detail.  Indicates the presence of the city of Olympia and the Olympic Mountains in the background.  Printed at the bottom is a numbered legend listing a key to various businesses, churches, hotels, mills, parks and other areas of interest throughout the city.  Shows major streets including Winthrop Street, Cliff Avenue, Puyallup Avenue, Pacific Avenue, Adams Street, Tacoma Avenue and South 15th Street.   Includes inset illustrations of major businesses and other important structures and geographic entities in top and bottom edges including:  Hotel Fife, The Ledger, Tacoma National Bank, Oak Grove, Annie Wright Seminary (an all-girls' school), Tacoma Abstract & Title Insurance Company, Tacoma Theatre building, Tacoma City Market, Charles Uhlman Market block, Mount Rainier, Chilberg's Restaurant, Lombard Investment company, N. A. Perry D Street Grocery, Hotel Bostwick and F.S. Harmon and Company Furniture.  Also included as inset is the residence of George W. Traver who was the publisher of the map. Tracks of the Northern Pacific Railroad and and the Tacoma and Fern Hill St. R.R. are shown. In addition sailing vessels, steamers and steamboats are depicted in Commencement Bay.\\r\\n\\r\\nNot drawn to scale."
+    ]
+  },
+  "metadata": [
+    {
+      "label": {
+        "en": ["Cartographer"]
+      },
+      "value": {
+        "en": ["Traver, George W."]
+      }
+    },
+    {
+      "label": {
+        "en": ["Century Published"]
+      },
+      "value": {
+        "en": ["19th century"]
+      }
+    },
+    {
+      "label": {
+        "en": ["Publication Date"]
+      },
+      "value": {
+        "en": ["1890"]
+      }
+    },
+    {
+      "label": {
+        "en": ["Publisher"]
+      },
+      "value": {
+        "en": ["Traver, George W."]
+      }
+    },
+    {
+      "label": {
+        "en": ["Place of Publication"]
+      },
+      "value": {
+        "en": ["United States--Washington (State)--Tacoma"]
+      }
+    }
+  ],
+  "rights": "http://rightsstatements.org/vocab/NoC-US/1.0/",
+  "requiredStatement": {
+    "label": {
+      "en": ["Attribution"]
+    },
+    "value": {
+      "en": ["University of Washington Libraries, Special Collections, MAP120"]
+    }
+  },
+  "thumbnail": [
+    {
+      "id": "https://digitalcollections.lib.washington.edu/digital/iiif/maps/65/full/200,200/0/default.jpg",
+      "type": "Image",
+      "format": "image/jpeg",
+      "width": 200,
+      "height": 200
+    }
+  ],
+  "items": [
+    {
+      "id": "https://yith.dev/fixtures/iiif/manifests/tacoma/canvas/1",
+      "type": "Canvas",
+      "width": 7394,
+      "height": 4590,
+      "items": [
+        {
+          "id": "https://yith.dev/fixtures/iiif/manifests/tacoma/canvas/1/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "@context": "https://iiif.io/api/presentation/3/context.json",
+              "id": "https://yith.dev/fixtures/iiif/manifests/tacoma/canvas/1/page/annotation",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://digitalcollections.lib.washington.edu/digital/iiif/maps/65/full/full/0/default.jpg",
+                "type": "Image",
+                "width": 7394,
+                "height": 4590,
+                "format": "image/jpeg",
+                "service": [
+                  {
+                    "id": "https://cdm16786.contentdm.oclc.org/digital/iiif/maps/65",
+                    "@type": "http://iiif.io/api/image/2/context.json",
+                    "profile": "http://iiif.io/api/image/2/level1.json"
+                  }
+                ]
+              },
+              "target": "https://yith.dev/fixtures/iiif/manifests/tacoma/canvas/1"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "https://yith.dev/fixtures/iiif/manifests/tacoma/canvas/1/annotations",
+          "type": "AnnotationPage",
+          "label": "Tacoma, c. 1890",
+          "items": [
+            {
+              "id": "https://yith.dev/fixtures/iiif/manifests/tacoma/canvas/1/annotations/1",
+              "type": "Annotation",
+              "motivation": "supplementing",
+              "body": {
+                "type": "FragmentSelector",
+                "language": "en",
+                "value": "Birds Eye"
+              },
+              "target": "https://yith.dev/fixtures/iiif/manifests/tacoma/canvas/1#xywh=1398,975,4868,2462"
+            },
+            {
+              "id": "https://yith.dev/fixtures/iiif/manifests/tacoma/canvas/1/annotations/2",
+              "type": "Annotation",
+              "motivation": "supplementing",
+              "body": {
+                "type": "FragmentSelector",
+                "language": "en",
+                "value": "Tacoma National Bank"
+              },
+              "target": "https://yith.dev/fixtures/iiif/manifests/tacoma/canvas/1#xywh=1815,59,1067,959"
+            },
+            {
+              "id": "https://yith.dev/fixtures/iiif/manifests/tacoma/canvas/1/annotations/3",
+              "type": "Annotation",
+              "motivation": "supplementing",
+              "body": {
+                "type": "FragmentSelector",
+                "language": "en",
+                "value": "Tacoma National Bank at corners of Pacific Ave. and Dock St."
+              },
+              "target": "https://yith.dev/fixtures/iiif/manifests/tacoma/canvas/1#xywh=4760,2641,145,148"
+            },
+            {
+              "id": "https://yith.dev/fixtures/iiif/manifests/tacoma/canvas/1/annotations/4",
+              "type": "Annotation",
+              "motivation": "supplementing",
+              "body": {
+                "type": "FragmentSelector",
+                "language": "en",
+                "value": "Tacoma City Market"
+              },
+              "target": "https://yith.dev/fixtures/iiif/manifests/tacoma/canvas/1#xywh=870,3476,1254,720"
+            },
+            {
+              "id": "https://yith.dev/fixtures/iiif/manifests/tacoma/canvas/1/annotations/5",
+              "type": "Annotation",
+              "motivation": "supplementing",
+              "body": {
+                "type": "FragmentSelector",
+                "language": "en",
+                "value": "Tacoma City Market at corner of 9th St. and Olympia Ave."
+              },
+              "target": "https://yith.dev/fixtures/iiif/manifests/tacoma/canvas/1#xywh=4455,2166,367,280"
+            },
+            {
+              "id": "https://yith.dev/fixtures/iiif/manifests/tacoma/canvas/1/annotations/6",
+              "type": "Annotation",
+              "motivation": "supplementing",
+              "body": {
+                "type": "FragmentSelector",
+                "language": "en",
+                "value": "Hotel Bostwick"
+              },
+              "target": "https://yith.dev/fixtures/iiif/manifests/tacoma/canvas/1#xywh=5194,3470,1246,728"
+            },
+            {
+              "id": "https://yith.dev/fixtures/iiif/manifests/tacoma/canvas/1/annotations/7",
+              "type": "Annotation",
+              "motivation": "supplementing",
+              "body": {
+                "type": "FragmentSelector",
+                "language": "en",
+                "value": "Hotel Bostwick at Bostwick Block"
+              },
+              "target": "https://yith.dev/fixtures/iiif/manifests/tacoma/canvas/1#xywh=4703,2230,557,332"
+            },
+            {
+              "id": "https://yith.dev/fixtures/iiif/manifests/tacoma/canvas/1/annotations/8",
+              "type": "Annotation",
+              "motivation": "supplementing",
+              "body": {
+                "type": "FragmentSelector",
+                "language": "en",
+                "value": "Bridge"
+              },
+              "target": "https://yith.dev/fixtures/iiif/manifests/tacoma/canvas/1#xywh=648,2706,1114,664"
+            },
+            {
+              "id": "https://yith.dev/fixtures/iiif/manifests/tacoma/canvas/1/annotations/9",
+              "type": "Annotation",
+              "motivation": "supplementing",
+              "body": {
+                "type": "FragmentSelector",
+                "language": "en",
+                "value": "City Park"
+              },
+              "target": "https://yith.dev/fixtures/iiif/manifests/tacoma/canvas/1#xywh=4648,1598,1114,664"
+            },
+            {
+              "id": "https://yith.dev/fixtures/iiif/manifests/tacoma/canvas/1/annotations/10",
+              "type": "Annotation",
+              "motivation": "supplementing",
+              "body": {
+                "type": "FragmentSelector",
+                "language": "en",
+                "value": "Tacoma Wharf"
+              },
+              "target": "https://yith.dev/fixtures/iiif/manifests/tacoma/canvas/1#xywh=5888,2288,1114,664"
+            },
+            {
+              "id": "https://yith.dev/fixtures/iiif/manifests/tacoma/canvas/1/annotations/11",
+              "type": "Annotation",
+              "motivation": "supplementing",
+              "body": {
+                "type": "FragmentSelector",
+                "language": "en",
+                "value": "Train from Federal Way"
+              },
+              "target": "https://yith.dev/fixtures/iiif/manifests/tacoma/canvas/1#xywh=3122,2746,1114,664"
+            },
+            {
+              "id": "https://yith.dev/fixtures/iiif/manifests/tacoma/canvas/1/annotations/12",
+              "type": "Annotation",
+              "motivation": "supplementing",
+              "body": {
+                "type": "FragmentSelector",
+                "language": "en",
+                "value": "Dotson Clothier"
+              },
+              "target": "https://yith.dev/fixtures/iiif/manifests/tacoma/canvas/1#xywh=2966,2590,557,332"
+            },
+            {
+              "id": "https://yith.dev/fixtures/iiif/manifests/tacoma/canvas/1/annotations/13",
+              "type": "Annotation",
+              "motivation": "supplementing",
+              "body": {
+                "type": "FragmentSelector",
+                "language": "en",
+                "value": "Figmunds Mfg. and Alloy"
+              },
+              "target": "https://yith.dev/fixtures/iiif/manifests/tacoma/canvas/1#xywh=2224,2396,1114,664"
+            },
+            {
+              "id": "https://yith.dev/fixtures/iiif/manifests/tacoma/canvas/1/annotations/14",
+              "type": "Annotation",
+              "motivation": "supplementing",
+              "body": {
+                "type": "FragmentSelector",
+                "language": "en",
+                "value": "Empty"
+              },
+              "target": "https://yith.dev/fixtures/iiif/manifests/tacoma/canvas/1#xywh=1331,2043,2227,1327"
+            },
+            {
+              "id": "https://yith.dev/fixtures/iiif/manifests/tacoma/canvas/1/annotations/15",
+              "type": "Annotation",
+              "motivation": "supplementing",
+              "body": {
+                "type": "FragmentSelector",
+                "language": "en",
+                "value": "Empty"
+              },
+              "target": "https://yith.dev/fixtures/iiif/manifests/tacoma/canvas/1#xywh=970,1984,1114,664"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

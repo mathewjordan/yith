@@ -1,0 +1,4 @@
+[[headers]]
+  for = "/fixtures/*"
+  [headers.values]
+    Access-Control-Allow-Origin: *

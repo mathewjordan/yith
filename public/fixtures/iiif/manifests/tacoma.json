@@ -1,6 +1,6 @@
 {
   "@context": "https://iiif.io/api/presentation/3/context.json",
-  "id": "http://127.0.0.1:8080/fixtures/iiif/manifests/tacoma.json",
+  "id": "https://yith.dev/fixtures/iiif/manifests/tacoma.json",
   "type": "Manifest",
   "label": {
     "none": ["Tacoma"]

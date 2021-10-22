@@ -4,21 +4,51 @@ import { ViewerControls, ViewerWrapper } from "./Viewer.styled";
 import { DialogClose } from "@radix-ui/react-dialog";
 import { Mirador } from "./Mirador";
 import { getMiradorConfig } from "hooks/viewer/getMiradorConfig";
+import { uuid } from "services/uuid";
 
 export const Viewer: React.FC = ({ manifestId, sequence, type }) => {
-  // todo: allow presentation to send multiple windows
-  // const windows = sequence.map((manifest) => {
-  //   return { manifestId: manifest.id };
-  // });
+  /*
+   * todo: allow presentation to send multiple windows
+   */
 
   const defaultKey: number = parseInt(findkey(sequence, { id: manifestId }));
   const [key, setKey] = React.useState<number>(defaultKey);
-  let currentManifestId: string = sequence[key].id;
+  let currentWindows = [{ manifestId: sequence[key].id }];
+
+  /*
+   * write this as a hook
+   */
+
+  let stepType: string = sequence[key].type;
+  let annotation: object = {};
+
+  switch (stepType) {
+    case "Manifest":
+      currentWindows = [{ manifestId: sequence[key].id }];
+      break;
+    case "Canvas":
+      currentWindows = [
+        { manifestId: sequence[key].manifestId, canvasId: sequence[key].id },
+      ];
+      break;
+    case "Annotation":
+      currentWindows = [{ manifestId: sequence[key].manifestId }];
+      break;
+    default:
+      console.error(
+        `Step "${stepType}" is unknown. Must be of type Manifest, Canvas, or Annotation.`
+      );
+  }
+
+  /*
+   *
+   */
 
   const doStep = (step) => {
     setKey(step);
   };
 
+  const prefix: string = `mirador-${uuid()}`;
   const config = getMiradorConfig(type);
 
   return (
@@ -30,14 +60,15 @@ export const Viewer: React.FC = ({ manifestId, sequence, type }) => {
       </ViewerControls>
       <Mirador
         config={{
-          windows: [
-            {
-              manifestId: currentManifestId,
-            },
-          ],
+          id: prefix,
+          createGenerateClassNameOptions: {
+            productionPrefix: prefix,
+          },
+          windows: currentWindows,
           ...config,
         }}
         plugins={[]}
+        step={sequence[key]}
       />
     </ViewerWrapper>
   );

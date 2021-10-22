@@ -3,7 +3,6 @@ import { ContentStyled, OverlayStyled, TriggerStyled } from "./Modal.styled";
 import { Annotation, InternationalString } from "@hyperion-framework/types";
 import * as Dialog from "@radix-ui/react-dialog";
 import { Figure } from "./Figure";
-import { ViewerControls } from "./ViewerControls";
 import { Viewer } from "./Viewer";
 
 export interface FigureProps {

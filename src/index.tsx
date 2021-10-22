@@ -2,6 +2,8 @@ import React from "react";
 import { styled } from "@stitches/react";
 import { YithProvider } from "context/yith-context";
 import { Manifest, ManifestProps } from "components/Manifest";
+import { Annotation, AnnotationProps } from "components/Annotation";
+import { Canvas, CanvasProps } from "components/Canvas";
 import { Presentation, Projection } from "screens";
 import { uuid } from "services/uuid";
 
@@ -11,6 +13,8 @@ interface YithProps {
 }
 
 interface YithComposition {
+  Annotation: React.FC<AnnotationProps>;
+  Canvas: React.FC<CanvasProps>;
   Manifest: React.FC<ManifestProps>;
 }
 
@@ -22,24 +26,37 @@ const Yith: React.FC<YithProps> & YithComposition = (props) => {
   sequence.id = instance;
   sequence.items = [];
 
-  const clonedChildren = React.Children.toArray(children).map((child) => {
+  // todo: write this as a hook OR two
+  const clonedManifests = React.Children.toArray(children).map((manifest) => {
+    // add manifest to sequence
     sequence.items.push({
-      id: child.props.id,
-      annotations: [],
+      id: manifest.props.id,
+      type: "Manifest",
     });
-    const clonedChild = React.cloneElement(child, {
+
+    if (manifest.props.children)
+      manifest.props.children.forEach((child) => {
+        sequence.items.push({
+          id: child.props.id,
+          type: child.type.name,
+          manifestId: manifest.props.id,
+        });
+      });
+
+    // clone and add instance/type
+    const clonedManifest = React.cloneElement(manifest, {
       instance,
       type,
     });
-    return clonedChild;
+    return clonedManifest;
   });
 
   const screen = (type: string) => {
     switch (type) {
       case "presentation":
-        return <Presentation children={clonedChildren} />;
+        return <Presentation children={clonedManifests} />;
       case "projection":
-        return <Projection children={clonedChildren} />;
+        return <Projection children={clonedManifests} />;
       default:
         return (
           <span>
@@ -56,6 +73,8 @@ const Yith: React.FC<YithProps> & YithComposition = (props) => {
   );
 };
 
+Yith.Annotation = Annotation;
+Yith.Canvas = Canvas;
 Yith.Manifest = Manifest;
 
 const Screen = styled("div", {

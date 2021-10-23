@@ -1,6 +1,6 @@
 import React from "react";
 import findkey from "lodash.findkey";
-import { ViewerControls, ViewerWrapper } from "./Viewer.styled";
+import { ViewerControls, ViewerNote, ViewerWrapper } from "./Viewer.styled";
 import { DialogClose } from "@radix-ui/react-dialog";
 import { Mirador } from "./Mirador";
 import { getMiradorConfig } from "hooks/viewer/getMiradorConfig";
@@ -10,6 +10,8 @@ import {
   AnnotationNormalized,
   ManifestNormalized,
 } from "@hyperion-framework/types";
+import { getManifestNote } from "hooks/getManifestNote";
+import { getLabel } from "hooks/getLabel";
 
 export const Viewer: React.FC = ({ manifestId, sequence, type }) => {
   /*
@@ -24,20 +26,23 @@ export const Viewer: React.FC = ({ manifestId, sequence, type }) => {
   const { vault } = state;
 
   /*
-   * write this as a hook
+   * write this as a hook or three
    */
 
   let stepType: string = sequence[key].type;
   let region: string[] = [];
+  let note: object = {};
 
   switch (stepType) {
     case "Manifest":
       currentWindows = [{ manifestId: sequence[key].id }];
+      note = getManifestNote(sequence[key].id);
       break;
     case "Canvas":
       currentWindows = [
         { manifestId: sequence[key].manifestId, canvasId: sequence[key].id },
       ];
+      note = getManifestNote(sequence[key].manifestId);
       break;
     case "Annotation":
       const manifest: ManifestNormalized = vault.fromRef({
@@ -57,6 +62,7 @@ export const Viewer: React.FC = ({ manifestId, sequence, type }) => {
       currentWindows = [
         { manifestId: sequence[key].manifestId, canvasId: target[0] },
       ];
+      note = getManifestNote(sequence[key].manifestId);
 
       break;
     default:
@@ -83,6 +89,14 @@ export const Viewer: React.FC = ({ manifestId, sequence, type }) => {
         {renderNavigation("Previous", key, sequence, doStep)}
         {renderNavigation("Next", key, sequence, doStep)}
       </ViewerControls>
+      <ViewerNote>
+        <span>
+          <strong>{getLabel(note.label, "en")}</strong>
+          <em>Canvas Label</em>
+        </span>
+        <div>Annotation</div>
+        <p>Required Statement</p>
+      </ViewerNote>
       <Mirador
         config={{
           id: prefix,

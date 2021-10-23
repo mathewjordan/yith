@@ -4,6 +4,7 @@ import { Annotation, InternationalString } from "@hyperion-framework/types";
 import * as Dialog from "@radix-ui/react-dialog";
 import { Figure } from "./Figure";
 import { Viewer } from "./Viewer";
+import { getLabel } from "hooks/getLabel";
 
 export interface FigureProps {
   manifestId: string;
@@ -32,7 +33,7 @@ export const Modal: React.FC<FigureProps> = ({
         <Figure
           size={size}
           painting={painting}
-          caption={manifestLabel.none[0]}
+          caption={getLabel(manifestLabel, "en")}
         />
       </TriggerStyled>
       <OverlayStyled />

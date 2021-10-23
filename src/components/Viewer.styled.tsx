@@ -2,6 +2,8 @@ import { styled } from "@stitches/react";
 
 const ViewerControls = styled("div", {
   display: "flex",
+  position: "relative",
+  zIndex: "1",
 
   "> button": {
     display: "flex",
@@ -26,7 +28,19 @@ const ViewerControls = styled("div", {
   },
 });
 
+const ViewerNote = styled("div", {
+  display: "flex",
+  flexDirection: "column",
+  position: "absolute",
+  backgroundColor: "white",
+  padding: "1rem",
+  zIndex: "2",
+  left: "2rem",
+  bottom: "2rem",
+});
+
 const ViewerWrapper = styled("div", {
+  position: "relative",
   display: "flex",
   flexDirection: "column",
   width: "100%",
@@ -68,7 +82,8 @@ const ViewerWrapper = styled("div", {
   "> [id^='mirador-']": {
     position: "relative",
     flexGrow: "1",
+    zIndex: "0",
   },
 });
 
-export { ViewerControls, ViewerWrapper };
+export { ViewerControls, ViewerNote, ViewerWrapper };

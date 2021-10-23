@@ -1,27 +1,18 @@
 import React from "react";
 import mirador from "mirador";
 import { useYithState } from "context/yith-context";
+import {
+  AnnotationNormalized,
+  ManifestNormalized,
+} from "@hyperion-framework/types";
 
-export const Mirador: React.FC = ({ config, plugins, step }) => {
+export const Mirador: React.FC = ({ config, plugins, step, region }) => {
   const [currentWindows, setCurrentWindows] = React.useState<object>({});
   const [miradorInstance, setMiradorInstance] = React.useState<object>();
-
-  const state: any = useYithState();
-  const { vault } = state;
 
   React.useEffect(() => {
     switch (step.type) {
       case "Annotation":
-        const manifest = vault.fromRef({
-          id: step.manifestId,
-          type: "Manifest",
-        });
-        const annotation = vault
-          .allFromRef(manifest.annotations[0].items)
-          .filter((item) => {
-            if (item.id === step.id) return item;
-          })[0];
-        let region = annotation.target.split("#xywh=")[1].split(",");
         panZoom(miradorInstance, 0, region, 0);
         break;
       default:

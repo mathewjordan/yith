@@ -5,6 +5,11 @@ import { DialogClose } from "@radix-ui/react-dialog";
 import { Mirador } from "./Mirador";
 import { getMiradorConfig } from "hooks/viewer/getMiradorConfig";
 import { uuid } from "services/uuid";
+import { useYithState } from "context/yith-context";
+import {
+  AnnotationNormalized,
+  ManifestNormalized,
+} from "@hyperion-framework/types";
 
 export const Viewer: React.FC = ({ manifestId, sequence, type }) => {
   /*
@@ -15,12 +20,15 @@ export const Viewer: React.FC = ({ manifestId, sequence, type }) => {
   const [key, setKey] = React.useState<number>(defaultKey);
   let currentWindows = [{ manifestId: sequence[key].id }];
 
+  const state: any = useYithState();
+  const { vault } = state;
+
   /*
    * write this as a hook
    */
 
   let stepType: string = sequence[key].type;
-  let annotation: object = {};
+  let region: string[] = [];
 
   switch (stepType) {
     case "Manifest":
@@ -32,7 +40,24 @@ export const Viewer: React.FC = ({ manifestId, sequence, type }) => {
       ];
       break;
     case "Annotation":
-      currentWindows = [{ manifestId: sequence[key].manifestId }];
+      const manifest: ManifestNormalized = vault.fromRef({
+        id: sequence[key].manifestId,
+        type: "Manifest",
+      });
+      const annotation: AnnotationNormalized = vault
+        .allFromRef(manifest.annotations[0].items)
+        .filter((item: AnnotationNormalized) => {
+          if (item.id === sequence[key].id) return item;
+        })[0];
+
+      const target: string[] = annotation.target.split("#xywh=");
+
+      region = target[1].split(",");
+
+      currentWindows = [
+        { manifestId: sequence[key].manifestId, canvasId: target[0] },
+      ];
+
       break;
     default:
       console.error(
@@ -69,6 +94,7 @@ export const Viewer: React.FC = ({ manifestId, sequence, type }) => {
         }}
         plugins={[]}
         step={sequence[key]}
+        region={region}
       />
     </ViewerWrapper>
   );

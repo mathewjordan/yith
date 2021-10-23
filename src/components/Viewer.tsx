@@ -89,14 +89,16 @@ export const Viewer: React.FC = ({ manifestId, sequence, type }) => {
         {renderNavigation("Previous", key, sequence, doStep)}
         {renderNavigation("Next", key, sequence, doStep)}
       </ViewerControls>
-      <ViewerNote>
-        <span>
-          <strong>{getLabel(note.label, "en")}</strong>
-          <em>Canvas Label</em>
-        </span>
-        <div>Annotation</div>
-        <p>Required Statement</p>
-      </ViewerNote>
+      {type === "projection" && (
+        <ViewerNote>
+          <span>
+            <strong>{getLabel(note.label, "en")}</strong>
+            <em>Canvas Label</em>
+          </span>
+          <div>Annotation</div>
+          <p>Required Statement</p>
+        </ViewerNote>
+      )}
       <Mirador
         config={{
           id: prefix,

@@ -12,6 +12,7 @@ import {
 } from "@hyperion-framework/types";
 import { getManifestNote } from "hooks/getManifestNote";
 import { getLabel } from "hooks/getLabel";
+import { MetadataItem } from "./MetadataItem";
 
 export const Viewer: React.FC = ({ manifestId, sequence, type }) => {
   /*
@@ -36,13 +37,13 @@ export const Viewer: React.FC = ({ manifestId, sequence, type }) => {
   switch (stepType) {
     case "Manifest":
       currentWindows = [{ manifestId: sequence[key].id }];
-      note = getManifestNote(sequence[key].id);
+      note.manifest = getManifestNote(sequence[key].id);
       break;
     case "Canvas":
       currentWindows = [
         { manifestId: sequence[key].manifestId, canvasId: sequence[key].id },
       ];
-      note = getManifestNote(sequence[key].manifestId);
+      note.manifest = getManifestNote(sequence[key].manifestId);
       break;
     case "Annotation":
       const manifest: ManifestNormalized = vault.fromRef({
@@ -62,7 +63,8 @@ export const Viewer: React.FC = ({ manifestId, sequence, type }) => {
       currentWindows = [
         { manifestId: sequence[key].manifestId, canvasId: target[0] },
       ];
-      note = getManifestNote(sequence[key].manifestId);
+
+      note.manifest = getManifestNote(sequence[key].manifestId);
 
       break;
     default:
@@ -92,11 +94,16 @@ export const Viewer: React.FC = ({ manifestId, sequence, type }) => {
       {type === "projection" && (
         <ViewerNote>
           <span>
-            <strong>{getLabel(note.label, "en")}</strong>
+            <strong>{getLabel(note.manifest.label, "en")}</strong>
             <em>Canvas Label</em>
           </span>
           <div>Annotation</div>
-          <p>Required Statement</p>
+          <p>
+            <MetadataItem
+              item={note.manifest.requiredStatement}
+              language="en"
+            />
+          </p>
         </ViewerNote>
       )}
       <Mirador

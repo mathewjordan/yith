@@ -58,8 +58,7 @@ export const Manifest: React.FC<ManifestProps> = ({ id, instance, type }) => {
 
     return (
       <Modal
-        manifestId={id}
-        manifestLabel={manifest.label}
+        manifest={manifest}
         painting={painting[0]}
         sequence={sequence}
         type={type}

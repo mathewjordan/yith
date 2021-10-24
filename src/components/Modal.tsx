@@ -1,14 +1,14 @@
 import React from "react";
 import { ContentStyled, OverlayStyled, TriggerStyled } from "./Modal.styled";
-import { Annotation, InternationalString } from "@hyperion-framework/types";
+import { Annotation, ManifestNormalized } from "@hyperion-framework/types";
 import * as Dialog from "@radix-ui/react-dialog";
 import { Figure } from "./Figure";
 import { Viewer } from "./Viewer";
 import { getLabel } from "hooks/getLabel";
+import { MetadataItem } from "./MetadataItem";
 
 export interface FigureProps {
-  manifestId: string;
-  manifestLabel: InternationalString;
+  manifest: ManifestNormalized;
   painting: Annotation;
   sequence: Array<any>;
   type: string;
@@ -17,8 +17,7 @@ export interface FigureProps {
 export const size: number = 275;
 
 export const Modal: React.FC<FigureProps> = ({
-  manifestId,
-  manifestLabel,
+  manifest,
   painting,
   sequence,
   type,
@@ -33,12 +32,13 @@ export const Modal: React.FC<FigureProps> = ({
         <Figure
           size={size}
           painting={painting}
-          caption={getLabel(manifestLabel, "en")}
+          caption={getLabel(manifest.label, "en")}
         />
+        <MetadataItem item={manifest.requiredStatement} language="en" />
       </TriggerStyled>
       <OverlayStyled />
       <ContentStyled>
-        <Viewer manifestId={manifestId} sequence={sequence} type={type} />
+        <Viewer manifestId={manifest.id} sequence={sequence} type={type} />
       </ContentStyled>
     </Dialog.Root>
   );

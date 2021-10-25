@@ -1,8 +1,12 @@
 import { Pre } from "./about";
-import React from "react";
+import React, { useEffect } from "react";
 import Yith from "./../index";
 
 export const PresentationDocs: React.FC = () => {
+  React.useEffect(() => {
+    Prism.highlightAll();
+  }, []);
+
   return (
     <>
       <h2>Presentation</h2>
@@ -15,7 +19,7 @@ export const PresentationDocs: React.FC = () => {
         <code className="language-html">
           {`
 <Yith type="presentation">
-    <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/76395/manifest.json" />
+  <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/76395/manifest.json" />
 </Yith>
 `}
         </code>
@@ -31,9 +35,9 @@ export const PresentationDocs: React.FC = () => {
         <code className="language-html">
           {`
 <Yith type="presentation">
-    <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/76395/manifest.json" />
-    <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/76395/manifest.json" />
-    <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/76395/manifest.json" />
+  <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/76395/manifest.json" />
+  <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/76395/manifest.json" />
+  <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/76395/manifest.json" />
 </Yith>
 `}
         </code>

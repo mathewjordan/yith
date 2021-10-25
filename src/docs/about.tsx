@@ -3,7 +3,21 @@ import { styled } from "@stitches/react";
 import Prism from "prismjs";
 
 export const AboutDocs: React.FC = () => {
-  return <>... </>;
+  return (
+    <>
+      <Pre>
+        <code className="language-html">
+          {`
+<Yith type="presentation">
+  <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/76395/manifest.json" />
+  <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/76395/manifest.json" />
+  <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/76395/manifest.json" />
+</Yith>
+`}
+        </code>
+      </Pre>
+    </>
+  );
 };
 
 const Wrapper = styled("div", {

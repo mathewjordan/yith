@@ -13,10 +13,9 @@ const FigureStyled = styled("figure", {
     paddingTop: "75%",
     background: "white",
     borderRadius: "3px",
-    boxShadow: "2px 2px 5px #00000033",
 
     "> div": {
-      backgroundColor: "#000000",
+      backgroundColor: "#0F111A",
       position: "absolute",
       top: "0",
       left: "0",
@@ -61,7 +60,6 @@ const FigureStyled = styled("figure", {
   figcaption: {
     margin: "0.5rem 0",
     display: "flex-inline",
-    justifyContent: "flex-start",
     fontSize: "1rem",
     fontWeight: "700",
   },
@@ -75,9 +73,9 @@ const LQIP = styled("div", {
   width: "100%",
   height: "100%",
   zIndex: "0",
-  opacity: "0.5",
+  opacity: "0.618",
   backgroundSize: "cover",
-  filter: "blur(8px)",
+  filter: "blur(20px) contrast(1.15)",
   transform: "scale3d(1.15,1.15,1.15)",
 });
 

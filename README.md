@@ -2,18 +2,21 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/c7218204-0b13-42f3-a62f-bdd2102f2b79/deploy-status)](https://app.netlify.com/sites/yith/deploys)
 
-A frontend tool that leverages IIIF manifests and interweaves them into flexible layouts. 
+A frontend tool that leverages IIIF manifests and interweaves them into flexible layouts.
 
 ## Types
 
 ### Under Development
+
 - **Presentation** - Showcase individual manifests or compare multiple in separate deep-zoom windows
 - **Projection** - Provide an immersive guided tour driven by region targeted annotations
 
 ### Proposed
+
 - **Progression** - Tell a narrative story walking end users through multiple manifests
 
 ## Usage
+
 ```shell
 <Yith type="presentation">
   <Yith.Content manifestId="https://api.artic.edu/api/v1/artworks/193664/manifest.json" />

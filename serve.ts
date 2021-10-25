@@ -18,7 +18,7 @@ const liveServer = require("live-server");
       ),
     },
     platform: "node",
-    entryPoints: ["src/dev.tsx"],
+    entryPoints: ["src/docs.tsx"],
     // Uses incremental compilation (see `chokidar.on`).
     incremental: true,
     // Removes whitespace, etc. depending on `NODE_ENV=...`.

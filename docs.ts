@@ -14,7 +14,7 @@ build({
   },
   logLevel: "info",
   platform: "node",
-  entryPoints: ["src/dev.tsx"],
+  entryPoints: ["src/docs.tsx"],
   minify: false,
   outfile: "public/script.js",
 });

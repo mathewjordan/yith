@@ -1,7 +1,6 @@
 import { Pre } from "./about";
 import React from "react";
 import Yith from "./../index";
-import Prism from "prismjs";
 
 export const ProjectionDocs: React.FC = () => {
   return (

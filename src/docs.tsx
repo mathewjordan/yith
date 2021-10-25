@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Aside, AboutDocs, Main, Wrapper } from "docs/about";
 import { ProjectionDocs } from "docs/projection";
+import { PresentationDocs } from "docs/presentation";
 
 const Docs: React.FC = () => {
   return (
@@ -46,7 +47,9 @@ const Docs: React.FC = () => {
             <Route path="/projection">
               <ProjectionDocs />
             </Route>
-            <Route path="/presentation">bye</Route>
+            <Route path="/presentation">
+              <PresentationDocs />
+            </Route>
           </Switch>
         </Main>
       </Wrapper>

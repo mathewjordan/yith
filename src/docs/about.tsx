@@ -1,17 +1,25 @@
 import React from "react";
 import { styled } from "@stitches/react";
+import Yith from "./../index";
 import Prism from "prismjs";
 
 export const AboutDocs: React.FC = () => {
   return (
     <>
+      <Yith type="projection">
+        <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/8991/manifest.json" />
+        <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/127644/manifest.json" />
+        <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/25865/manifest.json" />
+      </Yith>
       <Pre>
         <code className="language-html">
           {`
-<Yith type="presentation">
-  <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/76395/manifest.json" />
-  <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/76395/manifest.json" />
-  <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/76395/manifest.json" />
+<Yith type="projection">
+  <Yith type="projection">
+    <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/8991/manifest.json" />
+    <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/127644/manifest.json" />
+    <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/25865/manifest.json" />
+  </Yith>
 </Yith>
 `}
         </code>

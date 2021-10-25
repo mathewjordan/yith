@@ -21,7 +21,6 @@ export const ProjectionDocs: React.FC = () => {
           <Yith.Annotation id="https://yith.dev/fixtures/iiif/manifests/tacoma/canvas/1/annotations/7" />
           <Yith.Annotation id="https://yith.dev/fixtures/iiif/manifests/tacoma/canvas/1/annotations/8" />
         </Yith.Manifest>
-        <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/76395/manifest.json" />
       </Yith>
 
       <Pre>
@@ -37,13 +36,12 @@ export const ProjectionDocs: React.FC = () => {
     <Yith.Annotation id="https://yith.dev/fixtures/iiif/manifests/tacoma/canvas/1/annotations/7" />
     <Yith.Annotation id="https://yith.dev/fixtures/iiif/manifests/tacoma/canvas/1/annotations/8" />
   </Yith.Manifest>
-  <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/76395/manifest.json" />
 </Yith>
 `}
         </code>
       </Pre>
 
-      <h3>Using Canvases</h3>
+      <h3>Multiple Canvases</h3>
       <Yith type="projection">
         <Yith.Manifest id="https://iiif.bodleian.ox.ac.uk/iiif/manifest/e32a277e-91e2-4a6d-8ba6-cc4bad230410.json">
           <Yith.Canvas id="https://iiif.bodleian.ox.ac.uk/iiif/canvas/33ce3177-0fdc-44fd-8325-24a298322023.json" />
@@ -60,6 +58,26 @@ export const ProjectionDocs: React.FC = () => {
     <Yith.Canvas id="https://iiif.bodleian.ox.ac.uk/iiif/canvas/51cc30d8-0404-49fc-893e-c44c3e4a94f8.json" />
     <Yith.Canvas id="https://iiif.bodleian.ox.ac.uk/iiif/canvas/cb0ae5a2-e985-48ef-8318-3cab784ad24f.json" />
   </Yith.Manifest>
+</Yith>
+`}
+        </code>
+      </Pre>
+
+      <h3>Multiple Manifests</h3>
+      <Yith type="projection">
+        <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/8991/manifest.json" />
+        <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/127644/manifest.json" />
+        <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/25865/manifest.json" />
+      </Yith>
+      <Pre>
+        <code className="language-html">
+          {`
+<Yith type="projection">
+  <Yith type="projection">
+    <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/8991/manifest.json" />
+    <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/127644/manifest.json" />
+    <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/25865/manifest.json" />
+  </Yith>
 </Yith>
 `}
         </code>

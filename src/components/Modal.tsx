@@ -14,7 +14,7 @@ export interface FigureProps {
   type: string;
 }
 
-export const size: number = 300;
+export const size: number = 240;
 
 export const Modal: React.FC<FigureProps> = ({
   manifest,

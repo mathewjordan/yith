@@ -8,12 +8,12 @@ export const Note: React.FC = ({ data }) => {
     <ViewerNote>
       <span>
         <strong>{getLabel(data.manifest.label, "en")}</strong>
-        <em>Canvas Label</em>
+        <em>{getLabel(data.canvas.label, "en")}</em>
       </span>
-      <div>Annotation</div>
-      <p>
+      {data.annotation && <p>{data.annotation}</p>}
+      <span>
         <MetadataItem item={data.manifest.requiredStatement} language="en" />
-      </p>
+      </span>
     </ViewerNote>
   );
 };

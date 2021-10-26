@@ -8,7 +8,10 @@ export const Mirador: React.FC = ({ config, plugins, step, region }) => {
   React.useEffect(() => {
     switch (step.type) {
       case "Annotation":
-        panZoom(miradorInstance, 0, region, 0);
+        if (currentWindows[0].manifestId !== config.windows[0].manifestId) {
+          setCurrentWindows(config.windows);
+        }
+        panZoom(miradorInstance, region, 0);
         break;
       default:
         setCurrentWindows(config.windows);
@@ -22,7 +25,7 @@ export const Mirador: React.FC = ({ config, plugins, step, region }) => {
   return <div id={config.id} />;
 };
 
-const panZoom = (miradorInstance, ms, xywh, windowIndex) => {
+const panZoom = (miradorInstance, xywh, windowIndex) => {
   const windowId = Object.keys(miradorInstance.store.getState().windows)[
     windowIndex
   ];
@@ -45,7 +48,5 @@ const panZoom = (miradorInstance, ms, xywh, windowIndex) => {
     zoom: 0.61888 / boxToZoom.width,
   });
 
-  setTimeout(() => {
-    miradorInstance.store.dispatch(action);
-  }, ms);
+  miradorInstance.store.dispatch(action);
 };

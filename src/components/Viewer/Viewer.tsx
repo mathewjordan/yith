@@ -5,13 +5,8 @@ import { DialogClose } from "@radix-ui/react-dialog";
 import { Mirador } from "./Mirador";
 import { getMiradorConfig } from "hooks/viewer/getMiradorConfig";
 import { uuid } from "services/uuid";
-import { useYithState } from "context/yith-context";
-import {
-  AnnotationNormalized,
-  ManifestNormalized,
-} from "@hyperion-framework/types";
-import { getManifestNote } from "hooks/getManifestNote";
 import { Note } from "./Note";
+import { getStepData } from "hooks/getStepData";
 
 export const Viewer: React.FC = ({ manifestId, sequence, type }) => {
   /*
@@ -20,61 +15,8 @@ export const Viewer: React.FC = ({ manifestId, sequence, type }) => {
 
   const defaultKey: number = parseInt(findkey(sequence, { id: manifestId }));
   const [key, setKey] = React.useState<number>(defaultKey);
-  let currentWindows = [{ manifestId: sequence[key].id }];
 
-  const state: any = useYithState();
-  const { vault } = state;
-
-  /*
-   * write this as a hook or three
-   */
-
-  let stepType: string = sequence[key].type;
-  let region: string[] = [];
-  let note: object = {};
-
-  switch (stepType) {
-    case "Manifest":
-      currentWindows = [{ manifestId: sequence[key].id }];
-      note.manifest = getManifestNote(sequence[key].id);
-      break;
-    case "Canvas":
-      currentWindows = [
-        { manifestId: sequence[key].manifestId, canvasId: sequence[key].id },
-      ];
-      note.manifest = getManifestNote(sequence[key].manifestId);
-      break;
-    case "Annotation":
-      const manifest: ManifestNormalized = vault.fromRef({
-        id: sequence[key].manifestId,
-        type: "Manifest",
-      });
-      const annotation: AnnotationNormalized = vault
-        .allFromRef(manifest.annotations[0].items)
-        .filter((item: AnnotationNormalized) => {
-          if (item.id === sequence[key].id) return item;
-        })[0];
-
-      const target: string[] = annotation.target.split("#xywh=");
-
-      region = target[1].split(",");
-
-      currentWindows = [
-        { manifestId: sequence[key].manifestId, canvasId: target[0] },
-      ];
-
-      note.manifest = getManifestNote(sequence[key].manifestId);
-
-      break;
-    default:
-      console.error(
-        `Step "${stepType}" is unknown. Must be of type Manifest, Canvas, or Annotation.`
-      );
-  }
-
-  /*
-   *
-   */
+  const data = getStepData(sequence[key]);
 
   const doStep = (step) => {
     setKey(step);
@@ -90,19 +32,19 @@ export const Viewer: React.FC = ({ manifestId, sequence, type }) => {
         {renderNavigation("Previous", key, sequence, doStep)}
         {renderNavigation("Next", key, sequence, doStep)}
       </ViewerControls>
-      {type === "projection" && <Note data={note} />}
+      {type === "projection" && <Note data={data.note} />}
       <Mirador
         config={{
           id: prefix,
           createGenerateClassNameOptions: {
             productionPrefix: prefix,
           },
-          windows: currentWindows,
+          windows: data.currentWindows,
           ...config,
         }}
         plugins={[]}
         step={sequence[key]}
-        region={region}
+        region={data.region}
       />
     </ViewerWrapper>
   );

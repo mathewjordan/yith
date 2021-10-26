@@ -9,6 +9,8 @@ export const getLabel = (
    * If InternationalString code does not exist on label, then
    * return what may be there, ex: label.none[0] OR label.fr[0]
    */
+  if (!label) return;
+
   if (!label[language]) {
     const codes: Array<string> = Object.getOwnPropertyNames(label);
     if (codes.length > 0) return label[codes[0]];

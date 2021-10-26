@@ -5,7 +5,6 @@ import * as Dialog from "@radix-ui/react-dialog";
 import { Figure } from "components/Previews/Figure";
 import { Viewer } from "components/Viewer/Viewer";
 import { MetadataItem } from "components/Descriptive/MetadataItem";
-import { getLabel } from "hooks/getLabel";
 
 export interface FigureProps {
   manifest: ManifestNormalized;
@@ -29,11 +28,7 @@ export const Modal: React.FC<FigureProps> = ({
   return (
     <Dialog.Root modal={true}>
       <TriggerStyled css={{ width: size }}>
-        <Figure
-          size={size}
-          painting={painting}
-          caption={getLabel(manifest.label, "en")}
-        />
+        <Figure size={size} painting={painting} label={manifest.label} />
         <MetadataItem item={manifest.requiredStatement} language="en" />
       </TriggerStyled>
       <OverlayStyled />

@@ -1,7 +1,7 @@
 import React from "react";
 
 import { MetadataItem as MetadataItemPair } from "@hyperion-framework/types";
-import { getLabel } from "hooks/getLabel";
+import { Label } from "./Label";
 
 export interface MetadataItemProps {
   item: MetadataItemPair;
@@ -15,8 +15,10 @@ export const MetadataItem: React.FC<MetadataItemProps> = ({
   return (
     <span>
       <em>
-        <strong>{getLabel(item.label, language)}: </strong>
-        {getLabel(item.value, language)}
+        <strong>
+          <Label label={item.label} />:
+        </strong>
+        <Label label={item.value} />
       </em>
     </span>
   );

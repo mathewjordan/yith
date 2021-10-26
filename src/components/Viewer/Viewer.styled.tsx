@@ -28,17 +28,6 @@ const ViewerControls = styled("div", {
   },
 });
 
-const ViewerNote = styled("div", {
-  display: "flex",
-  flexDirection: "column",
-  position: "absolute",
-  backgroundColor: "white",
-  padding: "1rem",
-  zIndex: "2",
-  left: "2rem",
-  bottom: "2rem",
-});
-
 const ViewerWrapper = styled("div", {
   position: "relative",
   display: "flex",
@@ -86,4 +75,4 @@ const ViewerWrapper = styled("div", {
   },
 });
 
-export { ViewerControls, ViewerNote, ViewerWrapper };
+export { ViewerControls, ViewerWrapper };

@@ -76,6 +76,9 @@
       "type": "Canvas",
       "width": 7394,
       "height": 4590,
+      "label": {
+        "en": ["Color printed lithograph of Tacoma, Was. c. 1890"]
+      },
       "items": [
         {
           "id": "https://yith.dev/fixtures/iiif/manifests/tacoma/canvas/1/page",

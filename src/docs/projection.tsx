@@ -10,7 +10,19 @@ export const ProjectionDocs: React.FC = () => {
   return (
     <>
       <h2>Projection</h2>
-      <h3>Using Annotations</h3>
+      <p>
+        An immersive guided tour driven by region targeted annotations,
+        canvases, and manifests. Inspired by{" "}
+        <a href="https://exhibit.so/">Exhibit</a>.
+      </p>
+      <h3>Features</h3>
+      <ul>
+        <li>Full screen modal deep-zoom experience.</li>
+        <li>Step in and out of canvases and manifests to tell a story.</li>
+        <li>Auto pan-zooming to xywh regions in annotation targets.</li>
+      </ul>
+      <h3>Examples</h3>
+      <h4>Using Annotations</h4>
       <Yith type="projection">
         <Yith.Manifest id="https://yith.dev/fixtures/iiif/manifests/tacoma.json">
           <Yith.Annotation id="https://yith.dev/fixtures/iiif/manifests/tacoma/canvas/1/annotations/2" />
@@ -41,7 +53,7 @@ export const ProjectionDocs: React.FC = () => {
         </code>
       </Pre>
 
-      <h3>Multiple Canvases</h3>
+      <h4>Multiple Canvases</h4>
       <Yith type="projection">
         <Yith.Manifest id="https://iiif.bodleian.ox.ac.uk/iiif/manifest/e32a277e-91e2-4a6d-8ba6-cc4bad230410.json">
           <Yith.Canvas id="https://iiif.bodleian.ox.ac.uk/iiif/canvas/33ce3177-0fdc-44fd-8325-24a298322023.json" />
@@ -63,7 +75,7 @@ export const ProjectionDocs: React.FC = () => {
         </code>
       </Pre>
 
-      <h3>Multiple Manifests</h3>
+      <h4>Multiple Manifests</h4>
       <Yith type="projection">
         <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/8991/manifest.json" />
         <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/127644/manifest.json" />

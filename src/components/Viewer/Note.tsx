@@ -15,9 +15,9 @@ export const Note: React.FC = ({ data }) => {
         <div className="yith-note-body">{data.annotation}</div>
       )}
 
-      <div className="yith-note-footer">
-        <MetadataItem item={data.manifest.requiredStatement} language="en" />
-      </div>
+      <dl className="yith-note-footer">
+        <MetadataItem item={data.manifest.requiredStatement} />
+      </dl>
     </ViewerNote>
   );
 };

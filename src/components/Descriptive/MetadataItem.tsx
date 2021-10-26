@@ -1,25 +1,21 @@
 import React from "react";
-
 import { MetadataItem as MetadataItemPair } from "@hyperion-framework/types";
 import { Label } from "./Label";
+import { styled } from "@stitches/react";
 
 export interface MetadataItemProps {
   item: MetadataItemPair;
-  language: string;
 }
 
-export const MetadataItem: React.FC<MetadataItemProps> = ({
-  item,
-  language,
-}) => {
+export const MetadataItem: React.FC<MetadataItemProps> = ({ item }) => {
   return (
-    <span>
-      <em>
-        <strong>
-          <Label label={item.label} />:
-        </strong>
+    <>
+      <dt>
+        <Label label={item.label} />s
+      </dt>
+      <dd>
         <Label label={item.value} />
-      </em>
-    </span>
+      </dd>
+    </>
   );
 };

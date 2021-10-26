@@ -29,7 +29,9 @@ export const Modal: React.FC<FigureProps> = ({
     <Dialog.Root modal={true}>
       <TriggerStyled css={{ width: size }}>
         <Figure size={size} painting={painting} label={manifest.label} />
-        <MetadataItem item={manifest.requiredStatement} language="en" />
+        <dl>
+          <MetadataItem item={manifest.requiredStatement} />
+        </dl>
       </TriggerStyled>
       <OverlayStyled />
       <ContentStyled>

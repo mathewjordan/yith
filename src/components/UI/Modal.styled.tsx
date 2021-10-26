@@ -1,6 +1,6 @@
 import * as Dialog from "@radix-ui/react-dialog";
 import { styled } from "@stitches/react";
-import { FigureStyled, LQIP } from "./Figure.styled";
+import { FigureStyled, LQIP } from "components/Previews/Figure.styled";
 
 const TriggerStyled = styled(Dialog.Trigger, {
   cursor: "pointer",

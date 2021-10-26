@@ -1,6 +1,6 @@
 import React from "react";
 import findkey from "lodash.findkey";
-import { ViewerControls, ViewerNote, ViewerWrapper } from "./Viewer.styled";
+import { ViewerControls, ViewerWrapper } from "./Viewer.styled";
 import { DialogClose } from "@radix-ui/react-dialog";
 import { Mirador } from "./Mirador";
 import { getMiradorConfig } from "hooks/viewer/getMiradorConfig";
@@ -11,8 +11,7 @@ import {
   ManifestNormalized,
 } from "@hyperion-framework/types";
 import { getManifestNote } from "hooks/getManifestNote";
-import { getLabel } from "hooks/getLabel";
-import { MetadataItem } from "./MetadataItem";
+import { Note } from "./Note";
 
 export const Viewer: React.FC = ({ manifestId, sequence, type }) => {
   /*
@@ -91,21 +90,7 @@ export const Viewer: React.FC = ({ manifestId, sequence, type }) => {
         {renderNavigation("Previous", key, sequence, doStep)}
         {renderNavigation("Next", key, sequence, doStep)}
       </ViewerControls>
-      {type === "projection" && (
-        <ViewerNote>
-          <span>
-            <strong>{getLabel(note.manifest.label, "en")}</strong>
-            <em>Canvas Label</em>
-          </span>
-          <div>Annotation</div>
-          <p>
-            <MetadataItem
-              item={note.manifest.requiredStatement}
-              language="en"
-            />
-          </p>
-        </ViewerNote>
-      )}
+      {type === "projection" && <Note data={note} />}
       <Mirador
         config={{
           id: prefix,

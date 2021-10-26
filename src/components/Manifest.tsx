@@ -7,7 +7,7 @@ import {
 } from "@hyperion-framework/types";
 import { useYithState } from "context/yith-context";
 import { getSequence } from "hooks/getSequence";
-import { Modal } from "./Modal";
+import { Modal } from "./UI/Modal";
 
 export interface ManifestProps {
   id: string;

@@ -2,10 +2,10 @@ import React from "react";
 import { ContentStyled, OverlayStyled, TriggerStyled } from "./Modal.styled";
 import { Annotation, ManifestNormalized } from "@hyperion-framework/types";
 import * as Dialog from "@radix-ui/react-dialog";
-import { Figure } from "./Figure";
-import { Viewer } from "./Viewer";
+import { Figure } from "components/Previews/Figure";
+import { Viewer } from "components/Viewer/Viewer";
+import { MetadataItem } from "components/Descriptive/MetadataItem";
 import { getLabel } from "hooks/getLabel";
-import { MetadataItem } from "./MetadataItem";
 
 export interface FigureProps {
   manifest: ManifestNormalized;

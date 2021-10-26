@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;400&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Roboto+Mono:wght@400&display=swap");
     </style>
     <link href="/prism.css" rel="stylesheet" />
     <title>Yith</title>
@@ -13,19 +13,49 @@
     html {
       font-size: 1rem;
       font-family: system-ui, -apple-system, Helvetica, Arial;
+      color: "#1f2233 !important";
     }
 
     h1 {
-      font-size: 1.75rem;
-      font-weight: 900 !important;
+      font-size: 2rem;
+      letter-spacing: -0.025em;
+      position: relative;
+      flex-direction: column;
+      width: auto;
+      display: inline-flex !important;
+      color: white;
+    }
+
+    h1::before,
+    h1::after {
+      position: absolute;
+      content: "";
+      height: 1.1em;
+      width: 129%;
+      left: -10%;
+      z-index: -1;
+      bottom: 0.2em;
+      border-radius: 1px;
+      background-color: #1f2233;
+      transform: skew(9deg, -3.5deg);
+    }
+
+    h1::after {
+      height: 20px;
+      width: 138%;
+      left: -10%;
+      bottom: 0em;
+      border-radius: 1px;
+      background-color: #1f2233;
+      transform: skew(-5deg, 3.5deg);
     }
 
     h1,
     h2,
     h3 {
-      font-weight: 900;
       line-height: 1.3em;
-      margin: 0 0 1rem;
+      margin: 0 auto 1rem 0;
+      font-family: "DM Serif Text";
     }
 
     body {

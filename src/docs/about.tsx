@@ -38,10 +38,10 @@ const Aside = styled("div", {
   display: "flex",
   flexDirection: "column",
   position: "fixed",
-  width: "calc(20% - 2rem)",
+  width: "calc(20% - 4rem)",
   height: "100%",
   flexShrink: "0",
-  padding: "1rem",
+  padding: "2rem",
   backgroundColor: "#fff",
   boxShadow: "2px 2px 5px #00000011",
 });
@@ -56,7 +56,7 @@ const Main = styled("div", {
   flexShrink: "1",
   overflowX: "hidden",
   overflowY: "scroll",
-  padding: "1rem 2rem",
+  padding: "2rem",
 });
 
 const Pre = styled("pre", {

@@ -73,11 +73,9 @@ export const ProjectionDocs: React.FC = () => {
         <code className="language-html">
           {`
 <Yith type="projection">
-  <Yith type="projection">
-    <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/8991/manifest.json" />
-    <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/127644/manifest.json" />
-    <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/25865/manifest.json" />
-  </Yith>
+  <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/8991/manifest.json" />
+  <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/127644/manifest.json" />
+  <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/25865/manifest.json" />
 </Yith>
 `}
         </code>

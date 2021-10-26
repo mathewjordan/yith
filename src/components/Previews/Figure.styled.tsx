@@ -10,7 +10,7 @@ const FigureStyled = styled("figure", {
     height: "0",
     width: "100%",
     overflow: "hidden",
-    paddingTop: "75%",
+    paddingTop: "77%",
     background: "white",
     borderRadius: "3px",
 
@@ -58,10 +58,11 @@ const FigureStyled = styled("figure", {
   },
 
   figcaption: {
-    margin: "0.5rem 0",
+    margin: "1rem 0",
     display: "flex-inline",
     fontSize: "1rem",
-    fontWeight: "700",
+    fontWeight: "900",
+    textAlign: "center",
   },
 });
 

@@ -27,7 +27,7 @@ const ViewerNote = styled("div", {
       display: "flex",
       fontSize: "0.8333rem",
       marginTop: "0.5rem",
-      color: "#666",
+      color: "#555555",
     },
   },
 
@@ -38,21 +38,14 @@ const ViewerNote = styled("div", {
   },
 
   ".yith-note-footer": {
+    margin: "0",
+    padding: "1rem",
+    justifyContent: "flex-start",
     fontSize: "0.7222rem",
     backgroundColor: "#e0e0e0",
+    color: "#555555",
     borderBottomRightRadius: "3px",
     borderBottomLeftRadius: "3px",
-    padding: "1rem",
-    margin: "0",
-    fontStyle: "italic",
-
-    dt: {
-      display: "inline",
-      fontWeight: "700",
-      ["&:after"]: { content: ": " },
-    },
-
-    dd: { display: "inline", margin: "0", padding: "0" },
   },
 });
 

@@ -6,6 +6,14 @@ const TriggerStyled = styled(Dialog.Trigger, {
   cursor: "pointer",
   backgroundColor: "transparent",
   border: "none",
+  justifyContent: "flex-start",
+
+  "> dl": {
+    padding: " 0 0.5rem",
+    opacity: "0.7",
+    fontSize: "0.7222rem",
+    disply: "flex",
+  },
 
   "&:hover, &:focus": {
     [`${FigureStyled}`]: {

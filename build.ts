@@ -28,11 +28,3 @@ build({
   outfile: "./dist/index.cjs.js",
   target: ["esnext", "node12.22.0"],
 });
-
-build({
-  ...shared,
-  external: ["react", "react-dom"],
-  format: "esm",
-  outfile: "./dist/index.esm.js",
-  target: ["esnext", "node12.22.0"],
-});

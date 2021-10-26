@@ -1,12 +1,12 @@
 {
-  "name": "yith",
-  "version": "1.0.0",
-  "description": "",
+  "name": "@yith/yith",
+  "version": "0.1.0",
+  "description": "[![Netlify Status](https://api.netlify.com/api/v1/badges/c7218204-0b13-42f3-a62f-bdd2102f2b79/deploy-status)](https://app.netlify.com/sites/yith/deploys)",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "rm -rf dist && node build.ts && tsc --emitDeclarationOnly --outDir dist",
+    "build": "rm -rf dist && node build.ts",
     "build:docs": "rm -rf dist && node docs.ts",
     "dev": "node serve.ts",
     "dev:docs": "node serve.ts",
@@ -21,8 +21,8 @@
     "IIIF",
     "mirador"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": "Mathew Jordan",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/mathewjordan/yith/issues"
   },

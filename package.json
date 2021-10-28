@@ -1,6 +1,6 @@
 {
   "name": "@yith/yith",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "[![Netlify Status](https://api.netlify.com/api/v1/badges/c7218204-0b13-42f3-a62f-bdd2102f2b79/deploy-status)](https://app.netlify.com/sites/yith/deploys)",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",

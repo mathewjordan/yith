@@ -10,7 +10,7 @@
     "isolatedModules": true, // Unconditionally emit imports for unresolved files
     "jsx": "react", // Support JSX in .tsx files
     "lib": ["dom", "dom.iterable", "esnext"], // List of library files to be included in the compilation
-    "module": "commonjs", // Specify module code generation
+    "module": "esnext", // Specify module code generation
     "moduleResolution": "node", // Resolve modules using Node.js style
     "noEmit": false, // Do not emit output (meaning do not compile code, only perform type checking)
     "noFallthroughCasesInSwitch": true, // Report errors for fallthrough cases in switch statement

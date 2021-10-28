@@ -1,5 +1,5 @@
-export const getSequence = (sequences, instance) => {
-  const filtered = sequences.filter((yith) => {
+export const getSequence = (sequences: any, instance: string) => {
+  const filtered = sequences.filter((yith: any) => {
     if (yith.id === instance) return yith.items;
   });
   if (!filtered[0]) return;

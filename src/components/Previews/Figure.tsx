@@ -1,16 +1,17 @@
-import { Annotation } from "@hyperion-framework/types";
+import { Annotation, InternationalString } from "@hyperion-framework/types";
 import { Label } from "components/Descriptive/Label";
+import { getResourceURI } from "hooks/getResourceURI";
 import React from "react";
 import { FigureStyled, LQIP } from "./Figure.styled";
 
 export interface FigureProps {
-  label: string;
+  label: InternationalString;
   painting: Annotation;
   size: number;
 }
 
 export const Figure: React.FC<FigureProps> = ({ label, painting, size }) => {
-  const resource: string = `${painting.body[0].service[0].id}`;
+  const resource: string = getResourceURI(painting);
   const img: string = `${resource}/full/${size},/0/default.jpg`;
   const lqip: string = `${resource}/full/20,/0/default.jpg`;
 

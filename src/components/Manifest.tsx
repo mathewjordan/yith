@@ -3,6 +3,7 @@ import {
   Annotation,
   AnnotationPageNormalized,
   CanvasNormalized,
+  ContentResource,
   ManifestNormalized,
 } from "@hyperion-framework/types";
 import { useYithState } from "context/yith-context";
@@ -47,11 +48,13 @@ export const Manifest: React.FC<ManifestProps> = ({ id, instance, type }) => {
     );
     const annotations: Annotation[] = vault.allFromRef(annotationPage.items);
 
-    const painting: Annotation[] = annotations.filter((annotation) => {
-      if (annotation.motivation[0] === "painting") {
-        annotation.body[0] = vault.fromRef(annotation.body[0]);
-        return annotation;
-      }
+    const painting: Annotation[] = annotations.filter((annotation: any) => {
+      if (annotation.motivation)
+        if (annotation.motivation[0] === "painting") {
+          const resource: ContentResource = vault.fromRef(annotation.body[0]);
+          annotation.body[0] = resource;
+          return annotation;
+        }
     });
 
     // if (sequence[0].id !== id) return null;
@@ -65,4 +68,6 @@ export const Manifest: React.FC<ManifestProps> = ({ id, instance, type }) => {
       />
     );
   }
+
+  return <>The manifest {id} failed to load.</>;
 };

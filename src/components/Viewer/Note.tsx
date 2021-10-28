@@ -3,7 +3,11 @@ import { MetadataItem } from "components/Descriptive/MetadataItem";
 import { ViewerNote } from "./Note.styled";
 import { Label } from "components/Descriptive/Label";
 
-export const Note: React.FC = ({ data }) => {
+interface NoteProps {
+  data: any;
+}
+
+export const Note: React.FC<NoteProps> = ({ data }) => {
   return (
     <ViewerNote>
       <div className="yith-note-header">

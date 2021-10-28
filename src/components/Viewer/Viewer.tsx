@@ -8,7 +8,17 @@ import { uuid } from "services/uuid";
 import { Note } from "./Note";
 import { getStepData } from "hooks/getStepData";
 
-export const Viewer: React.FC = ({ manifestId, sequence, type }) => {
+interface ViewerProps {
+  manifestId: any;
+  sequence: any;
+  type: string;
+}
+
+export const Viewer: React.FC<ViewerProps> = ({
+  manifestId,
+  sequence,
+  type,
+}) => {
   /*
    * todo: allow presentation to send multiple windows
    */
@@ -18,7 +28,7 @@ export const Viewer: React.FC = ({ manifestId, sequence, type }) => {
 
   const data = getStepData(sequence[key]);
 
-  const doStep = (step) => {
+  const doStep = (step: number) => {
     setKey(step);
   };
 
@@ -29,8 +39,18 @@ export const Viewer: React.FC = ({ manifestId, sequence, type }) => {
     <ViewerWrapper data-screen={type}>
       <ViewerControls>
         <DialogClose>Close Viewer</DialogClose>
-        {renderNavigation("Previous", key, sequence, doStep)}
-        {renderNavigation("Next", key, sequence, doStep)}
+        <ViewerNavigation
+          label="Previous"
+          stepKey={key}
+          sequence={sequence}
+          doStep={doStep}
+        />
+        <ViewerNavigation
+          label="Next"
+          stepKey={key}
+          sequence={sequence}
+          doStep={doStep}
+        />
       </ViewerControls>
       {type === "projection" && <Note data={data.note} />}
       <Mirador
@@ -49,19 +69,30 @@ export const Viewer: React.FC = ({ manifestId, sequence, type }) => {
     </ViewerWrapper>
   );
 };
+interface RenderNavigationProps {
+  label: any;
+  stepKey: number;
+  sequence: any;
+  doStep: (arg0: number) => void;
+}
 
-const renderNavigation = (label, key, sequence, doStep) => {
-  let disabled = undefined;
-  let step = undefined;
+const ViewerNavigation: React.FC<RenderNavigationProps> = ({
+  label,
+  stepKey,
+  sequence,
+  doStep,
+}) => {
+  let disabled: boolean = false;
+  let step: any = undefined;
 
   switch (label) {
     case "Previous":
-      if (key === 0) disabled = true;
-      else step = key + -1;
+      if (stepKey === 0) disabled = true;
+      else step = stepKey + -1;
       break;
     case "Next":
-      if (key === sequence.length - 1) disabled = true;
-      else step = key + 1;
+      if (stepKey === sequence.length - 1) disabled = true;
+      else step = stepKey + 1;
       break;
     default:
       console.error(`Label "${label}" is unknown.`);

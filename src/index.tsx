@@ -18,45 +18,54 @@ interface YithComposition {
   Manifest: React.FC<ManifestProps>;
 }
 
+export interface Sequence {
+  id: string;
+  items: Array<any>;
+}
+
 const Yith: React.FC<YithProps> & YithComposition = (props) => {
   const { type, children } = props;
   const instance: string = `yith-${uuid()}`;
 
-  let sequence = {};
-  sequence.id = instance;
-  sequence.items = [];
+  let sequence: Sequence = {
+    id: instance,
+    items: [],
+  };
 
   // todo: write this as a hook OR two
-  const clonedManifests = React.Children.toArray(children).map((manifest) => {
-    // add manifest to sequence
-    sequence.items.push({
-      id: manifest.props.id,
-      type: "Manifest",
-    });
+  const clonedManifests = React.Children.toArray(children).map(
+    (manifest: any) => {
+      // add manifest to sequence
 
-    if (manifest.props.children)
-      manifest.props.children.forEach((child) => {
-        sequence.items.push({
-          id: child.props.id,
-          type: child.type.name,
-          manifestId: manifest.props.id,
-        });
+      sequence.items.push({
+        id: manifest.props.id,
+        type: "Manifest",
       });
 
-    // clone and add instance/type
-    const clonedManifest = React.cloneElement(manifest, {
-      instance,
-      type,
-    });
-    return clonedManifest;
-  });
+      if (manifest.props.children)
+        manifest.props.children.forEach((child: any) => {
+          sequence.items.push({
+            id: child.props.id,
+            type: child.type.name,
+            manifestId: manifest.props.id,
+          });
+        });
+
+      // clone and add instance/type
+      const clonedManifest = React.cloneElement(manifest, {
+        instance,
+        type,
+      });
+      return clonedManifest;
+    }
+  );
 
   const screen = (type: string) => {
     switch (type) {
       case "presentation":
-        return <Presentation children={clonedManifests} />;
+        return <Presentation children={clonedManifests as any} />;
       case "projection":
-        return <Projection children={clonedManifests} />;
+        return <Projection children={clonedManifests as any} />;
       default:
         return (
           <span>
@@ -67,7 +76,7 @@ const Yith: React.FC<YithProps> & YithComposition = (props) => {
   };
 
   return (
-    <YithProvider sequence={sequence}>
+    <YithProvider sequence={sequence as any}>
       <Screen>{screen(type)}</Screen>
     </YithProvider>
   );
@@ -83,4 +92,4 @@ const Screen = styled("div", {
   alignItems: "flex-start",
 });
 
-module.exports = Yith;
+export default Yith;

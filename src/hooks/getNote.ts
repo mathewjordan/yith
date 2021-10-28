@@ -4,7 +4,7 @@ import {
   ManifestNormalized,
 } from "@hyperion-framework/types";
 
-export const getManifestNote = (id) => {
+export const getManifestNote = (id: string) => {
   const state: any = useYithState();
   const { vault } = state;
 
@@ -21,7 +21,7 @@ export const getManifestNote = (id) => {
   };
 };
 
-export const getCanvasNote = (id) => {
+export const getCanvasNote = (id: string) => {
   const state: any = useYithState();
   const { vault } = state;
 
@@ -36,7 +36,7 @@ export const getCanvasNote = (id) => {
   };
 };
 
-export const getAnnotationNote = (annotation) => {
+export const getAnnotationNote = (annotation: any) => {
   if (!annotation.body.value) return null;
 
   return annotation.body.value;

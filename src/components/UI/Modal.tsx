@@ -1,10 +1,15 @@
 import React from "react";
 import { ContentStyled, OverlayStyled, TriggerStyled } from "./Modal.styled";
-import { Annotation, ManifestNormalized } from "@hyperion-framework/types";
+import {
+  Annotation,
+  InternationalString,
+  ManifestNormalized,
+} from "@hyperion-framework/types";
 import * as Dialog from "@radix-ui/react-dialog";
 import { Figure } from "components/Previews/Figure";
 import { Viewer } from "components/Viewer/Viewer";
 import { MetadataItem } from "components/Descriptive/MetadataItem";
+import { MetadataItem as MetadataItemPair } from "@hyperion-framework/types";
 
 export interface FigureProps {
   manifest: ManifestNormalized;
@@ -28,9 +33,13 @@ export const Modal: React.FC<FigureProps> = ({
   return (
     <Dialog.Root modal={true}>
       <TriggerStyled css={{ width: size }}>
-        <Figure size={size} painting={painting} label={manifest.label} />
+        <Figure
+          size={size}
+          painting={painting}
+          label={manifest.label as unknown as InternationalString}
+        />
         <dl>
-          <MetadataItem item={manifest.requiredStatement} />
+          <MetadataItem item={manifest.requiredStatement as MetadataItemPair} />
         </dl>
       </TriggerStyled>
       <OverlayStyled />

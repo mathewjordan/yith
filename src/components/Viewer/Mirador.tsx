@@ -1,9 +1,21 @@
 import React from "react";
 import mirador from "mirador";
 
-export const Mirador: React.FC = ({ config, plugins, step, region }) => {
-  const [currentWindows, setCurrentWindows] = React.useState<object>({});
-  const [miradorInstance, setMiradorInstance] = React.useState<object>();
+interface MiradorProps {
+  config: any;
+  plugins: Array<any>;
+  step: any;
+  region: Array<string>;
+}
+
+export const Mirador: React.FC<MiradorProps> = ({
+  config,
+  plugins,
+  step,
+  region,
+}) => {
+  const [currentWindows, setCurrentWindows] = React.useState<any>({});
+  const [miradorInstance, setMiradorInstance] = React.useState<any>();
 
   React.useEffect(() => {
     switch (step.type) {
@@ -25,7 +37,11 @@ export const Mirador: React.FC = ({ config, plugins, step, region }) => {
   return <div id={config.id} />;
 };
 
-const panZoom = (miradorInstance, xywh, windowIndex) => {
+function panZoom(
+  miradorInstance: any,
+  xywh: Array<string>,
+  windowIndex: number
+) {
   const windowId = Object.keys(miradorInstance.store.getState().windows)[
     windowIndex
   ];
@@ -49,4 +65,4 @@ const panZoom = (miradorInstance, xywh, windowIndex) => {
   });
 
   miradorInstance.store.dispatch(action);
-};
+}

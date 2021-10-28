@@ -43,7 +43,7 @@ function yithReducer(state: YithContextStore, action: YithAction) {
 }
 
 interface YithProviderProps {
-  sequence: Array<any>;
+  sequence: any;
   initialState?: YithContextStore;
   children: React.ReactNode;
 }

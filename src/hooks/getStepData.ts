@@ -1,7 +1,4 @@
-import {
-  AnnotationNormalized,
-  ManifestNormalized,
-} from "@hyperion-framework/types";
+import { AnnotationNormalized } from "@hyperion-framework/types";
 import { useYithState } from "context/yith-context";
 import {
   getAnnotationNote,
@@ -9,11 +6,11 @@ import {
   getManifestNote,
 } from "hooks/getNote";
 
-export const getStepData = (step) => {
+export const getStepData = (step: any) => {
   const state: any = useYithState();
   const { vault } = state;
 
-  let data = {
+  let data: any = {
     currentWindows: [],
     region: [],
     note: {},
@@ -33,11 +30,11 @@ export const getStepData = (step) => {
       data.note.canvas = getCanvasNote(step.id);
       break;
     case "Annotation":
-      const manifest: ManifestNormalized = vault.fromRef({
+      const manifest: any = vault.fromRef({
         id: step.manifestId,
         type: "Manifest",
       });
-      const annotation: AnnotationNormalized = vault
+      const annotation: any = vault
         .allFromRef(manifest.annotations[0].items)
         .filter((item: AnnotationNormalized) => {
           if (item.id === step.id) return item;
@@ -58,7 +55,7 @@ export const getStepData = (step) => {
       break;
     default:
       console.error(
-        `Step "${stepType}" is unknown. Must be of type Manifest, Canvas, or Annotation.`
+        `Step ${step.type} is unknown. Must be of type Manifest, Canvas, or Annotation.`
       );
   }
   return data;

@@ -5,7 +5,7 @@ import {
   InternationalString,
   ManifestNormalized,
 } from "@hyperion-framework/types";
-import * as Dialog from "@radix-ui/react-dialog";
+import Dialog from "@radix-ui/react-dialog";
 import { Figure } from "components/Previews/Figure";
 import { Viewer } from "components/Viewer/Viewer";
 import { MetadataItem } from "components/Descriptive/MetadataItem";

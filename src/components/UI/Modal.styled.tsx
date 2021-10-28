@@ -1,8 +1,12 @@
-import * as Dialog from "@radix-ui/react-dialog";
+import {
+  DialogTrigger,
+  DialogContent,
+  DialogOverlay,
+} from "@radix-ui/react-dialog";
 import { styled } from "@stitches/react";
 import { FigureStyled, LQIP } from "components/Previews/Figure.styled";
 
-const TriggerStyled = styled(Dialog.Trigger, {
+const TriggerStyled = styled(DialogTrigger, {
   cursor: "pointer",
   backgroundColor: "transparent",
   border: "none",
@@ -32,7 +36,7 @@ const TriggerStyled = styled(Dialog.Trigger, {
   },
 });
 
-const ContentStyled = styled(Dialog.Content, {
+const ContentStyled = styled(DialogContent, {
   position: "fixed",
   display: "flex",
   width: "100%",
@@ -41,7 +45,7 @@ const ContentStyled = styled(Dialog.Content, {
   backgroundColor: "#DCDCDC",
 });
 
-const OverlayStyled = styled(Dialog.Overlay, {
+const OverlayStyled = styled(DialogOverlay, {
   position: "fixed",
   width: "100%",
   height: "100%",

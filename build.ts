@@ -16,7 +16,7 @@ const shared = {
 
 build({
   ...shared,
-  external: ["react", "react-dom"],
+  external: ["react", "react-dom", "mirador"],
   format: "esm",
   outfile: "./dist/index.esm.js",
   target: ["esnext", "node12.22.0"],
@@ -24,7 +24,7 @@ build({
 
 build({
   ...shared,
-  external: ["react", "react-dom"],
+  external: ["react", "react-dom", "mirador"],
   format: "cjs",
   outfile: "./dist/index.cjs.js",
   target: ["esnext", "node12.22.0"],

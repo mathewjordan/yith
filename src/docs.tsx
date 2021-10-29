@@ -55,13 +55,13 @@ const Docs: React.FC = () => {
               </li>
             </ul>
             <hr />
-            <strong>Examples</strong>
+            <strong>Contextual Examples</strong>
             <ul>
               <li>
                 <Link to="/examples/buddha">Five Impressions of Buddha</Link>
               </li>
               <li>
-                <a className="disabled">The Nez Perce</a>
+                <a className="disabled">Nimíipuu, The Nez Percé</a>
               </li>
               <li>
                 <a className="disabled">Odilon Redon (1840-1916)</a>

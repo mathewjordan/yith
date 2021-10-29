@@ -12,7 +12,6 @@ const FigureStyled = styled("figure", {
     overflow: "hidden",
     paddingTop: "77%",
     background: "white",
-    borderRadius: "3px",
 
     "> div": {
       backgroundColor: "#0F111A",
@@ -39,7 +38,6 @@ const FigureStyled = styled("figure", {
         textTransform: "uppercase",
         fontWeight: "700",
         bottom: "1rem",
-        borderRadius: "3px",
         boxShadow: "2px 2px 5px #00000011",
         transition: "all 200ms ease-in-out",
       },

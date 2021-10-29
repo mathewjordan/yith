@@ -24,3 +24,9 @@ build({
   format: "cjs",
   outfile: "./dist/index.cjs.js",
 });
+
+build({
+  ...shared,
+  format: "esm",
+  outfile: "./dist/index.esm.js",
+});

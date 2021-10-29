@@ -9,7 +9,7 @@
     "incremental": true, // Enable incremental compilation by reading/writing information from prior compilations to a file on disk
     "isolatedModules": true, // Unconditionally emit imports for unresolved files
     "jsx": "react", // Support JSX in .tsx files
-    "lib": ["dom", "dom.iterable", "esnext", "es6"], // List of library files to be included in the compilation
+    "lib": ["dom", "dom.iterable", "esnext"], // List of library files to be included in the compilation
     "module": "esnext", // Specify module code generation
     "moduleResolution": "node", // Resolve modules using Node.js style
     "noEmit": false, // Do not emit output (meaning do not compile code, only perform type checking)
@@ -20,7 +20,7 @@
     "outDir": "./dist",
     "skipLibCheck": true, // Skip type checking of all declaration files
     "sourceMap": true, // Generate corrresponding .map file
-    "strict": false, // Enable all strict type checking options
+    "strict": true, // Enable all strict type checking options
     "target": "es6" // Specify ECMAScript target version
   },
   "include": ["global.d.ts", "src/**/*.ts", "src/**/*.tsx"],

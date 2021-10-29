@@ -1,4 +1,4 @@
-// Reference: https://github.com/souporserious/bundling-typescript-with-esbuild-for-npm
+// https://github.com/souporserious/bundling-typescript-with-esbuild-for-npm
 
 const { build } = require("esbuild");
 const { peerDependencies } = require("./package.json");
@@ -6,26 +6,21 @@ const { peerDependencies } = require("./package.json");
 const entryFile = "src/index.tsx";
 const shared = {
   bundle: true,
-  entryPoints: [entryFile],
-  external: Object.keys(peerDependencies),
-  logLevel: "info",
-  minify: true,
-  sourcemap: true,
+  define: {
+    "process.env.NODE_ENV": JSON.stringify(
+      process.env.NODE_ENV || "development"
+    ),
+  },
+  external: ["react", "react-dom", "mirador"],
   platform: "node",
+  logLevel: "info",
+  entryPoints: ["src/docs.tsx"],
+  minify: false,
+  sourcemap: true,
 };
 
 build({
   ...shared,
-  external: ["react", "react-dom", "mirador"],
-  format: "esm",
-  outfile: "./dist/index.esm.js",
-  target: ["esnext", "node12.22.0"],
-});
-
-build({
-  ...shared,
-  external: ["react", "react-dom", "mirador"],
   format: "cjs",
   outfile: "./dist/index.cjs.js",
-  target: ["esnext", "node12.22.0"],
 });

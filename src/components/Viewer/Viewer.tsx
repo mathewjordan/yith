@@ -1,4 +1,5 @@
 import React from "react";
+// @ts-ignore
 import findkey from "lodash.findkey";
 import { ViewerControls, ViewerWrapper } from "./Viewer.styled";
 import { DialogClose } from "@radix-ui/react-dialog";

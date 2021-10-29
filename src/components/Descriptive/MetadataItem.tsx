@@ -8,6 +8,8 @@ export interface MetadataItemProps {
 }
 
 export const MetadataItem: React.FC<MetadataItemProps> = ({ item }) => {
+  if (!item) return <></>;
+
   return (
     <MetadataItemWrapper>
       <dt>

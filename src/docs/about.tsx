@@ -7,7 +7,7 @@ export const AboutDocs: React.FC = () => {
   return (
     <>
       <Yith type="projection">
-        <Yith.Manifest id="https://storiiies.cogapp.com/holbein/manifest.json" />
+        <Yith.Manifest id="https://iiif.stack.rdc.library.northwestern.edu/public/84/ae/c8/c1/-4/2e/8-/4e/2c/-a/6b/2-/1c/7e/37/90/21/7f-manifest.json" />
       </Yith>
     </>
   );

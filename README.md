@@ -19,7 +19,7 @@ A frontend tool that leverages IIIF manifests and interweaves them into flexible
 
 ```shell
 <Yith type="presentation">
-  <Yith.Content manifestId="https://api.artic.edu/api/v1/artworks/193664/manifest.json" />
+  <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/193664/manifest.json" />
 </Yith>
 ```
 

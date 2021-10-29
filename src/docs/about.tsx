@@ -5,6 +5,10 @@ import Prism from "prismjs";
 import { transform } from "typescript";
 
 export const AboutDocs: React.FC = () => {
+  React.useEffect(() => {
+    Prism.highlightAll();
+  }, []);
+
   return (
     <>
       <h2>Usage</h2>
@@ -18,6 +22,7 @@ export const AboutDocs: React.FC = () => {
       <Pre>
         <code className="language-js">
           {`
+// That's it.
 import Yith from "@yith/yith";
 `}
         </code>

@@ -45,26 +45,29 @@ const Docs: React.FC = () => {
                 <Link to="/presentation">Figure</Link>
               </li>
               <li>
+                <a className="disabled">Hero</a>
+              </li>
+              <li>
                 <a className="disabled">Interstitial</a>
               </li>
             </ul>
-            <strong>Extensions</strong>
+            <strong>Plugins</strong>
             <ul>
               <li>
-                <a className="disabled">WordPress</a>
+                <a className="disabled">Omeka S</a>
               </li>
               <li>
-                <a className="disabled">Omeka S</a>
+                <a className="disabled">WordPress</a>
               </li>
             </ul>
             <hr />
             <strong>Examples</strong>
             <ul>
               <li>
-                <a className="disabled">The Nez Perce</a>
+                <Link to="/">Five Impressions of Buddha</Link>
               </li>
               <li>
-                <a className="disabled">Five Impressions of Buddha</a>
+                <a className="disabled">The Nez Perce</a>
               </li>
               <li>
                 <a className="disabled">Odilon Redon (1840-1916)</a>

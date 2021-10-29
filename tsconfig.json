@@ -23,6 +23,11 @@
     "strict": true, // Enable all strict type checking options
     "target": "es6" // Specify ECMAScript target version
   },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  },
   "include": ["global.d.ts", "src/**/*.ts", "src/**/*.tsx"],
   "exclude": [
     "node_modules",

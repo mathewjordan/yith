@@ -1,9 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { Aside, AboutDocs, Main, Nav, Wrapper } from "docs/about";
-import { ProjectionDocs } from "docs/projection";
-import { PresentationDocs } from "docs/presentation";
+import { Aside, AboutDocs, Main, Nav, Wrapper } from "./docs/about";
+import { ProjectionDocs } from "./docs/projection";
+import { PresentationDocs } from "./docs/presentation";
+import { BuddhaDocs } from "./docs/examples/buddha";
 
 const Docs: React.FC = () => {
   return (
@@ -11,18 +12,11 @@ const Docs: React.FC = () => {
       <Wrapper>
         <Aside>
           <h1>Yith</h1>
-          <p
-            style={{
-              fontSize: "0.8333rem",
-              lineHeight: "1.45em",
-              letterSpacing: "0.01em",
-            }}
-          >
-            A frontend tool that leverages IIIF manifests and interweaves them
-            into flexible layouts.
-          </p>
           <Nav>
             <ul>
+              <li>
+                <Link to="/">About</Link>
+              </li>
               <li>
                 <Link to="/">Usage</Link>
               </li>
@@ -64,7 +58,7 @@ const Docs: React.FC = () => {
             <strong>Examples</strong>
             <ul>
               <li>
-                <Link to="/">Five Impressions of Buddha</Link>
+                <Link to="/examples/buddha">Five Impressions of Buddha</Link>
               </li>
               <li>
                 <a className="disabled">The Nez Perce</a>
@@ -76,17 +70,10 @@ const Docs: React.FC = () => {
           </Nav>
         </Aside>
         <Main>
-          <Switch>
-            <Route exact path="/">
-              <AboutDocs />
-            </Route>
-            <Route path="/projection">
-              <ProjectionDocs />
-            </Route>
-            <Route path="/presentation">
-              <PresentationDocs />
-            </Route>
-          </Switch>
+          <AboutDocs />
+          <ProjectionDocs />
+          <PresentationDocs />
+          <BuddhaDocs />
         </Main>
       </Wrapper>
     </Router>

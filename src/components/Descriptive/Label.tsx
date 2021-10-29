@@ -1,7 +1,7 @@
 import React from "react";
 
 import { InternationalString } from "@hyperion-framework/types";
-import { getLabel } from "./hooks/getLabel";
+import { getLabel } from "hooks/getLabel";
 import { styled } from "@stitches/react";
 
 interface LabelProps {

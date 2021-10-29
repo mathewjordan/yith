@@ -1,11 +1,11 @@
 import React from "react";
 import { styled } from "@stitches/react";
-import { YithProvider } from "context/yith-context";
-import { Manifest, ManifestProps } from "components/Manifest";
-import { Annotation, AnnotationProps } from "components/Annotation";
-import { Canvas, CanvasProps } from "components/Canvas";
-import { Presentation, Projection } from "screens";
-import { uuid } from "services/uuid";
+import { YithProvider } from "./context/yith-context";
+import { Manifest, ManifestProps } from "./components/Manifest";
+import { Annotation, AnnotationProps } from "./components/Annotation";
+import { Canvas, CanvasProps } from "./components/Canvas";
+import { Presentation, Projection } from "./screens";
+import { uuid } from "./services/uuid";
 
 interface YithProps {
   type: string;

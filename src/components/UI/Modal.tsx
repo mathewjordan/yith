@@ -6,9 +6,9 @@ import {
   ManifestNormalized,
 } from "@hyperion-framework/types";
 import Dialog from "@radix-ui/react-dialog";
-import { Figure } from "components/Previews/Figure";
-import { Viewer } from "components/Viewer/Viewer";
-import { MetadataItem } from "components/Descriptive/MetadataItem";
+import { Figure } from "./components/Previews/Figure";
+import { Viewer } from "./components/Viewer/Viewer";
+import { MetadataItem } from "./components/Descriptive/MetadataItem";
 import { MetadataItem as MetadataItemPair } from "@hyperion-framework/types";
 
 export interface FigureProps {

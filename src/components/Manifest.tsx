@@ -6,8 +6,8 @@ import {
   ContentResource,
   ManifestNormalized,
 } from "@hyperion-framework/types";
-import { useYithState } from "context/yith-context";
-import { getSequence } from "hooks/getSequence";
+import { useYithState } from "./context/yith-context";
+import { getSequence } from "./hooks/getSequence";
 import { Modal } from "./UI/Modal";
 
 export interface ManifestProps {

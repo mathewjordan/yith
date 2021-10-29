@@ -5,7 +5,7 @@
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "scripts": {
-    "build": "rm -rf dist && node build.js && tsc --emitDeclarationOnly --outDir dist",
+    "build": "rm -rf dist && node build.js && tsc --outDir dist",
     "build:docs": "rm -rf dist && node docs.ts",
     "dev": "node serve.ts",
     "dev:docs": "node serve.ts",

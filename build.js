@@ -11,7 +11,7 @@ const shared = {
       process.env.NODE_ENV || "development"
     ),
   },
-  external: ["react", "react-dom", "mirador"],
+  external: ["react", "react-dom"],
   platform: "node",
   logLevel: "info",
   entryPoints: ["src/docs.tsx"],

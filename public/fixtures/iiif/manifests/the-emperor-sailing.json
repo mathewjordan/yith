@@ -39,7 +39,7 @@
               "type": "Annotation",
               "motivation": "painting",
               "body": {
-                "id": "https://www.artic.edu/iiif/2/17455fc4-14ec-b892-93d2-ebf89c7c689e/full/full/0/default.jp",
+                "id": "https://www.artic.edu/iiif/2/17455fc4-14ec-b892-93d2-ebf89c7c689e/full/full/0/default.jpg",
                 "type": "Image",
                 "width": 3000,
                 "height": 2777,
@@ -71,9 +71,9 @@
           "body": {
             "type": "FragmentSelector",
             "language": "en",
-            "value": ""
+            "value": " Suspendisse justo mi, accumsan a lorem nec, sollicitudin fermentum lectus. Donec sit amet eros a tellus interdum imperdiet eget ac massa. "
           },
-          "target": "https://yith.dev/fixtures/iiif/manifests/tacoma/canvas/1#xywh=1398,975,4868,2462"
+          "target": "https://yith.dev/fixtures/iiif/manifests/the-emperor-sailing/canvas/1#xywh=1000,250,1000,700"
         },
         {
           "id": "https://yith.dev/fixtures/iiif/manifests/the-emperor-sailing/canvas/1/annotations/2",
@@ -82,9 +82,9 @@
           "body": {
             "type": "FragmentSelector",
             "language": "en",
-            "value": ""
+            "value": "Vestibulum nisi odio, viverra sit amet ex sit amet, tincidunt pharetra purus."
           },
-          "target": "https://yith.dev/fixtures/iiif/manifests/tacoma/canvas/1#xywh=1815,59,1067,959"
+          "target": "https://yith.dev/fixtures/iiif/manifests/the-emperor-sailing/canvas/1#xywh=350,1300,900,900"
         },
         {
           "id": "https://yith.dev/fixtures/iiif/manifests/the-emperor-sailing/canvas/1/annotations/3",
@@ -93,9 +93,9 @@
           "body": {
             "type": "FragmentSelector",
             "language": "en",
-            "value": ""
+            "value": "Donec feugiat a lectus eget lobortis. Nunc elementum nibh scelerisque ligula rutrum luctus."
           },
-          "target": "https://yith.dev/fixtures/iiif/manifests/the-emperor-sailing/canvas/1#xywh=4760,2641,145,148"
+          "target": "https://yith.dev/fixtures/iiif/manifests/the-emperor-sailing/canvas/1#xywh=1200,1000,1250,1250"
         }
       ]
     }

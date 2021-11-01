@@ -102,10 +102,10 @@ export const ProjectionDocs: React.FC = () => {
           <Yith.Canvas id="https://iiif.harvardartmuseums.org/manifests/object/169542/canvas/canvas-469446512" />
           <Yith.Canvas id="https://iiif.harvardartmuseums.org/manifests/object/169542/canvas/canvas-469454932" />
         </Yith.Manifest>
-        <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/189775/manifest.json">
-          <Yith.Annotation id="https://yith.dev/fixtures/iiif/manifests/tacoma/canvas/1/annotations/2" />
-          <Yith.Annotation id="https://yith.dev/fixtures/iiif/manifests/tacoma/canvas/1/annotations/3" />
-          <Yith.Annotation id="https://yith.dev/fixtures/iiif/manifests/tacoma/canvas/1/annotations/4" />
+        <Yith.Manifest id="https://yith.dev/fixtures/iiif/manifests/the-emperor-sailing.json">
+          <Yith.Annotation id="https://yith.dev/fixtures/iiif/manifests/the-emperor-sailing/canvas/1/annotations/1" />
+          <Yith.Annotation id="https://yith.dev/fixtures/iiif/manifests/the-emperor-sailing/canvas/1/annotations/2" />
+          <Yith.Annotation id="https://yith.dev/fixtures/iiif/manifests/the-emperor-sailing/canvas/1/annotations/3" />
         </Yith.Manifest>
       </Yith>
 
@@ -118,10 +118,10 @@ export const ProjectionDocs: React.FC = () => {
     <Yith.Canvas id="https://iiif.harvardartmuseums.org/manifests/object/169542/canvas/canvas-469446512" />
     <Yith.Canvas id="https://iiif.harvardartmuseums.org/manifests/object/169542/canvas/canvas-469454932" />
   </Yith.Manifest>
-  <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/189775/manifest.json">
-    <Yith.Annotation id="https://yith.dev/fixtures/iiif/manifests/tacoma/canvas/1/annotations/2" />
-    <Yith.Annotation id="https://yith.dev/fixtures/iiif/manifests/tacoma/canvas/1/annotations/3" />
-    <Yith.Annotation id="https://yith.dev/fixtures/iiif/manifests/tacoma/canvas/1/annotations/4" />
+  <Yith.Manifest id="https://yith.dev/fixtures/iiif/manifests/the-emperor-sailing.json">
+    <Yith.Annotation id="https://yith.dev/fixtures/iiif/manifests/the-emperor-sailing/canvas/1/annotations/1" />
+    <Yith.Annotation id="https://yith.dev/fixtures/iiif/manifests/the-emperor-sailing/canvas/1/annotations/2" />
+    <Yith.Annotation id="https://yith.dev/fixtures/iiif/manifests/the-emperor-sailing/canvas/1/annotations/3" />
   </Yith.Manifest>
 </Yith>
 `}

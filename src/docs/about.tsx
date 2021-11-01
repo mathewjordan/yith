@@ -17,6 +17,14 @@ export const AboutDocs: React.FC = () => {
         their lush content into flexible layouts in a usable, responsive, and
         accessible way.
       </p>
+
+      <Yith
+        type="projection"
+        preview="interstitial"
+        text="Quisque luctus diam lobortis c.1910"
+      >
+        <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/8991/manifest.json" />
+      </Yith>
       <Example>
         <div>
           <div>

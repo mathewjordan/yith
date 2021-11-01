@@ -1,14 +1,18 @@
 import React from "react";
-import { ContentStyled, OverlayStyled, TriggerStyled } from "./Modal.styled";
+import {
+  ContentStyled,
+  ModalStyled,
+  OverlayStyled,
+  TriggerStyled,
+} from "./Modal.styled";
 import {
   Annotation,
   InternationalString,
   ManifestNormalized,
 } from "@hyperion-framework/types";
-import Dialog from "@radix-ui/react-dialog";
 import { Figure } from "components/Previews/Figure";
 import { Viewer } from "components/Viewer/Viewer";
-import { MetadataItem } from "components/Descriptive/MetadataItem";
+import { Interstitial } from "components/Previews/Interstitial";
 import { MetadataItem as MetadataItemPair } from "@hyperion-framework/types";
 
 export interface FigureProps {
@@ -16,6 +20,8 @@ export interface FigureProps {
   painting: Annotation;
   sequence: Array<any>;
   type: string;
+  text: string;
+  preview?: string;
 }
 
 export const size: number = 240;
@@ -25,27 +31,44 @@ export const Modal: React.FC<FigureProps> = ({
   painting,
   sequence,
   type,
+  text,
+  preview = "figure",
 }) => {
   /*
    * todo: build a hook that gets the image from the image server
    */
 
   return (
-    <Dialog.Root modal={true}>
-      <TriggerStyled css={{ width: size }}>
-        <Figure
-          size={size}
-          painting={painting}
-          label={manifest.label as unknown as InternationalString}
-        />
-        <dl>
-          <MetadataItem item={manifest.requiredStatement as MetadataItemPair} />
-        </dl>
+    <ModalStyled modal={true}>
+      <TriggerStyled>
+        {preview === "figure" && (
+          <>
+            <Figure
+              size={size}
+              painting={painting}
+              requiredStatement={
+                manifest.requiredStatement as unknown as MetadataItemPair
+              }
+              label={manifest.label as unknown as InternationalString}
+            />
+          </>
+        )}
+        {preview === "interstitial" && (
+          <Interstitial
+            size={size}
+            painting={painting}
+            requiredStatement={
+              manifest.requiredStatement as unknown as MetadataItemPair
+            }
+            text={text}
+            label={manifest.label as unknown as InternationalString}
+          />
+        )}
       </TriggerStyled>
       <OverlayStyled />
       <ContentStyled>
         <Viewer manifestId={manifest.id} sequence={sequence} type={type} />
       </ContentStyled>
-    </Dialog.Root>
+    </ModalStyled>
   );
 };

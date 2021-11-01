@@ -1,19 +1,24 @@
-import {
+import Dialog, {
   DialogTrigger,
   DialogContent,
   DialogOverlay,
 } from "@radix-ui/react-dialog";
 import { styled } from "@stitches/react";
 import { FigureStyled, LQIP } from "components/Previews/Figure.styled";
+import { InterstitialStyled } from "components/Previews/Interstitial.styled";
+
+const ModalStyled = styled(Dialog.Root, {
+  width: "100%",
+});
 
 const TriggerStyled = styled(DialogTrigger, {
   cursor: "pointer",
-  backgroundColor: "transparent",
   border: "none",
   justifyContent: "flex-start",
+  width: "100%",
+  backgroundColor: "transparent",
 
-  "> dl": {
-    padding: " 0 0.5rem",
+  dl: {
     opacity: "0.7",
     fontSize: "0.7222rem",
     disply: "flex",
@@ -26,6 +31,19 @@ const TriggerStyled = styled(DialogTrigger, {
       },
 
       span: {
+        opacity: "1",
+      },
+
+      [`${LQIP}`]: {
+        opacity: "0.25",
+      },
+    },
+    [`${InterstitialStyled}`]: {
+      img: {
+        opacity: "0.75",
+      },
+
+      a: {
         opacity: "1",
       },
 
@@ -52,4 +70,4 @@ const OverlayStyled = styled(DialogOverlay, {
   backgroundColor: "#000000DD",
 });
 
-export { ContentStyled, OverlayStyled, TriggerStyled };
+export { ContentStyled, ModalStyled, OverlayStyled, TriggerStyled };

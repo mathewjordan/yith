@@ -14,9 +14,17 @@ export interface ManifestProps {
   id: string;
   instance: string;
   type: string;
+  text: string;
+  preview?: string;
 }
 
-export const Manifest: React.FC<ManifestProps> = ({ id, instance, type }) => {
+export const Manifest: React.FC<ManifestProps> = ({
+  id,
+  instance,
+  type,
+  text,
+  preview,
+}) => {
   const [manifest, setManifest] = React.useState<ManifestNormalized>();
   const state: any = useYithState();
   const { vault, sequences } = state;
@@ -65,6 +73,8 @@ export const Manifest: React.FC<ManifestProps> = ({ id, instance, type }) => {
         painting={painting[0]}
         sequence={sequence}
         type={type}
+        text={text}
+        preview={preview}
       />
     );
   }

@@ -2,7 +2,6 @@ import { styled } from "@stitches/react";
 
 const FigureStyled = styled("figure", {
   margin: "0",
-  width: "100%",
 
   "> div": {
     position: "relative",

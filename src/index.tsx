@@ -9,6 +9,8 @@ import { uuid } from "./services/uuid";
 
 interface YithProps {
   type: string;
+  preview?: string;
+  text?: string;
   children: React.ReactChildren;
 }
 
@@ -24,7 +26,7 @@ export interface Sequence {
 }
 
 const Yith: React.FC<YithProps> & YithComposition = (props) => {
-  const { type, children } = props;
+  const { type, preview, text, children } = props;
   const instance: string = `yith-${uuid()}`;
 
   let sequence: Sequence = {
@@ -54,6 +56,8 @@ const Yith: React.FC<YithProps> & YithComposition = (props) => {
       // clone and add instance/type
       const clonedManifest = React.cloneElement(manifest, {
         instance,
+        preview,
+        text,
         type,
       });
       return clonedManifest;

@@ -8,6 +8,7 @@ const ProjectionWrapper = styled("div", {
 
   "> button": {
     margin: "0 2rem 2rem 0",
+    flexShrink: "1",
 
     "&:last-child": {
       marginRight: "0",

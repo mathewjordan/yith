@@ -6,6 +6,7 @@ const PresentationWrapper = styled("div", {
   alignItems: "flex-start",
 
   "> button": {
+    flexShrink: "1",
     margin: "0 2rem 2rem 0",
   },
 });

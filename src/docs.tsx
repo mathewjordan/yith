@@ -5,6 +5,8 @@ import { Aside, AboutDocs, Main, Nav, Wrapper } from "./docs/about";
 import { ProjectionDocs } from "./docs/projection";
 import { PresentationDocs } from "./docs/presentation";
 import { BuddhaDocs } from "./docs/examples/buddha";
+import { FigureDocs } from "./docs/previews/figure";
+import { InterstitialDocs } from "./docs/previews/interstitial";
 
 const Docs: React.FC = () => {
   return (
@@ -42,7 +44,7 @@ const Docs: React.FC = () => {
                 <a className="disabled">Hero</a>
               </li>
               <li>
-                <a className="disabled">Interstitial</a>
+                <Link to="/#interstitial">Interstitial</Link>
               </li>
             </ul>
             <strong>Plugins</strong>
@@ -58,7 +60,7 @@ const Docs: React.FC = () => {
             <strong>Contextual Examples</strong>
             <ul>
               <li>
-                <Link to="/examples/buddha">Five Impressions of Buddha</Link>
+                <Link to="/examples/buddha">Six Impressions of Buddha</Link>
               </li>
               <li>
                 <a className="disabled">Nimíipuu, The Nez Percé</a>
@@ -71,8 +73,13 @@ const Docs: React.FC = () => {
         </Aside>
         <Main>
           <AboutDocs />
+          <h2>Types</h2>
           <ProjectionDocs />
           <PresentationDocs />
+          <h2>Previews</h2>
+          <FigureDocs />
+          <InterstitialDocs />
+          <h2>Contextual Examples</h2>
           <BuddhaDocs />
         </Main>
       </Wrapper>

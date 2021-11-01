@@ -17,14 +17,6 @@ export const AboutDocs: React.FC = () => {
         their lush content into flexible layouts in a usable, responsive, and
         accessible way.
       </p>
-
-      <Yith
-        type="projection"
-        preview="interstitial"
-        text="Quisque luctus diam lobortis c.1910"
-      >
-        <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/8991/manifest.json" />
-      </Yith>
       <Example>
         <div>
           <div>
@@ -87,7 +79,7 @@ export const AboutDocs: React.FC = () => {
           </div>
         </div>
       </Example>
-      <h2>Basic Usage</h2>
+      <h2>Usage</h2>
       <Pre>
         <code className="language-bash">
           {`
@@ -127,6 +119,11 @@ const Wrapper = styled("div", {
   p: {
     lineHeight: "1.5em",
     fontWeight: "300",
+
+    code: {
+      fontSize: "0.8333rem",
+      padding: "0.25rem 0.5rem",
+    },
 
     "&.subtitle": {
       fontSize: "2rem",

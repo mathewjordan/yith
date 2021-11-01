@@ -28,7 +28,7 @@ export const Interstitial: React.FC<InterstitialProps> = ({
   return (
     <InterstitialStyled css={{ height: size }}>
       <div>
-        <figcaption>
+        <figcaption style={{ paddingRight: size }}>
           <span>{text}</span>
           <a>Expand in Viewer</a>
           <div>

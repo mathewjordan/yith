@@ -18,6 +18,10 @@ export const PresentationDocs: React.FC = () => {
       <Pre>
         <code className="language-html">
           {`
+/**
+ * A single manifest with a presentation type
+ */
+
 <Yith type="presentation">
   <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/76395/manifest.json" />
 </Yith>
@@ -34,6 +38,10 @@ export const PresentationDocs: React.FC = () => {
       <Pre>
         <code className="language-html">
           {`
+/**
+ * Three manifests with a presentation type
+ */
+
 <Yith type="presentation">
   <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/21090/manifest.json" />
   <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/21101/manifest.json" />

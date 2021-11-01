@@ -81,9 +81,9 @@ export const BuddhaDocs: React.FC = () => {
           preview="interstitial"
           text="Quisque luctus diam lobortis c.1300"
         >
-          <Yith.Manifest id="https://iiif.harvardartmuseums.org/manifests/object/204136">
-            <Yith.Canvas id="https://iiif.harvardartmuseums.org/manifests/object/204136/canvas/canvas-47459045" />
-            <Yith.Canvas id="https://iiif.harvardartmuseums.org/manifests/object/204136/canvas/canvas-47752272" />
+          <Yith.Manifest id="https://iiif.harvardartmuseums.org/manifests/object/198021">
+            <Yith.Canvas id="https://iiif.harvardartmuseums.org/manifests/object/198021/canvas/canvas-47473863" />
+            <Yith.Canvas id="https://iiif.harvardartmuseums.org/manifests/object/198021/canvas/canvas-47473865" />
           </Yith.Manifest>
         </Yith>
 

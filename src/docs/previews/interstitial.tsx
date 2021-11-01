@@ -31,6 +31,10 @@ export const InterstitialDocs: React.FC = () => {
       <Pre>
         <code className="language-html">
           {`
+/**
+ * Preview of interstitial, with non-IIIF textual content
+ */
+
 <Yith
   type="projection"
   preview="interstitial"

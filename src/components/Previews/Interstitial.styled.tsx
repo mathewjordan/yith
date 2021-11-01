@@ -44,12 +44,12 @@ const InterstitialStyled = styled("figure", {
 
       img: {
         opacity: "1",
-        width: "calc(100%)",
-        height: "calc(100%)",
+        width: "calc(100% - 0rem)",
+        height: "calc(100% - 2rem)",
         objectFit: "contain",
+        margin: "1rem 0",
         zIndex: "1",
         position: "relative",
-        margin: "0",
         transition: "all 200ms ease-in-out",
       },
     },

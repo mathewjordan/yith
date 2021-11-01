@@ -4,7 +4,7 @@ const ProjectionWrapper = styled("div", {
   display: "flex",
   justifyContent: "flex-start",
   alignItems: "flex-start",
-  width: "100%",
+  flexGrow: "1",
 
   "> button": {
     margin: "0 2rem 2rem 0",

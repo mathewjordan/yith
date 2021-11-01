@@ -26,17 +26,21 @@ export const ProjectionDocs: React.FC = () => {
 
       <h5>Multiple Manifests</h5>
       <Yith type="projection">
-        <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/8991/manifest.json" />
-        <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/127644/manifest.json" />
-        <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/25865/manifest.json" />
+        <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/129849/manifest.json" />
+        <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/8980/manifest.json" />
+        <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/8987/manifest.json" />
       </Yith>
       <Pre>
         <code className="language-html">
           {`
+/**
+ * Three unique manifests representing works by Vasily Kandinsky
+ */    
+ 
 <Yith type="projection">
-<Yith.Manifest id="https://api.artic.edu/api/v1/artworks/8991/manifest.json" />
-<Yith.Manifest id="https://api.artic.edu/api/v1/artworks/127644/manifest.json" />
-<Yith.Manifest id="https://api.artic.edu/api/v1/artworks/25865/manifest.json" />
+  <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/129849/manifest.json" />
+  <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/8980/manifest.json" />
+  <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/8987/manifest.json" />
 </Yith>
 `}
         </code>
@@ -44,20 +48,26 @@ export const ProjectionDocs: React.FC = () => {
 
       <h5>Multiple Canvases</h5>
       <Yith type="projection">
-        <Yith.Manifest id="https://iiif.bodleian.ox.ac.uk/iiif/manifest/e32a277e-91e2-4a6d-8ba6-cc4bad230410.json">
-          <Yith.Canvas id="https://iiif.bodleian.ox.ac.uk/iiif/canvas/33ce3177-0fdc-44fd-8325-24a298322023.json" />
-          <Yith.Canvas id="https://iiif.bodleian.ox.ac.uk/iiif/canvas/51cc30d8-0404-49fc-893e-c44c3e4a94f8.json" />
-          <Yith.Canvas id="https://iiif.bodleian.ox.ac.uk/iiif/canvas/cb0ae5a2-e985-48ef-8318-3cab784ad24f.json" />
+        <Yith.Manifest id="https://iiif.harvardartmuseums.org/manifests/object/55652">
+          <Yith.Canvas id="https://iiif.harvardartmuseums.org/manifests/object/55652/canvas/canvas-18724207" />
+          <Yith.Canvas id="https://iiif.harvardartmuseums.org/manifests/object/55652/canvas/canvas-18724210" />
+          <Yith.Canvas id="https://iiif.harvardartmuseums.org/manifests/object/55652/canvas/canvas-18724213" />
+          <Yith.Canvas id="https://iiif.harvardartmuseums.org/manifests/object/55652/canvas/canvas-18724214" />
         </Yith.Manifest>
       </Yith>
       <Pre>
         <code className="language-html">
           {`
+/**
+ * A single manifest with specific canvases curated
+ */
+
 <Yith type="projection">
-  <Yith.Manifest id="https://iiif.bodleian.ox.ac.uk/iiif/manifest/e32a277e-91e2-4a6d-8ba6-cc4bad230410.json">
-    <Yith.Canvas id="https://iiif.bodleian.ox.ac.uk/iiif/canvas/33ce3177-0fdc-44fd-8325-24a298322023.json" />
-    <Yith.Canvas id="https://iiif.bodleian.ox.ac.uk/iiif/canvas/51cc30d8-0404-49fc-893e-c44c3e4a94f8.json" />
-    <Yith.Canvas id="https://iiif.bodleian.ox.ac.uk/iiif/canvas/cb0ae5a2-e985-48ef-8318-3cab784ad24f.json" />
+  <Yith.Manifest id="https://iiif.harvardartmuseums.org/manifests/object/55652">
+    <Yith.Canvas id="https://iiif.harvardartmuseums.org/manifests/object/55652/canvas/canvas-18724207" />
+    <Yith.Canvas id="https://iiif.harvardartmuseums.org/manifests/object/55652/canvas/canvas-18724210" />
+    <Yith.Canvas id="https://iiif.harvardartmuseums.org/manifests/object/55652/canvas/canvas-18724213" />
+    <Yith.Canvas id="https://iiif.harvardartmuseums.org/manifests/object/55652/canvas/canvas-18724214" />
   </Yith.Manifest>
 </Yith>
 `}
@@ -80,6 +90,10 @@ export const ProjectionDocs: React.FC = () => {
       <Pre>
         <code className="language-html">
           {`
+/**
+ * A single manifest with specific annotations curated
+ */
+
 <Yith type="projection">
   <Yith.Manifest id="https://yith.dev/fixtures/iiif/manifests/tacoma.json">
     <Yith.Annotation id="https://yith.dev/fixtures/iiif/manifests/tacoma/canvas/1/annotations/2" />
@@ -112,6 +126,10 @@ export const ProjectionDocs: React.FC = () => {
       <Pre>
         <code className="language-html">
           {`
+/**
+ * Three manifests with mixed canvases and annotations curated
+ */
+
 <Yith type="projection">
   <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/18979/manifest.json" />
   <Yith.Manifest id="https://iiif.harvardartmuseums.org/manifests/object/169542">

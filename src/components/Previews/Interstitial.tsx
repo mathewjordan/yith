@@ -30,7 +30,6 @@ export const Interstitial: React.FC<InterstitialProps> = ({
       <div>
         <figcaption style={{ paddingRight: size }}>
           <span>{text}</span>
-          <a>Expand in Viewer</a>
           <div>
             <Label label={label} />
             <dl>
@@ -40,6 +39,7 @@ export const Interstitial: React.FC<InterstitialProps> = ({
         </figcaption>
         <div>
           <img src={img} style={{ width: size }} />
+          {/* <a>Expand in Viewer</a> */}
           <LQIP css={{ backgroundImage: `url(${lqip})` }} />
         </div>
       </div>

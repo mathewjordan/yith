@@ -13,9 +13,9 @@ export const AboutDocs: React.FC = () => {
     <>
       <h2>About</h2>
       <p className="lead">
-        Yith is a frontend tool that leverages IIIF manifests and interweaves
-        their lush content into flexible layouts in a usable, responsive, and
-        accessible way.
+        Yith is a component library that interweaves IIIF manifests and their
+        content into flexible layouts in a usable, responsive, and accessible
+        way.
       </p>
       <Example>
         <div>
@@ -116,6 +116,38 @@ const Wrapper = styled("div", {
   height: "100%",
   letterSpacing: "0.01em",
 
+  h2: {
+    marginTop: "3rem",
+
+    "&:first-child": {
+      marginTop: "0",
+    },
+  },
+
+  h3: {
+    fontWeight: "900",
+    fontSize: "1.25rem",
+    marginTop: "2rem",
+
+    "&.yith-article-title": {
+      fontWeight: "200",
+      fontFamily: "DM Serif Display",
+      fontSize: "2.5rem",
+      marginBottom: "1rem",
+    },
+  },
+
+  h4: {
+    margin: "1rem 0 1rem",
+  },
+
+  h5: {
+    fontWeight: "300",
+    fontSize: "1.25rem",
+    marginTop: "2rem",
+    borderBottom: "2px solid #47495d11",
+  },
+
   p: {
     lineHeight: "1.5em",
     fontWeight: "300",
@@ -204,8 +236,7 @@ const Main = styled("div", {
   flexShrink: "1",
   overflowX: "hidden",
   overflowY: "scroll",
-  padding: "1rem 2rem",
-  borderTop: "1rem solid #47495d22",
+  padding: "2rem 2rem",
 });
 
 const Nav = styled("nav", {
@@ -233,7 +264,7 @@ const Nav = styled("nav", {
   hr: {
     display: "block",
     border: "none",
-    backgroundColor: "#47495d22",
+    backgroundColor: "#47495d11",
     width: "100%",
     height: "2px",
     margin: "2rem 0",

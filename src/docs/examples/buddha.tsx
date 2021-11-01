@@ -10,10 +10,14 @@ export const BuddhaDocs: React.FC = () => {
 
   return (
     <>
-      <h3>Six Impressions of Buddha</h3>
+      <h3 className="yith-article-title">Six Impressions of Buddha</h3>
       <Example>
         <div>
           <div>
+            <p className="lead">
+              Aenean non est hendrerit elit ullamcorper euismod ut et metus.
+              Morbi id urna efficitur, semper tellus eget, tincidunt mauris.
+            </p>
             <p>
               Aenean quis odio ultricies, bibendum velit vitae, viverra eros.
               Duis egestas sapien vel tellus auctor maximus. Donec pulvinar
@@ -39,6 +43,7 @@ export const BuddhaDocs: React.FC = () => {
             <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/80547/manifest.json" />
           </Yith>
           <div style={{ marginTop: "-1rem" }}>
+            <h4>Curabitur id turpis sed magna rhoncus sagittis.</h4>
             <p>
               Nulla sed neque et arcu ultrices ullamcorper eu a justo.
               Suspendisse eros risus, iaculis tristique erat quis, vulputate
@@ -74,7 +79,7 @@ export const BuddhaDocs: React.FC = () => {
         <Yith
           type="projection"
           preview="interstitial"
-          text="Quisque luctus diam lobortis c.1910"
+          text="Quisque luctus diam lobortis c.1300"
         >
           <Yith.Manifest id="https://iiif.harvardartmuseums.org/manifests/object/204136">
             <Yith.Canvas id="https://iiif.harvardartmuseums.org/manifests/object/204136/canvas/canvas-47459045" />
@@ -82,6 +87,7 @@ export const BuddhaDocs: React.FC = () => {
           </Yith.Manifest>
         </Yith>
 
+        <h4>Vivamus sit amet euismod massa.</h4>
         <p>
           Mauris vitae sodales neque, id ullamcorper libero. Curabitur eu
           blandit elit. Sed metus est, elementum eu eros sed, porta mattis
@@ -105,6 +111,7 @@ export const BuddhaDocs: React.FC = () => {
 
         <div>
           <div>
+            <h4>Nulla at turpis a tortor volutpat rhoncus.</h4>
             <p>
               Mauris vitae sodales neque, id ullamcorper libero. Curabitur eu
               blandit elit. Sed metus est, elementum eu eros sed, porta mattis

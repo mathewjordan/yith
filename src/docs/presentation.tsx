@@ -9,8 +9,8 @@ export const PresentationDocs: React.FC = () => {
 
   return (
     <>
-      <h2>Presentation</h2>
-      <h3>Single Manifest</h3>
+      <h3>Presentation</h3>
+      <h5>Single Manifest</h5>
       <Yith type="presentation">
         <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/76395/manifest.json" />
       </Yith>
@@ -25,7 +25,7 @@ export const PresentationDocs: React.FC = () => {
         </code>
       </Pre>
 
-      <h3>Multiple Manifests</h3>
+      <h5>Multiple Manifests</h5>
       <Yith type="presentation">
         <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/21090/manifest.json" />
         <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/21101/manifest.json" />

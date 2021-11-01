@@ -15,7 +15,7 @@ export const FigureDocs: React.FC = () => {
         Figure is the default preview for all yith components. It does not need
         to be set, though may be set explicitly with prop of{" "}
         <code className="language-html">preview="figure"</code>. Each manifest
-        within a Yith components will be represented by a figure. In multicanvas
+        within Yith components will be represented by a figure. In multicanvas
         manifests, the initial array item under `items` will eb the default
         canvas.
       </p>

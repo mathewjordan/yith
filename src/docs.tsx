@@ -57,7 +57,7 @@ const Docs: React.FC = () => {
               </li>
             </ul>
             <hr />
-            <strong>Contextual Examples</strong>
+            <strong>Examples</strong>
             <ul>
               <li>
                 <Link to="/examples/buddha">Six Impressions of Buddha</Link>
@@ -79,7 +79,7 @@ const Docs: React.FC = () => {
           <h2>Previews</h2>
           <FigureDocs />
           <InterstitialDocs />
-          <h2>Contextual Examples</h2>
+          <h2>Examples</h2>
           <BuddhaDocs />
         </Main>
       </Wrapper>

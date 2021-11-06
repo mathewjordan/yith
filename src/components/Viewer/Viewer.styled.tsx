@@ -4,26 +4,31 @@ const ViewerControls = styled("div", {
   display: "flex",
   position: "relative",
   zIndex: "1",
+  backgroundColor: "#fff",
+  width: "100%",
 
   "> button": {
     display: "flex",
     flexGrow: "1",
-    backgroundColor: "white",
-    color: "#000000",
+    color: "#1f1f1f",
     padding: "0.75rem 1rem",
     alignSelf: "flex-end",
     zIndex: "2",
-    fontSize: "0.722rem",
-    textTransform: "uppercase",
+    fontSize: "0.8333rem",
     fontWeight: "700",
     border: "none",
     transition: "all 200ms ease-in-out",
     cursor: "pointer",
     justifyContent: "center",
+    backgroundColor: "transparent",
 
-    "&:hover, &:focus": {
-      color: "#fff",
-      backgroundColor: "#000",
+    "&:hover": {
+      color: "#000",
+    },
+
+    "&[disabled='']": {
+      color: "#666",
+      fontWeight: "400",
     },
   },
 });
@@ -38,6 +43,23 @@ const ViewerWrapper = styled("div", {
   backgroundColor: "#DCDCDC",
 
   "&[data-screen='projection']": {
+    [`& ${ViewerControls}`]: {
+      position: "absolute",
+      backgroundColor: "#000e",
+
+      "> button": {
+        color: "#e0e0e0",
+
+        "&:hover": {
+          color: "#fff",
+        },
+
+        "&[disabled='']": {
+          color: "#666",
+        },
+      },
+    },
+
     ".mirador-viewer": {
       background: "none",
       backgroundColor: "black",

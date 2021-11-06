@@ -4,6 +4,7 @@ const { build } = require("esbuild");
 const { peerDependencies } = require("./package.json");
 
 const entryFile = "src/index.tsx";
+
 const shared = {
   bundle: true,
   define: {
@@ -11,22 +12,24 @@ const shared = {
       process.env.NODE_ENV || "development"
     ),
   },
-  external: ["react", "react-dom"],
+  external: Object.keys(peerDependencies),
   platform: "node",
   logLevel: "info",
-  entryPoints: ["src/docs.tsx"],
+  entryPoints: [entryFile],
   minify: false,
   sourcemap: true,
 };
 
 build({
   ...shared,
+  external: ["react", "react-dom", "mirador"],
   format: "cjs",
   outfile: "./dist/index.cjs.js",
 });
 
 build({
   ...shared,
+  external: ["react", "react-dom", "mirador"],
   format: "esm",
   outfile: "./dist/index.esm.js",
 });

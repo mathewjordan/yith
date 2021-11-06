@@ -40,18 +40,22 @@ export const Viewer: React.FC<ViewerProps> = ({
     <ViewerWrapper data-screen={type}>
       <ViewerControls>
         <DialogClose>Close Viewer</DialogClose>
-        <ViewerNavigation
-          label="Previous"
-          stepKey={key}
-          sequence={sequence}
-          doStep={doStep}
-        />
-        <ViewerNavigation
-          label="Next"
-          stepKey={key}
-          sequence={sequence}
-          doStep={doStep}
-        />
+        {sequence.length > 1 && (
+          <>
+            <ViewerNavigation
+              label="Previous"
+              stepKey={key}
+              sequence={sequence}
+              doStep={doStep}
+            />
+            <ViewerNavigation
+              label="Next"
+              stepKey={key}
+              sequence={sequence}
+              doStep={doStep}
+            />
+          </>
+        )}
       </ViewerControls>
       {type === "projection" && <Note data={data.note} />}
       <Mirador

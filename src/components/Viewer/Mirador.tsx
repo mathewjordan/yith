@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React from "react";
 // @ts-ignore
 import mirador from "mirador";
@@ -15,8 +16,10 @@ export const Mirador: React.FC<MiradorProps> = ({
   step,
   region,
 }) => {
-  const [currentWindows, setCurrentWindows] = React.useState<any>({});
+  const [currentWindows, setCurrentWindows] = React.useState<any>([{}]);
   const [miradorInstance, setMiradorInstance] = React.useState<any>();
+
+  console.log(currentWindows);
 
   React.useEffect(() => {
     switch (step.type) {
@@ -41,7 +44,7 @@ export const Mirador: React.FC<MiradorProps> = ({
 function panZoom(
   miradorInstance: any,
   xywh: Array<string>,
-  windowIndex: number
+  windowIndex: number,
 ) {
   const windowId = Object.keys(miradorInstance.store.getState().windows)[
     windowIndex

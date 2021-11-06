@@ -1,4 +1,4 @@
-import Dialog, {
+import {
   DialogTrigger,
   DialogContent,
   DialogOverlay,
@@ -6,10 +6,6 @@ import Dialog, {
 import { styled } from "@stitches/react";
 import { FigureStyled, LQIP } from "components/Previews/Figure.styled";
 import { InterstitialStyled } from "components/Previews/Interstitial.styled";
-
-const ModalStyled = styled(Dialog.Root, {
-  width: "100%",
-});
 
 const TriggerStyled = styled(DialogTrigger, {
   cursor: "pointer",
@@ -70,4 +66,4 @@ const OverlayStyled = styled(DialogOverlay, {
   backgroundColor: "#000000DD",
 });
 
-export { ContentStyled, ModalStyled, OverlayStyled, TriggerStyled };
+export { ContentStyled, OverlayStyled, TriggerStyled };

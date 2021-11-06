@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  ContentStyled,
-  ModalStyled,
-  OverlayStyled,
-  TriggerStyled,
-} from "./Modal.styled";
+import { ContentStyled, OverlayStyled, TriggerStyled } from "./Modal.styled";
 import {
   Annotation,
   InternationalString,
@@ -14,6 +9,7 @@ import { Figure } from "components/Previews/Figure";
 import { Viewer } from "components/Viewer/Viewer";
 import { Interstitial } from "components/Previews/Interstitial";
 import { MetadataItem as MetadataItemPair } from "@hyperion-framework/types";
+import { Dialog } from "@radix-ui/react-dialog";
 
 export interface FigureProps {
   manifest: ManifestNormalized;
@@ -39,7 +35,7 @@ export const Modal: React.FC<FigureProps> = ({
    */
 
   return (
-    <ModalStyled modal={true}>
+    <Dialog modal={true}>
       <TriggerStyled>
         {preview === "figure" && (
           <>
@@ -69,6 +65,6 @@ export const Modal: React.FC<FigureProps> = ({
       <ContentStyled>
         <Viewer manifestId={manifest.id} sequence={sequence} type={type} />
       </ContentStyled>
-    </ModalStyled>
+    </Dialog>
   );
 };

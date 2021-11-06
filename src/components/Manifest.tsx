@@ -12,10 +12,11 @@ import { Modal } from "./UI/Modal";
 
 export interface ManifestProps {
   id: string;
-  instance: string;
-  type: string;
-  text: string;
+  instance?: string | undefined;
+  type?: string;
+  text?: string;
   preview?: string;
+  children?: React.ReactChildren | React.ReactChildren[];
 }
 
 export const Manifest: React.FC<ManifestProps> = ({
@@ -29,7 +30,7 @@ export const Manifest: React.FC<ManifestProps> = ({
   const state: any = useYithState();
   const { vault, sequences } = state;
 
-  const sequence = getSequence(sequences, instance);
+  const sequence = getSequence(sequences, instance as string);
 
   React.useEffect(() => {
     vault
@@ -52,7 +53,7 @@ export const Manifest: React.FC<ManifestProps> = ({
   if (manifest) {
     const canvas: CanvasNormalized = vault.fromRef(manifest.items[0]);
     const annotationPage: AnnotationPageNormalized = vault.fromRef(
-      canvas.items[0]
+      canvas.items[0],
     );
     const annotations: Annotation[] = vault.allFromRef(annotationPage.items);
 
@@ -72,8 +73,8 @@ export const Manifest: React.FC<ManifestProps> = ({
         manifest={manifest}
         painting={painting[0]}
         sequence={sequence}
-        type={type}
-        text={text}
+        type={type as string}
+        text={text as string}
         preview={preview}
       />
     );

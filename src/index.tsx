@@ -11,7 +11,7 @@ interface YithProps {
   type: string;
   preview?: string;
   text?: string;
-  children: React.ReactChildren;
+  children: React.ReactChildren | React.ReactChildren[];
 }
 
 interface YithComposition {
@@ -25,8 +25,14 @@ export interface Sequence {
   items: Array<any>;
 }
 
-const Yith: React.FC<YithProps> & YithComposition = (props) => {
-  const { type, preview, text, children } = props;
+const Yith: React.FC<YithProps> & YithComposition = ({
+  type,
+  preview,
+  text,
+  children,
+}) => {
+  if (!window) return null;
+
   const instance: string = `yith-${uuid()}`;
 
   let sequence: Sequence = {
@@ -61,7 +67,7 @@ const Yith: React.FC<YithProps> & YithComposition = (props) => {
         type,
       });
       return clonedManifest;
-    }
+    },
   );
 
   const screen = (type: string) => {

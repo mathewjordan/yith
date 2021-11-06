@@ -121,7 +121,7 @@ const Wrapper = styled("div", {
   h2: {
     marginTop: "3rem",
 
-    "&:first-child": {
+    "&:first-of-type": {
       marginTop: "0",
     },
   },

@@ -1,4 +1,4 @@
-import { Example, Pre } from "./about";
+import { Anchor, Example, Pre } from "./about";
 import React from "react";
 import Yith from "./../index";
 import Prism from "prismjs";
@@ -9,6 +9,7 @@ export const ProjectionDocs: React.FC = () => {
   }, []);
   return (
     <>
+      <Anchor id="projection" />
       <h3>Projection</h3>
       <Example>
         <p className="lead" style={{ marginBottom: "2rem" }}>

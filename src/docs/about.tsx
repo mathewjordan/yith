@@ -11,6 +11,7 @@ export const AboutDocs: React.FC = () => {
 
   return (
     <>
+      <Anchor id="about" />
       <h2>About</h2>
       <p className="lead">
         Yith is a component library that interweaves IIIF manifests and their
@@ -79,6 +80,7 @@ export const AboutDocs: React.FC = () => {
           </div>
         </div>
       </Example>
+      <Anchor id="usage" />
       <h2>Usage</h2>
       <Pre>
         <code className="language-bash">
@@ -226,6 +228,10 @@ const Example = styled("div", {
   },
 });
 
+const Anchor = styled("span", {
+  display: "block",
+});
+
 const Main = styled("div", {
   display: "flex",
   flexDirection: "column",
@@ -304,4 +310,4 @@ const Pre = styled("pre", {
   code: { color: "white !important" },
 });
 
-export { Aside, Example, Main, Nav, Pre, Wrapper };
+export { Anchor, Aside, Example, Main, Nav, Pre, Wrapper };

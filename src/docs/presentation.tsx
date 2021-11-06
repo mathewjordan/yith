@@ -1,4 +1,4 @@
-import { Pre } from "./about";
+import { Anchor, Pre } from "./about";
 import React, { useEffect } from "react";
 import Yith from "./../index";
 
@@ -9,6 +9,7 @@ export const PresentationDocs: React.FC = () => {
 
   return (
     <>
+      <Anchor id="presentation" />
       <h3>Presentation</h3>
       <h5>Single Manifest</h5>
       <Yith type="presentation">

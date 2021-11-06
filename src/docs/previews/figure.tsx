@@ -1,7 +1,7 @@
 import React from "react";
 import Yith from "./../../index";
 import Prism from "prismjs";
-import { Pre } from "../about";
+import { Anchor, Pre } from "../about";
 
 export const FigureDocs: React.FC = () => {
   React.useEffect(() => {
@@ -10,6 +10,7 @@ export const FigureDocs: React.FC = () => {
 
   return (
     <>
+      <Anchor id="figure" />
       <h3>Figure</h3>
       <p>
         Figure is the default preview for all yith components. It does not need

@@ -1,7 +1,7 @@
 import React from "react";
 import Yith from "./../../index";
 import Prism from "prismjs";
-import { Pre } from "../about";
+import { Anchor, Pre } from "../about";
 
 export const InterstitialDocs: React.FC = () => {
   React.useEffect(() => {
@@ -10,6 +10,7 @@ export const InterstitialDocs: React.FC = () => {
 
   return (
     <>
+      <Anchor id="interstitial" />
       <h3>Interstitial</h3>
       <p>
         An interstitial provides a full width figure{" "}

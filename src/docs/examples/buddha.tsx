@@ -1,7 +1,7 @@
 import React from "react";
 import Yith from "./../../index";
 import Prism from "prismjs";
-import { Example } from "docs/about";
+import { Anchor, Example } from "docs/about";
 
 export const BuddhaDocs: React.FC = () => {
   React.useEffect(() => {
@@ -10,6 +10,7 @@ export const BuddhaDocs: React.FC = () => {
 
   return (
     <>
+      <Anchor id="buddha" />
       <h3 className="yith-article-title">Six Impressions of Buddha</h3>
       <Example>
         <div>

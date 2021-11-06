@@ -7,6 +7,15 @@ import { BuddhaDocs } from "./docs/examples/buddha";
 import { FigureDocs } from "./docs/previews/figure";
 import { InterstitialDocs } from "./docs/previews/interstitial";
 
+const doScroll = (event) => {
+  event.preventDefault();
+  event.stopPropagation();
+  const href = event.target.getAttribute("href").replace("#", "");
+  const anchor = document.getElementById(href);
+  console.log(anchor);
+  anchor.scrollIntoView({ behavior: "smooth" });
+};
+
 const Docs: React.FC = () => {
   return (
     <Wrapper>
@@ -15,19 +24,27 @@ const Docs: React.FC = () => {
         <Nav>
           <ul>
             <li>
-              <a href="/">About</a>
+              <a href="#about" onClick={doScroll}>
+                About
+              </a>
             </li>
             <li>
-              <a href="/">Usage</a>
+              <a href="#usage" onClick={doScroll}>
+                Usage
+              </a>
             </li>
           </ul>
           <strong>Types</strong>
           <ul>
             <li>
-              <a href="/presentation">Presentation</a>
+              <a href="#presentation" onClick={doScroll}>
+                Presentation
+              </a>
             </li>
             <li>
-              <a href="/projection">Projection</a>
+              <a href="#projection" onClick={doScroll}>
+                Projection
+              </a>
             </li>
             <li>
               <a className="disabled">Progression</a>
@@ -36,13 +53,17 @@ const Docs: React.FC = () => {
           <strong>Previews</strong>
           <ul>
             <li>
-              <a href="/presentation">Figure</a>
+              <a href="#figure" onClick={doScroll}>
+                Figure
+              </a>
             </li>
             <li>
               <a className="disabled">Hero</a>
             </li>
             <li>
-              <a href="/#interstitial">Interstitial</a>
+              <a href="#interstitial" onClick={doScroll}>
+                Interstitial
+              </a>
             </li>
           </ul>
           <strong>Plugins</strong>
@@ -58,7 +79,9 @@ const Docs: React.FC = () => {
           <strong>Examples</strong>
           <ul>
             <li>
-              <a href="/examples/buddha">Six Impressions of Buddha</a>
+              <a href="#buddha" onClick={doScroll}>
+                Six Impressions of Buddha
+              </a>
             </li>
             <li>
               <a className="disabled">Nimíipuu, The Nez Percé</a>

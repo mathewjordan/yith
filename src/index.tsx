@@ -5,6 +5,7 @@ import { Manifest, ManifestProps } from "./components/Manifest";
 import { Annotation, AnnotationProps } from "./components/Annotation";
 import { Canvas, CanvasProps } from "./components/Canvas";
 import { Presentation, Projection } from "./screens";
+import { ErrorBoundary } from "react-error-boundary";
 import { uuid } from "./services/uuid";
 
 interface YithProps {
@@ -19,6 +20,23 @@ interface YithComposition {
   Canvas: React.FC<CanvasProps>;
   Manifest: React.FC<ManifestProps>;
 }
+interface FallbackProps {
+  error: any;
+  resetErrorBoundary: any;
+}
+
+const ErrorFallback: React.FC<FallbackProps> = ({
+  error,
+  resetErrorBoundary,
+}) => {
+  return (
+    <div role="alert">
+      <p>Something went wrong:</p>
+      <pre>{error.message}</pre>
+      <button onClick={resetErrorBoundary}>Try again</button>
+    </div>
+  );
+};
 
 export interface Sequence {
   id: string;
@@ -87,7 +105,9 @@ const Yith: React.FC<YithProps> & YithComposition = ({
 
   return (
     <YithProvider sequence={sequence as any}>
-      <Screen>{screen(type)}</Screen>
+      <ErrorBoundary FallbackComponent={ErrorFallback} onReset={() => {}}>
+        <Screen>{screen(type)}</Screen>
+      </ErrorBoundary>
     </YithProvider>
   );
 };

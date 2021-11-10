@@ -25,15 +25,11 @@ interface FallbackProps {
   resetErrorBoundary: any;
 }
 
-const ErrorFallback: React.FC<FallbackProps> = ({
-  error,
-  resetErrorBoundary,
-}) => {
+const ErrorFallback: React.FC<FallbackProps> = ({ error }) => {
   return (
     <div role="alert">
       <p>Something went wrong:</p>
       <pre>{error.message}</pre>
-      <button onClick={resetErrorBoundary}>Try again</button>
     </div>
   );
 };
@@ -105,7 +101,7 @@ const Yith: React.FC<YithProps> & YithComposition = ({
 
   return (
     <YithProvider sequence={sequence as any}>
-      <ErrorBoundary FallbackComponent={ErrorFallback} onReset={() => {}}>
+      <ErrorBoundary FallbackComponent={ErrorFallback}>
         <Screen>{screen(type)}</Screen>
       </ErrorBoundary>
     </YithProvider>

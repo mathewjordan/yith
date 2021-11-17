@@ -1,8 +1,10 @@
+![image](https://user-images.githubusercontent.com/7376450/142130947-905bab5b-308a-4b05-a2c2-e2e8b3ca095c.png)
+
 # Yith
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/c7218204-0b13-42f3-a62f-bdd2102f2b79/deploy-status)](https://app.netlify.com/sites/yith/deploys)
-
 A frontend tool that leverages IIIF manifests and interweaves them into flexible layouts.
+
+[**View Demo**](https://yith.dev/)
 
 ## Types
 
@@ -18,7 +20,7 @@ A frontend tool that leverages IIIF manifests and interweaves them into flexible
 ## Usage
 
 ```shell
-<Yith type="presentation">
+<Yith type="projection">
   <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/193664/manifest.json" />
 </Yith>
 ```

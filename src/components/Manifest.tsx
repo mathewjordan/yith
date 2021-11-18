@@ -16,7 +16,7 @@ export interface ManifestProps {
   type?: string;
   text?: string;
   preview?: string;
-  children?: React.ReactChildren | React.ReactChildren[];
+  children?: React.ReactChild | React.ReactChild[];
 }
 
 export const Manifest: React.FC<ManifestProps> = ({

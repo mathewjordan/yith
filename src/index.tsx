@@ -12,7 +12,7 @@ interface YithProps {
   type: string;
   preview?: string;
   text?: string;
-  children: React.ReactChildren | React.ReactChildren[];
+  children: React.ReactChild | React.ReactChild[];
 }
 
 interface YithComposition {

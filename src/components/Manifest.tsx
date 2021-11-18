@@ -39,7 +39,7 @@ export const Manifest: React.FC<ManifestProps> = ({
         setManifest(data);
       })
       .catch((error: any) => {
-        console.log(`Manifest failed to load: ${error}`);
+        console.error(`Manifest failed to load: ${error}`);
       });
   }, [id]);
 
@@ -53,7 +53,7 @@ export const Manifest: React.FC<ManifestProps> = ({
   if (manifest) {
     const canvas: CanvasNormalized = vault.fromRef(manifest.items[0]);
     const annotationPage: AnnotationPageNormalized = vault.fromRef(
-      canvas.items[0],
+      canvas.items[0]
     );
     const annotations: Annotation[] = vault.allFromRef(annotationPage.items);
 

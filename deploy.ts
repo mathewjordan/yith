@@ -9,7 +9,7 @@ build({
   },
   logLevel: "info",
   platform: "node",
-  entryPoints: ["src/docs.tsx"],
-  minify: false,
+  entryPoints: ["src/dev.tsx"],
+  minify: true,
   outfile: "public/script.js",
 });

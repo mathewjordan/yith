@@ -81,7 +81,7 @@ const Yith: React.FC<YithProps> & YithComposition = ({
         type,
       });
       return clonedManifest;
-    },
+    }
   );
 
   const screen = (type: string) => {
@@ -117,5 +117,7 @@ const Screen = styled("div", {
   display: "flex",
   alignItems: "flex-start",
 });
+
+export { Annotation, Canvas, Manifest };
 
 export default Yith;

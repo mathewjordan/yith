@@ -5,10 +5,10 @@
   "main": "dist/index.cjs.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "rm -rf dist && node build.js && tsc --outDir dist",
-    "build:docs": "rm -rf dist && node docs.js",
-    "dev": "node serve.js",
-    "dev:docs": "node serve.js",
+    "build": "rm -rf dist && node build.ts && tsc --outDir dist",
+    "build:docs": "rm -rf dist && node docs.ts",
+    "dev": "node serve.ts",
+    "dev:docs": "node serve.ts",
     "test": "jest --watch",
     "clean": "rimraf dist"
   },

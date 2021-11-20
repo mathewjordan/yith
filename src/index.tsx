@@ -3,6 +3,7 @@ import { styled } from "@stitches/react";
 import { YithProvider } from "./context/yith-context";
 import { Manifest, ManifestProps } from "./components/Manifest";
 import { Annotation, AnnotationProps } from "./components/Annotation";
+import { Collection, CollectionProps } from "./components/Collection";
 import { Canvas, CanvasProps } from "./components/Canvas";
 import { Presentation, Projection } from "./screens";
 import { ErrorBoundary } from "react-error-boundary";
@@ -18,6 +19,7 @@ interface YithProps {
 interface YithComposition {
   Annotation: React.FC<AnnotationProps>;
   Canvas: React.FC<CanvasProps>;
+  Collection: React.FC<CollectionProps>;
   Manifest: React.FC<ManifestProps>;
 }
 interface FallbackProps {
@@ -110,6 +112,7 @@ const Yith: React.FC<YithProps> & YithComposition = ({
 
 Yith.Annotation = Annotation;
 Yith.Canvas = Canvas;
+Yith.Collection = Collection;
 Yith.Manifest = Manifest;
 
 const Screen = styled("div", {
@@ -118,6 +121,6 @@ const Screen = styled("div", {
   alignItems: "flex-start",
 });
 
-export { Annotation, Canvas, Manifest };
+export { Annotation, Canvas, Collection, Manifest };
 
 export default Yith;

@@ -1,0 +1,158 @@
+{
+  "@context": ["https://iiif.io/api/presentation/3/context.json"],
+  "id": "http://127.0.0.1:8080/fixtures/iiif/manifests/tenncities.json",
+  "type": "Manifest",
+  "label": {
+    "en": ["Cabin near Knoxville"]
+  },
+  "summary": {
+    "en": [
+      "Although somewhat idealized, this log cabin is of a design typical of the Great Smoky Mountains before the advent of Great Smoky Mountains National Park. This particular view shows the front of the cabin, including steps, a makeshift porch, and a firepit."
+    ]
+  },
+  "metadata": [
+    {
+      "label": {
+        "en": ["Role Term"]
+      },
+      "value": {
+        "en": ["Unknown"]
+      }
+    },
+    {
+      "label": {
+        "en": ["Date"]
+      },
+      "value": {
+        "en": ["1911", "1911"]
+      }
+    },
+    {
+      "label": {
+        "en": ["Form"]
+      },
+      "value": {
+        "en": ["postcards"]
+      }
+    },
+    {
+      "label": {
+        "en": ["Topic"]
+      },
+      "value": {
+        "en": ["Log cabins", "Architectural photography"]
+      }
+    },
+    {
+      "label": {
+        "en": ["Coverage"]
+      },
+      "value": {
+        "en": ["Great Smoky Mountains (N.C. and Tenn.)"]
+      }
+    },
+    {
+      "label": {
+        "en": ["Publication Identifier"]
+      },
+      "value": {
+        "en": []
+      }
+    }
+  ],
+  "rights": "http://rightsstatements.org/vocab/CNE/1.0/",
+  "requiredStatement": {
+    "label": {
+      "en": ["Attribution"]
+    },
+    "value": {
+      "en": ["University of Tennessee, Knoxville. Libraries"]
+    }
+  },
+  "provider": [
+    {
+      "id": "https://www.lib.utk.edu/about/",
+      "type": "Agent",
+      "label": {
+        "en": ["University of Tennessee, Knoxville. Libraries"]
+      },
+      "homepage": [
+        {
+          "id": "https://www.lib.utk.edu/",
+          "type": "Text",
+          "label": {
+            "en": ["University of Tennessee Libraries Homepage"]
+          },
+          "format": "text/html"
+        }
+      ],
+      "logo": [
+        {
+          "id": "https://utkdigitalinitiatives.github.io/iiif-level-0/ut_libraries_centered/full/full/0/default.jpg",
+          "type": "Image",
+          "format": "image/jpeg",
+          "width": 200,
+          "height": 200
+        }
+      ]
+    }
+  ],
+  "thumbnail": [
+    {
+      "id": "https://digital.lib.utk.edu/iiif/2/collections~islandora~object~tenncities%3A343~datastream~JP2/info.json",
+      "type": "Image",
+      "format": "image/jpeg",
+      "width": 200,
+      "height": 200
+    }
+  ],
+  "items": [
+    {
+      "id": "https://digital.lib.utk.edu/assemble/manifest/tenncities/343/canvas/0",
+      "type": "Canvas",
+      "width": 4000,
+      "height": 2545,
+      "items": [
+        {
+          "id": "https://digital.lib.utk.edu/assemble/manifest/tenncities/343/canvas/0/page/tenncities%3A343",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://digital.lib.utk.edu/assemble/manifest/tenncities/343/canvas/0/page/tenncities%3A343/60cb5b036ac13",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": [
+                {
+                  "id": "https://digital.lib.utk.edu/iiif/2/collections~islandora~object~tenncities%3A343~datastream~JP2/full/full/0/default.jpg",
+                  "type": "Image",
+                  "width": 4000,
+                  "height": 2545,
+                  "format": "image/jpeg",
+                  "service": [
+                    {
+                      "@id": "https://digital.lib.utk.edu/iiif/2/collections~islandora~object~tenncities%3A343~datastream~JP2",
+                      "@type": "http://iiif.io/api/image/2/context.json",
+                      "profile": "http://iiif.io/api/image/2/level2.json"
+                    }
+                  ]
+                }
+              ],
+              "target": "https://digital.lib.utk.edu/assemble/manifest/tenncities/343/canvas/0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "id": "https://digital.lib.utk.edu/collections/islandora/object/tenncities%3A343/datastream/MODS",
+      "type": "Dataset",
+      "label": {
+        "en": ["Bibliographic Description in MODS"]
+      },
+      "format": "application/xml",
+      "profile": "http://www.loc.gov/standards/mods/v3/mods-3-5.xsd"
+    }
+  ]
+}

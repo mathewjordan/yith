@@ -1,4 +1,5 @@
 import React from "react";
+import ReactDOM from "react-dom";
 import { styled } from "@stitches/react";
 import { YithProvider } from "./context/yith-context";
 import { Manifest, ManifestProps } from "./components/Manifest";
@@ -8,6 +9,7 @@ import { Canvas, CanvasProps } from "./components/Canvas";
 import { Presentation, Projection } from "./screens";
 import { ErrorBoundary } from "react-error-boundary";
 import { uuid } from "./services/uuid";
+import { Dom } from "dom";
 
 interface YithProps {
   type: string;
@@ -124,3 +126,15 @@ const Screen = styled("div", {
 export { Annotation, Canvas, Collection, Manifest };
 
 export default Yith;
+
+/**
+ * Render to DOM (non-JSX method)
+ */
+Array.prototype.forEach.call(
+  document.getElementsByClassName("yith-iiif"),
+  function (element) {
+    const type = element.dataset.type;
+    const children = Array.from(element.children);
+    ReactDOM.render(<Dom children={children} type={type} />, element);
+  }
+);

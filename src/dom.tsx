@@ -7,7 +7,6 @@ export interface DomShape {
 }
 
 export const Dom: React.FC<DomShape> = ({ children, type }) => {
-  console.log(type);
   return (
     <Yith type={type}>
       {children.map((child: any) => {

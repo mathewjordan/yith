@@ -12,7 +12,6 @@ const shared = {
       process.env.NODE_ENV || "development"
     ),
   },
-  external: Object.keys(peerDependencies),
   platform: "node",
   logLevel: "info",
   entryPoints: [entryFile],

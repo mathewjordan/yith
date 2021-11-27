@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import { styled } from "@stitches/react";
 import { YithProvider } from "./context/yith-context";
 import { Manifest, ManifestProps } from "./components/Manifest";
@@ -9,7 +8,6 @@ import { Canvas, CanvasProps } from "./components/Canvas";
 import { Presentation, Projection } from "./screens";
 import { ErrorBoundary } from "react-error-boundary";
 import { uuid } from "./services/uuid";
-import { Dom } from "dom";
 
 interface YithProps {
   type: string;
@@ -123,23 +121,4 @@ const Screen = styled("div", {
   alignItems: "flex-start",
 });
 
-export { Annotation, Canvas, Collection, Manifest };
-
 export default Yith;
-
-/**
- * Render to DOM (non-JSX method)
- */
-Array.prototype.forEach.call(
-  document.getElementsByClassName("yith-iiif"),
-  function (element) {
-    const children = Array.from(element.children);
-    const preview = element.dataset.preview;
-    const text = element.dataset.text;
-    const type = element.dataset.type;
-    ReactDOM.render(
-      <Dom children={children} preview={preview} text={text} type={type} />,
-      element
-    );
-  }
-);

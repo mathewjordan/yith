@@ -1,20 +1,20 @@
-import Yith from "index";
 import React from "react";
+import ReactDOM from "react-dom";
+import { ByClass } from "components/ByClass";
 
-export interface DomShape {
-  children: any;
-  preview?: string;
-  text?: string;
-  type: string;
-}
-
-export const Dom: React.FC<DomShape> = ({ children, preview, text, type }) => {
-  return (
-    <Yith preview={preview} type={type} text={text}>
-      {children.map((child: any) => {
-        const { id } = child.dataset;
-        return <Yith.Manifest key={id} id={id} />;
-      })}
-    </Yith>
-  );
-};
+/**
+ * Render to DOM (non-JSX method)
+ */
+Array.prototype.forEach.call(
+  document.getElementsByClassName("yith-iiif"),
+  function (element) {
+    const children = Array.from(element.children);
+    const preview = element.dataset.preview;
+    const text = element.dataset.text;
+    const type = element.dataset.type;
+    ReactDOM.render(
+      <ByClass children={children} preview={preview} text={text} type={type} />,
+      element
+    );
+  }
+);

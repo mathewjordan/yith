@@ -8,7 +8,7 @@
     "forceConsistentCasingInFileNames": true, // Disallow inconsistently-cased references to the same file.
     "incremental": true, // Enable incremental compilation by reading/writing information from prior compilations to a file on disk
     "isolatedModules": true, // Unconditionally emit imports for unresolved files
-    "jsx": "react", // Support JSX in .tsx files
+    "jsx": "react-jsx", // Support JSX in .tsx files
     "lib": ["dom", "dom.iterable", "es6"], // List of library files to be included in the compilation
     "module": "es6", // Specify module code generation
     "moduleResolution": "node", // Resolve modules using Node.js style
@@ -28,8 +28,7 @@
     "node_modules",
     "**/*.test.ts",
     "**/*.test.tsx",
-    "src/dev.tsx",
-    "src/docs.tsx",
-    "src/docs"
+    "src/dom.tsx",
+    "src/dev.tsx"
   ]
 }

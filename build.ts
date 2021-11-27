@@ -3,7 +3,7 @@
 const { build } = require("esbuild");
 const { peerDependencies } = require("./package.json");
 
-const entryFile = "src/index.tsx";
+const entryPoints = ["src/index.tsx"];
 
 const shared = {
   bundle: true,
@@ -14,14 +14,16 @@ const shared = {
   },
   platform: "node",
   logLevel: "info",
-  entryPoints: [entryFile],
+  entryPoints,
   minify: false,
   sourcemap: true,
 };
 
 build({
   ...shared,
+  entryPoints: ["src/dom.tsx"],
   outfile: "./dist/yith.js",
+  minify: process.env.NODE_ENV === "production",
 });
 
 build({

@@ -18,17 +18,24 @@
     }
   </style>
   <body>
-    <div class="yith-iiif" data-type="projection">
+    <h2 style="margin-top: 0">Inject</h2>
+    <div id="root"></div>
+    <h2>DOM</h2>
+    <div
+      class="yith-iiif"
+      data-preview="interstitial"
+      data-text="Interstitial preview text."
+      data-type="projection"
+    >
+      <div
+        class="yith-iiif-manifest"
+        data-id="https://cdm16014.contentdm.oclc.org/iiif/p4014coll18:8071/manifest.json"
+      ></div>
       <div
         class="yith-iiif-manifest"
         data-id="https://api.artic.edu/api/v1/artworks/25865/manifest.json"
       ></div>
-      <div
-        class="yith-iiif-manifest"
-        data-id="https://iiif.harvardartmuseums.org/manifests/object/299837"
-      ></div>
     </div>
-    <div id="root"></div>
     <script src="./script.js"></script>
   </body>
 </html>

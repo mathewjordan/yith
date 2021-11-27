@@ -27,6 +27,8 @@ export const Viewer: React.FC<ViewerProps> = ({
   const defaultKey: number = parseInt(findkey(sequence, { id: manifestId }));
   const [key, setKey] = React.useState<number>(defaultKey);
 
+  console.log(manifestId);
+
   const data = getStepData(sequence[key]);
 
   const doStep = (step: number) => {

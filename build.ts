@@ -21,12 +21,6 @@ const shared = {
 
 build({
   ...shared,
-  format: "cjs",
-  outfile: "./dist/yith.js",
-});
-
-build({
-  ...shared,
   external: ["react", "react-dom", "mirador"],
   format: "cjs",
   outfile: "./dist/index.cjs.js",

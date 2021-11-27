@@ -133,8 +133,13 @@ export default Yith;
 Array.prototype.forEach.call(
   document.getElementsByClassName("yith-iiif"),
   function (element) {
-    const type = element.dataset.type;
     const children = Array.from(element.children);
-    ReactDOM.render(<Dom children={children} type={type} />, element);
+    const preview = element.dataset.preview;
+    const text = element.dataset.text;
+    const type = element.dataset.type;
+    ReactDOM.render(
+      <Dom children={children} preview={preview} text={text} type={type} />,
+      element
+    );
   }
 );

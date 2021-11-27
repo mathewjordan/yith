@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yith</title>
+    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+    <script
+      src="https://unpkg.com/mirador@latest/dist/mirador.min.js"
+      type="module"
+    ></script>
+    <script src="../dist/yith.js"></script>
+  </head>
+  <style>
+    html {
+      font-size: 1rem;
+      font-family: system-ui, -apple-system, Helvetica, Arial;
+      color: "#000";
+    }
+
+    body {
+      margin: 0;
+      padding: 2rem;
+    }
+  </style>
+  <body>
+    <div class="yith-iiif" data-preview="interstitial" data-type="projection">
+      <div
+        class="yith-iiif-manifest"
+        data-id="https://api.artic.edu/api/v1/artworks/25865/manifest.json"
+      ></div>
+      <div
+        class="yith-iiif-manifest"
+        data-id="https://iiif.harvardartmuseums.org/manifests/object/299837"
+      ></div>
+    </div>
+  </body>
+</html>

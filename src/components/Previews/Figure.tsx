@@ -19,17 +19,16 @@ export const Figure: React.FC<FigureProps> = ({
   size,
   requiredStatement,
 }) => {
-  const resource: string = getResourceURI(painting);
-  const img: string = `${resource}/full/${size},/0/default.jpg`;
-  const lqip: string = `${resource}/full/20,/0/default.jpg`;
-
+  const { img, lqip } = getResourceURI(painting, size);
   return (
     <FigureStyled css={{ width: `${size}px` }}>
       <div>
         <div>
           <span>Expand in Viewer</span>
           <img src={img} />
-          <LQIP css={{ backgroundImage: `url(${lqip})` }} />
+          {lqip && (
+            <LQIP css={{ backgroundImage: `url(${lqip})` }} />
+          )}
         </div>
       </div>
       <figcaption>

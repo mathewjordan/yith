@@ -5,9 +5,10 @@ import Yith from "./index";
 const App: React.FC = () => {
   return (
     <>
-      <Yith type="presentation">
+      <Yith type="presentation" >
         <Yith.Manifest id="https://api.artic.edu/api/v1/artworks/25865/manifest.json" />
         <Yith.Manifest id="https://iiif.harvardartmuseums.org/manifests/object/299837" />
+        <Yith.Manifest id="https://ub-iiif.vercel.app/api/manifest/marcus/ubb-bs-fol-00428" />
       </Yith>
       <Yith type="projection">
         <Yith.Manifest id="https://iiif.harvardartmuseums.org/manifests/object/55652">

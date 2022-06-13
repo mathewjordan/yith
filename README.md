@@ -1,6 +1,6 @@
 ![image](https://user-images.githubusercontent.com/7376450/142130947-905bab5b-308a-4b05-a2c2-e2e8b3ca095c.png)
 
-# Yith
+# Yith IIIF
 
 A frontend tool that leverages IIIF manifests and interweaves them into flexible layouts.
 

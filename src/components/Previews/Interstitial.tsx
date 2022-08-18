@@ -21,9 +21,7 @@ export const Interstitial: React.FC<InterstitialProps> = ({
   size,
   text,
 }) => {
-  const resource: string = getResourceURI(painting);
-  const img: string = `${resource}/full/${size},/0/default.jpg`;
-  const lqip: string = `${resource}/full/20,/0/default.jpg`;
+  const { img, lqip } = getResourceURI(painting, size);
 
   return (
     <InterstitialStyled css={{ height: size }}>
@@ -40,7 +38,9 @@ export const Interstitial: React.FC<InterstitialProps> = ({
         <div>
           <img src={img} style={{ width: size }} />
           {/* <a>Expand in Viewer</a> */}
-          <LQIP css={{ backgroundImage: `url(${lqip})` }} />
+          {lqip && (
+            <LQIP css={{ backgroundImage: `url(${lqip})` }} />
+          )}
         </div>
       </div>
     </InterstitialStyled>

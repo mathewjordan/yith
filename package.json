@@ -28,7 +28,9 @@
   "homepage": "https://github.com/mathewjordan/yith#readme",
   "devDependencies": {
     "@testing-library/react": "^12.1.0",
-    "@types/jest": "^27.0.2",
+    "@types/jest": "^29.2.5",
+    "@types/react": "^18.0.26",
+    "@types/react-dom": "^18.0.10",
     "@types/testing-library__react": "^10.2.0",
     "@typescript-eslint/eslint-plugin": "^4.31.2",
     "@typescript-eslint/parser": "^4.31.2",
@@ -51,24 +53,19 @@
     "@hyperion-framework/types": "^1.0.0",
     "@hyperion-framework/validator": "^1.0.0",
     "@hyperion-framework/vault": "^1.0.2",
-    "@radix-ui/react-collapsible": "^0.1.1",
-    "@radix-ui/react-dialog": "^0.1.0",
-    "@stitches/react": "^1.2.0",
-    "@types/jest": "^27.0.2",
-    "@types/react": "^17.0.21",
-    "@types/react-dom": "^17.0.9",
+    "@iiif/parser": "^1.1.0",
+    "@iiif/presentation-3": "^1.1.3",
+    "@iiif/vault": "^0.9.20",
+    "@radix-ui/react-collapsible": "^1.0.1",
+    "@radix-ui/react-dialog": "^1.0.2",
+    "@stitches/react": "^1.2.8",
     "lodash.findkey": "^4.6.0",
-    "mirador": "^3.2.0",
-    "prismjs": "^1.25.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "mirador": "^3.3.0",
+    "prismjs": "^1.29.0",
+    "react": "^16.8 || ^17.0 || ^18.0",
+    "react-dom": "^16.8 || ^17.0 || ^18.0",
     "react-error-boundary": "^3.1.4",
-    "typescript": "^4.4.3"
-  },
-  "peerDependencies": {
-    "mirador": "^3.2.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "typescript": "^4.9.4"
   },
   "files": [
     "dist"

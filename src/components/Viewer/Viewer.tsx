@@ -60,7 +60,7 @@ export const Viewer: React.FC<ViewerProps> = ({
         )}
       </ViewerControls>
       {type === "projection" && <Note data={data.note} />}
-      <Mirador
+      {/* <Mirador
         config={{
           id: prefix,
           createGenerateClassNameOptions: {
@@ -72,7 +72,7 @@ export const Viewer: React.FC<ViewerProps> = ({
         plugins={[]}
         step={sequence[key]}
         region={data.region}
-      />
+      /> */}
     </ViewerWrapper>
   );
 };
